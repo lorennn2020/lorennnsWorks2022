@@ -1,0 +1,2613 @@
+/* IMG: ASEPRITE RESIZE:100% width & heigh x 3 */
+/* GIF: ASEPRITE RESIZE:600% width & heigh x 3 */
+
+
+/* fonts */
+@charset "utf-8";
+/* -------------字體引用-------------- */
+@font-face {
+    font-family: 'enter-command';
+    font-display: swap;
+    src: url(fonts/enter_command_pixel-16/EnterCommand.ttf) format('TrueType');
+}
+@font-face {
+    font-family: 'prstartk';
+    font-display: swap;
+    src: url(fonts/press_start_pixel-8/prstartk.ttf) format('TrueType');
+}
+@font-face {
+    font-family: 'PrStart';
+    font-display: swap;
+    src: url(fonts/press_start_pixel-8/PrStart.ttf) format('TrueType');
+}
+/* @font-face {
+    font-family: 'silkscreen_pixel-8';
+    font-display: swap;
+    src: url(fonts/press_start_pixel-8/prstartk.ttf) format('TrueType');
+} */
+
+body, html{
+    min-height: 100vh;
+    margin: 0;
+    background-color: #000;
+}
+
+*[id^="font"]{
+    display: inline-block;
+}
+.font_JH {
+    font-family: "Microsoft JhengHei", sans-serif;/* 正黑 */
+}
+.font_enterCommand{ /* pixel 16 或倍數  */
+    font-family: "enter-command", sans-serif;   
+}
+.font_prstartk{ /* pixel 8 或倍數  */
+    font-family: "prstartk", sans-serif;   
+}
+.font_PrStart{ /* pixel 8 或倍數  */
+    font-family: "PrStart", sans-serif;   
+}
+
+.fontSize_16{
+    font-size: 16px;
+}
+.fontSize_24{
+    font-size: 24px;
+}
+.fontSize_28{
+    font-size: 28px;
+}
+.fontSize_32{
+    font-size: 32px;
+}
+.fontSize_40{
+    font-size: 40px;
+}
+.fontSize_48{
+    font-size: 48px;
+}
+.fontSize_57{
+    font-size: 57px;
+}
+
+
+.font_FFF{
+    color:#fff;
+}
+.font_E2EFFE{
+    color:#E2EFFE;
+}
+.font_abc0da{
+    color:#abc0da;
+}
+.font_758ca9{
+    color:#758ca9;
+}
+.font_44484e{
+    color:#44484e;
+}
+
+.font_022035{
+    color:#022035;
+}
+.font_ffe25b{
+    color:#ffe25b;
+}
+
+.font_ffe7d8{
+    color:#ffe7d8;
+}
+.font_ffd8aa{
+    color:#ffd8aa;
+}
+
+
+
+/* fonts end */
+
+/* common */
+.c_show{
+    display: block!important;
+}
+.c_showLightbox{
+    /* display: block!important; */
+    transform: translateX(0px)!important;;
+}
+.c_hide{
+    display: none!important;
+}
+.c_pointer{
+    cursor: pointer;
+}
+.c_pointer_e_none{
+    pointer-events: none;
+}
+.c_hoverShow{
+    opacity: 0;
+}
+.c_hoverShow:hover{
+    opacity: 1;
+}
+.c_frameNow{
+    z-index: 5!important;
+}
+
+i{
+    font-style: normal;
+    text-decoration: none;
+}
+/* common end */
+
+
+#game_frame{
+    position: absolute;
+    display: block;
+    top: 50%;
+    left: 50%;
+    width: 900px;
+    height: 600px;
+    overflow: hidden;
+    transform: translateX(-50%) translateY(-50%);
+}
+/* 1 dpr & 96dpi 以上 */
+@media (-webkit-max-device-pixel-ratio: 1),(max-resolution: 96dpi){
+    #game_frame{
+        transform: translateX(-50%) translateY(-50%) scale(1.2);
+    }
+}
+
+/* game_menu */
+#game_menu{
+    position: absolute;
+    display: block;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-image: url(img/scene-beginning.gif);
+    background-size: cover;
+    z-index: 100;
+    transition: transform 1.5s ease;
+    transform: translateY(0%);
+}
+#game_frame.starting #game_menu{
+    transform:translateY(-100%);
+}
+#game_menu #menu_start{
+    position: absolute;
+    background-image: url(img/btn-orange.svg);
+    /* width: 162px;
+    height: 66px; */
+    padding: 19.75px 39px;
+    top: 450px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3;
+    cursor: pointer;
+}
+#game_menu #menu_start:hover{
+    background-image: url(img/btn-orange_down.svg);
+}
+/* game_menu end */
+/* frame_btn */
+#frame_btnTop{
+    position: absolute;
+    display: block;
+    /* width: 133px; */
+    width: 66px;
+    height: 47px;
+    top: 12px;
+    left: auto;
+    right: 0;
+    z-index: 100;
+}
+.btn_vol_on,.btn_vol_off,.btn_lan_en,.btn_lan_zn{
+    position: absolute;
+    display: block;
+    width: 54px;
+    height: 48px;
+    background-size: cover;
+}
+.btn_vol_on{
+    background-image: url(img/btn-volume-on.svg);
+    z-index: 1;
+}
+.btn_vol_off{
+    background-image: url(img/btn-volume-off.svg);
+}
+.btn_lan_en{
+    left: 67px;
+    background-image: url(img/btn-lan-en.svg);
+    z-index: 1;
+}
+.btn_lan_zn{
+    left: 67px;
+    background-image: url(img/btn-lan-zn.svg);
+}
+
+#frame_btnBtm{
+    position: absolute;
+    display: block;
+    /* width: 145px;
+    height: 66px; */
+    width: 66px;
+    height: 145px;
+    top: 50%;
+    /* bottom: 50%; */
+    transform: translateY(-50%);
+    left: auto;
+    right: 26px;
+    z-index: 100;
+}
+#frame_btnBtm.hide{
+    right: -70px;
+}
+#frame_btnBtm div{
+    position: absolute;
+    display: block;
+    width: 66px;
+    height: 66px;
+    background-size: cover;
+}
+.btn_bag{
+    /* left: 4px; */
+    top: 0;
+    left: 0;
+
+
+    background-image: url(img/btn-bag.svg);
+    transition: left 0.5s ease-out;
+
+}
+.btn_bagOpen{
+    position: absolute;
+    display: none;
+    top: -6px;
+    left: 0;
+    width: 66px;
+    height: 72px;
+    background-image: url(img/btn-open_bag.gif);
+    background-size: cover;
+    transition: opacity 0.5s step-start 0s;
+}
+.btn_bagOpen.open{
+    display: block;
+}
+.btn_map{
+    /* left: 84px; */
+    bottom: 0;
+    left: 0;
+    background-image: url(img/btn-map.svg);
+    transition: bottom 0.5s ease-out 0.2s;
+}
+/* frame_btn end */
+
+/* 地圖補間動畫 */
+#game_frame #map_anima{
+    position: absolute;
+    display: block;
+    transform: translateX(-50%) translateY(-50%);
+    background-image: url(img/map-anima.svg);
+    width: 603px;
+    height: 402px;
+    top: 56%;
+    left: 60%;
+    transform: scale(0.05);
+    z-index: -1;
+}
+#game_frame #map_anima.pop{
+    transform: scale(1) translateX(-50%) translateY(-50%);
+    top: 50%;
+    left: 50%;
+    transition: all 0.5s ease;
+    z-index: 19;
+}
+/* 地圖補間動畫 end */
+
+
+
+/* frame_doctors */
+#frame_doctors,
+#frame_doctors #doctors_BG,
+#frame_doctors #doctors_opening,
+#frame_doctors #doctors_anima01,
+#frame_doctors #doctors_img01,
+#frame_doctors #doctors_homeSad,
+#frame_doctors #doctors_homeSadBegin,
+#frame_doctors #doctors_homeSadImg,
+#frame_doctors #doctors_homeSadAD,
+#frame_doctors #doctors_homeSadCTA,
+#frame_doctors #weirdDoctorBG,
+#frame_doctors #doctors_weirdDoctorEquip,
+#frame_doctors #doctors_weirdDoctorFront,
+#frame_doctors #doctors_weirdDoctorMain{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+#frame_doctors{
+    /* opacity: 0; */
+    z-index: 5;
+}
+#frame_doctors.open{
+    opacity: 1;
+}
+#frame_doctors #doctors_BG{
+    background-color: #5e5044;
+    z-index: 1;
+    transition: background-color 1.0s;
+}
+#frame_doctors #doctors_opening{
+    position: absolute;
+    z-index: 2;
+}
+#frame_doctors #doctors_opening img{
+    width: 900px;
+    height: 600px;
+    filter: url(#pixelate);
+}
+#frame_doctors #doctors_anima01{
+    width: 100%;
+    height: 100%;
+    z-index: 4;
+}
+#frame_doctors #doctors_img01{
+    background-image: url(img/scene-doctors_anima01.svg);
+    z-index: -1;
+    opacity: 0;
+    transition: top 1.0s;
+}
+#frame_doctors #doctors_homeSad{
+    z-index: 5;
+}
+#frame_doctors #doctors_homeSadBegin{
+    background-image: url(img/scence-homeSadBegin.svg);
+    z-index: -1;
+    opacity: 0;
+    height: 100vh;
+    top: 100%;
+    transition: top 1.0s;
+}
+#frame_doctors #doctors_homeSadImg{
+    background-image: url(img/scence-homeSad.svg);
+    z-index: -1;
+    opacity: 0;
+}
+#frame_doctors #doctors_homeSadAD{
+    background-image: url(img/scence-homeSadAD.svg);
+    width: 384px;
+    height: 552px;
+    top: 150%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    transition: top 0.8s ease-in;
+}
+#frame_doctors #doctors_homeSadCTA{
+    background-image: url(img/scence-homeSadCTAmap.svg);
+    width: 84px;
+    height: 51px;
+    right: 10px;
+    bottom: 18px;
+    top: auto;
+    left: auto;
+    cursor: pointer;
+}
+#frame_doctors #doctors_homeSadCTA::before{
+    position: absolute;
+    display: block;
+    content: "";
+    background-image: url(img/scence-homeSadCTAarrow.svg);
+    width: 24px;
+    height: 24px;
+    bottom: 21px;
+    left: 5px;
+    animation: CTA 1.0s linear 0s infinite forwards;
+}
+@keyframes CTA {
+      0%{left: 0px;}
+     30%{left: 10px;}
+     70%{left: 0px;}
+    100%{left: 0px;}
+}
+
+#frame_doctors #weirdDoctorBG{
+    top: 100%;
+    height: 100vh;
+    z-index: 1;
+    background-image: url(img/scene-weirdDoctorBG.svg);
+    transition: top 0.8s linear;
+}
+#frame_doctors #doctors_animaEquip,
+#frame_doctors #doctors_animaFront{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 100vh;
+    transition: opacity 0.8s linear;
+}
+#frame_doctors #doctors_animaEquip{
+    z-index: 3;
+}
+#frame_doctors #doctors_animaFront{
+    z-index: 5;
+}
+
+#frame_doctors #doctors_weirdDoctorEquip{
+    background-image: url(img/scene-weirdDoctorEquip.svg);
+    top: 100%;
+    height: 100vh;
+    z-index: 2;
+    opacity: 1;
+}
+#frame_doctors #doctors_weirdDoctorFront{
+    background-image: url(img/scene-weirdDoctorFront.svg);
+    top: 100%;
+    height: 100vh;
+    z-index: 4;
+    opacity: 1;
+    transition: opacity 0.8s linear 0.4s;
+}
+#frame_doctors #doctors_weirdDoctorEquip.show,
+#frame_doctors #doctors_weirdDoctorFront.show{
+    opacity: 1;
+}
+#frame_doctors #doctors_weirdDoctorEquip.fade{
+    opacity: 0.6;
+    transition: opacity 0.8s linear;
+}
+#frame_doctors #doctors_weirdDoctorMain{
+    background-image: url(img/scene-weirdDoctorMain.svg);
+    z-index: 4;
+    opacity: 0;
+}
+/* frame_doctors end */
+
+
+/* frame_home */
+#frame_home{
+    position: absolute;
+    display: block;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-image: url(img/scene-home.svg);
+    background-size: cover;
+    transition: transform 3s ease 0.8s;
+    transform: translateY(100%);
+    z-index: 3;
+}
+#frame_home::before {
+    position: absolute;
+    display: block;
+    content: "";
+    background-color: #2e333c;
+    width: 900px;
+    height: 600px;
+    left: 0;
+    top: -100%;
+}
+#frame_home.begining{
+    z-index: 6;
+    transform: translateY(0%);
+}
+#frame_home.begining::before{
+    top: 0;
+    height: 0;
+}
+#frame_home.opening{
+    transform: translateY(0%);
+}
+
+#frame_home #manSitting{
+    position: absolute;
+    display: block;
+    width: 54px;
+    height: 93px;
+    bottom: 100px;
+    right: 233px;
+    background-image: url(img/scene-home-Jeffsitting.gif);
+    background-size: cover;
+    z-index: 6;
+}
+/* #man{
+    position: absolute;
+    display: block;
+    bottom: 90px;
+    width:54px;
+    height: 165px;
+    background-image: url(img/manA-stand.svg);
+    background-size: cover;
+    transform: rotateY(0deg);
+    z-index: 9;
+} */
+#cat{
+    position: absolute;
+    display: block;
+    width: 72px;
+    height: 42px;
+    left: auto;
+    right: 180px;
+    bottom: 97px;
+    background-image: url(img/scene-home-cat.gif);
+    background-size: cover;
+    z-index: 5;
+}
+#photoS{
+    position: absolute;
+    display: block;
+    bottom: 175px;
+    left: auto;
+    right: 110px;
+    width: 54px;
+    height: 120px;
+    background-image: url(img/scene-home-photo-s.svg);
+    background-size: cover;
+    z-index: 1;
+}
+#plant{
+    position: absolute;
+    display: block;
+    width: 120px;
+    height: 204px;
+    bottom: 113px;
+    left: auto;
+    right: 141px;
+    background-image: url(img/scene-home-plant.gif);
+    background-size: cover;
+    z-index: 4;
+}
+#stoveFire{
+    position: absolute;
+    display: block;
+    width: 54px;
+    height: 12px;
+    left: 270px;
+    bottom: 180px;
+    background-image: url(img/scene-home-stoveFire.gif);
+    background-size: cover;
+    z-index: 1;
+    opacity: 0.8;
+}
+#ingredientsBlock {
+    position: absolute;
+    display: block;
+    width: 90px;
+    height: 48px;
+    left: 252px;
+    bottom: 232px;
+}
+#ingredientsBlock span{
+    position: absolute;
+    display: block;
+    width: 42px;
+    height: 48px;
+    top: 0;
+    background-size: cover;
+    z-index: 1;
+    pointer-events: none;
+}
+#ingredientsBlock #A,
+#ingredientsBlock #B{
+    transition: opacity 0.5s ease 2s, top 0.5s ease 2s;
+}
+#ingredientsBlock #A{
+    background-image: url(img/scene-home-ingredientsBlockA.gif);
+}
+#ingredientsBlock #B{
+    background-image: url(img/scene-home-ingredientsBlockB.gif);
+    left: 48px;
+}
+#ingredientsBlock #A.full,
+#ingredientsBlock #B.full{
+    pointer-events: none;
+    opacity: 0;
+    top: -20px;
+}
+#ingredientsBlock #A.full{
+    background-image: url(img/scene-home-ingredients01.svg);
+}
+#ingredientsBlock #B.full{
+    background-image: url(img/scene-home-ingredients02.svg);
+}
+
+#ingredientsBlock i{
+    position: absolute;
+    display: block;
+    left: 9px;
+    top: -3px;
+    width: 43px;
+    height: 57px;
+    opacity: 0;
+    z-index: 2;
+}
+#ingredientsBlock #animaSea,
+#ingredientsBlock #animaDesert{
+    position: absolute;
+    display: none;
+    width: 60px;
+    height: 102px;
+    left: 9px;
+    top: -32px;
+    background-image: url(img/scene-home-ingredients01.gif);
+    background-size: cover;
+    z-index: 5;
+}
+#ingredientsBlock #animaDesert{
+    background-image: url(img/scene-home-ingredients02.gif);
+    left: 6px;
+}
+section#frame_home div#ingredientsBlock i.seaWorm{
+    background-image: url(img/bag-SeaWorm.svg);
+    opacity: 1;
+}
+section#frame_home div#ingredientsBlock i.desertWorm{
+    background-image: url(img/bag-DesertWorm.svg);
+    opacity: 1;
+}
+/* frame_home end */
+
+
+/* c_start */
+section #c_start{
+    position: absolute;
+    display: none;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(7, 33, 51, 0.85);
+    z-index: 10;
+}
+section #c_start #target{
+    position: relative;
+    width: calc(100% - 50px);
+    height: 207px;
+    left: 25px;
+    border-bottom: 3px solid rgb(226 239 254 / 10%);
+}
+section #c_start #target i#start_text{
+    position: absolute;
+    top: 100px;
+    left: 195px;
+}
+section #c_start #target span{
+    position: absolute;
+    bottom: 0;
+    left: 510px;
+    width: 102px;
+    height: 135px;
+    background-image: url(img/scene-volcano_target.gif);
+    background-size: cover;
+}
+
+section #c_start #control{
+    position: relative;
+    width: calc(100% - 50px);
+    height: 324px;
+    left: 25px;
+}
+section #c_start #start_title{
+    padding: 20px 0px;
+    letter-spacing: 5px;
+}
+section #c_start span,
+section #c_start i{
+    position: absolute;
+    display: block;
+}
+section #start_keyboard01 i.down{
+    background-image: url(img/scene-volcano_keyboardDown01.svg);
+    padding: 6px 0 0 24px;
+}
+section #start_keyboard01 i+i.fontSize_40{
+    top: 60px;
+    left: 0;
+}
+section #start_keyboard01 i+i+i.fontSize_40{
+    top: 60px;
+    left: 66px;
+}
+section #start_keyboard01 i+i+i+i.fontSize_40{
+    top: 60px;
+    left: 132px;
+}
+section #start_keyboard01 .fontSize_28{
+    top: 111%;
+    left: -3%;
+    width: auto;
+    background-image: none;
+    padding: 0;
+    white-space: nowrap;
+}
+
+section #start_keyboard02{
+    width: 189px;
+    height: 57px;
+    top: 100px;
+    left: 450px;
+}
+section #start_keyboard02 i{
+    width: 189px;
+    height: 57px;
+    background-image: url(img/scene-volcano_keyboard02.svg);
+    background-size: cover;
+    padding: 3px 0 0 33px;
+    box-sizing: border-box;
+
+}
+section #start_keyboard02 i.down{
+    background-image: url(img/scene-volcano_keyboardDown02.svg);
+    padding: 6px 0 0 33px;
+}
+section #start_keyboard02 .fontSize_28{
+    top: 168%;
+    left: -6%;
+    white-space: nowrap;
+    background: none;
+    padding: 0;
+}
+section span#start_btn{
+    background-image: url(img/btn-blue.svg);
+    width: 162px;
+    height: 66px;
+    top: 480px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3;
+    cursor: pointer;
+}
+section #start_btn:hover{
+    background-image: url(img/btn-blue_down.svg);
+}
+section #start_btn i{
+    top: 18px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+section i#keyDown05{
+    background-image: url(img/scene-volcano_keyboard02.svg);
+    width: 189px;
+    height: 46px;
+    top: 3px;
+    left: 36px;
+}
+section .fontSize_40{
+    z-index: 5;
+}
+section #start_keyboard01{
+    width: 192px;
+    height: 115px;
+    top: 69px;
+    left: 192px;
+}
+section #start_keyboard01 i{
+    background-image: url(img/scene-volcano_keyboard01.svg);
+    background-size: cover;
+    width: 60px;
+    height: 54px;
+    top: 0px;
+    left: 57px;
+    padding: 3px 0 0 24px;
+    box-sizing: border-box;
+}
+/* c_start end */
+
+
+/* frame_volcano */
+#frame_volcano{
+    position: absolute;
+    display: block;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-image: url(img/scene-volcano.png);
+    background-size: cover;
+    background-position: 0% 100%;
+    z-index: 1;
+    transition: background-position linear 0.2s 0s, transform 3s ease 0.2s;
+    transform: translateY(0%);
+}
+#frame_volcano::before{
+    position: absolute;
+    display: block;
+    content: "";
+    background-image: url(img/scene-volcano_openingBg.svg);
+    background-size: cover;
+    width: 900px;
+    height: 600px;
+    left: 0;
+    top: -100%;
+}
+#frame_volcano.opening{
+    transform: translateY(100%);
+}
+
+#frame_volcano #submarine{
+    position: absolute;
+    display: block;
+    width: 225px;
+    height: 144px;
+    top: 231px;
+    left: 113px;
+    background-image: url(img/scene-volcano_submarine.svg);
+    background-size: cover;
+    z-index: 2;
+    transition: top linear 0.2s 0s,left linear 0.2s 0s;
+}
+#frame_volcano #submarine.beforeOpening{
+    transform: translateY(0px);
+    transition:  transform 2.5s ease;
+}
+#frame_volcano.opening #submarine{
+    transform: translateY(-1050px);
+}
+#frame_volcano #submarine .catchedWorm{
+    position: absolute;
+    display: block;
+    width: 27px;
+    height: 18px;
+    bottom: 5px;
+    right: 42px;
+}
+#frame_volcano #submarine .catchedWorm img{
+    position: absolute;
+    display: block;
+    width: 100%;
+    opacity: 0;
+    transition: opacity linear 0s 1.55s;
+}
+#frame_volcano .seaLight{
+    position: absolute;
+    background-image: url(img/scene-volcano_seaLight.svg);
+    width: 732px;
+    height: 636px;
+    left: 0px;
+    top: 0px;
+    z-index: 5;
+    animation: seaLight 14s linear 0s infinite forwards;
+    background-size: cover;
+    background-position: 100% 100%;
+    opacity: 1;
+    transition: width linear 0.2s 0s ,opacity 1.3s linear 2.2s ;
+}
+@keyframes seaLight{
+    0% {
+        left: 0px;
+        top: 0px;
+    }
+    19.99999% {
+        left: 0px;
+        top: 0px;
+    }
+    20% {
+        left: -3px;
+        top: -3px;
+    }
+    39.99999% {
+        left: -3px;
+        top: -3px;
+    }
+    40% {
+        left: 0px;
+        top: -6px;
+    }
+    59.9999% {
+        left: 0px;
+       top: -6px;
+    }
+    60% {
+        left: -9px;
+        top: -3px;
+    }
+    79.99999% {
+        left: -9px;
+        top: -3px;
+    }
+    80% {
+        left: -3px;
+        top: 0px;
+    }
+    99.99999% {
+        left: -3px;
+        top: 0px;
+    }
+    100% {
+        left: -3px;
+        top: -3px;
+    }
+}
+#frame_volcano.opening .seaLight{
+    opacity: 0;
+}
+#frame_volcano #submarine img.show{
+    opacity: 1;
+    z-index: 3;
+}
+#frame_volcano div[class^=worm]{
+    position: absolute;
+    display: block;
+    background-size: cover;
+    transition: right linear 0.2s 0s;
+}
+#frame_volcano .worm1{
+    background-image: url(img/scene-volcano_worm_1.gif);
+    width: 30px;
+    height: 30px;
+    right: 36px;
+    bottom: 66px;
+}
+#frame_volcano .worm2{
+    background-image: url(img/scene-volcano_worm_2.gif);
+    width: 33px;
+    height: 21px;
+    right: 0px;
+    bottom: 63px;
+}
+#frame_volcano .worm3{
+    background-image: url(img/scene-volcano_worm_3.gif);
+    width: 24px;
+    height: 21px;
+    right: -6px;
+    bottom: 36px;
+}
+#frame_volcano .worm4{
+    background-image: url(img/scene-volcano_worm_4.gif);
+    width: 33px;
+    height: 33px;
+    right: -180px;
+    bottom: 27px;
+}
+#frame_volcano .worm5{
+    background-image: url(img/scene-volcano_worm_5.gif);
+    width: 48px;
+    height: 33px;
+    right: -195px;
+    bottom: 87px;
+}
+#frame_volcano .worm6{
+    background-image: url(img/scene-volcano_worm_6.gif);
+    width: 30px;
+    height: 30px;
+    right: -219px;
+    bottom: 66px;
+}
+#frame_volcano .worm7{
+    background-image: url(img/scene-volcano_worm_7.gif);
+    width: 9px;
+    height: 21px;
+    right: -222px;
+    bottom: 39px;
+}
+#frame_volcano .worm8{
+    background-image: url(img/scene-volcano_worm_8.gif);
+    width: 27px;
+    height: 27px;
+    right: -477px;
+    bottom: 288px;
+}
+#frame_volcano .worm9{
+    background-image: url(img/scene-volcano_worm_9.gif);
+    width: 12px;
+    height: 9px;
+    right: -477px;
+    bottom: 333px;
+}
+
+
+section #success{
+    position: absolute;
+    display: none;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(7, 33, 51, 0.7);
+    z-index: 10;
+}
+section #success span,
+section #success i{
+    position: absolute;
+    display: block;
+    background-size: cover;
+}
+section #success_bg{
+    width: 900px;
+    height: 320px;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    background-image: url(img/scene-volcano_success_bg.svg);
+    background-position: 100% 0%;
+    animation: successBgShow 0.5s ease-in 0s 1 forwards;
+}
+@keyframes successBgShow{
+    from{
+        background-position: 100% 0%;
+    }
+    to{
+        background-position: 0% 0%;
+    }
+}
+section #success_bg.hide{
+    animation: successBgHide 0.5s ease-in 0s 1 forwards;
+}
+@keyframes successBgHide{
+    from{
+        background-position: 0% 0%;
+    }
+    to{
+        background-position: 100% 0%;
+    }
+}
+section #capsule{
+    width: 288px;
+    height: 441px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+section #success #capsule.shrink{
+    animation: shrink 0.8s ease-out 0s 1 forwards;
+}
+@keyframes shrink {
+    form{
+        transform: scale(1);
+    }
+    to{
+        transform: scale(0.1);    top: 7%;
+        left: 77%;
+    }
+}
+section #capsule i{
+    transition: top ease-in 0.3s 0s,
+    bottom ease-in 0.3s 0s,
+    left ease-in 0.3s 0s,
+    right ease-in 0.3s 0s;
+}
+section #capsule_worm{
+    background-image: url(img/scene-volcano_capsule_worm.svg);
+    width: 198px;
+    height: 258px;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 2;
+    opacity: 0;
+    animation: wormShow 1.5s ease-in 1s 1 forwards;
+}
+@keyframes wormShow{
+    from{
+        top: 45%;
+        opacity: 0;
+    }
+    to{
+        top: 50%;
+        opacity: 1;
+    }
+}
+section #capsule_top{
+    background-image: url(img/scene-volcano_capsule_top.svg);
+    width: 174px;
+    height: 186px;
+    top: 0px;
+    right: 0px;
+    z-index: 3;
+    opacity: 0;
+}
+section #capsule_hole{
+    background-image: url(img/scene-volcano_capsule_hole.svg);
+    width: 114px;
+    height: 57px;
+    top: 132px;
+    left: 114px;
+    z-index: 1;
+    opacity: 0;
+}
+section #capsule_bottom{
+    background-image: url(img/scene-volcano_capsule_bottom.svg);
+    width: 174px;
+    height: 183px;
+    left: 0px;
+    bottom: 0px;
+    z-index: 4;
+    opacity: 0;
+}
+section #capsule_top.show, section #capsule_hole.show, section #capsule_bottom.show{
+    opacity: 1;
+    transition: opacity 0.8s;
+}
+section #capsule_top.close{
+    animation: capsuleTopClose 0.4s ease-in 0s 1 forwards;
+}
+section #capsule_hole.close{
+    animation: capsuleHoleClose 0.4s ease-in 0s 1 forwards;
+}
+section #capsule_bottom.close{
+    animation: capsuleBottomClose 0.4s ease-in 0s 1 forwards;
+}
+@keyframes capsuleTopClose{
+    from{ top: 0px; right: 0px;}
+    to{ top: 78px; right: 36px;}
+}
+@keyframes capsuleHoleClose{
+    from{ top: 132px; left: 114px;}
+    to{ top: 210px; left: 78px;}
+}
+@keyframes capsuleBottomClose{
+    from{ left: 0px; bottom: 0px;}
+    to{ bottom: 60px; left: 33px;}
+}
+section #capsule.float{
+    top: 38%;
+    transition: top linear 1.5s 0s;
+    animation: float 1s infinite 1.5s alternate ease;
+}
+section #success #text{
+    top: 390px;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+}
+section #success #text.show,
+section #success_btn.show{
+    opacity: 1;
+    transition: opacity ease-in 1s 0s;
+}
+@keyframes float {
+    from { top: 38%; }
+	to { top: 35%; } 
+}
+section #success_btn{
+    background-image: url(img/btn-blue.svg);
+    width: 162px;
+    height: 66px;
+    bottom: 102px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3;
+    opacity: 0;
+    cursor: pointer;
+}
+section #success_btn:hover{
+    background-image: url(img/btn-blue_down.svg);
+}
+section #success_btn i{
+    top: 18px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+/* frame_volcano end */
+
+
+
+/* frame_desert */
+#frame_desert,
+#frame_desert #desert_sky,
+#frame_desert #desert_bg01,#frame_desert #desert_bg02,#frame_desert #desert_bg03,
+#frame_desert #desert_wind{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+#frame_desert{
+    width: 1956px;
+    left: 0px;
+    /* left: -329px; */
+    transition: transform 3s ease 0.8s;
+    transform: translateY(100%);
+}
+
+#frame_desert::before {
+    position: absolute;
+    display: block;
+    content: "";
+    background-color: #1c97ff;
+    width: 900px;
+    height: 600px;
+    left: 0;
+    top: -100%;
+}
+#frame_desert.opening{
+    transform: translateY(0%);
+}
+
+section#frame_desert #c_start{
+    z-index: 20;
+    background-color: rgba(184, 138, 88, 0.9);
+}
+section#frame_desert #c_start #target span{
+    width: 105px;
+    height: 120px;
+    background-image: url(img/scene-desert_miniWell.svg);
+    bottom: -12px;
+}
+section#frame_desert span#start_btn{
+    left: 440px;
+    z-index: 21;
+    filter: hue-rotate(170deg);
+}
+section#frame_desert #c_start #start_keyboard01 i.fontSize_40,
+section#frame_desert #c_start #start_keyboard02 i.fontSize_40{
+    filter: hue-rotate(160deg);
+}
+section#frame_desert #start_keyboard01{
+    width: 132px;
+    height: 54px;
+    top: 100px;
+    left: 234px;
+}
+section#frame_desert #start_keyboard01 .fontSize_28 {
+    left: -9%;
+    top: 123%;
+}
+section#frame_desert #start_keyboard01 i{
+    left: 0;
+}
+section#frame_desert #start_keyboard01 i+i.fontSize_40{
+    top: 0;
+    left: auto;
+    right: 0;
+}
+section#frame_desert #start_keyboard02 .fontSize_28 {
+    top: 117%;
+}
+
+#frame_desert #desert_sky{
+    width: 100%;
+    background-image: url(img/scene-desert_sky.svg);
+    background-size: contain;
+    z-index: 1;
+}
+#frame_desert #desert_well{
+    position: absolute;
+    width: 246px;
+    height: 258px;
+    background-image: url(img/scene-desert_well.svg);
+    background-size: contain;
+    left: 1416px;
+    bottom: 0;
+    z-index: 7;
+}
+#frame_desert #desert_well.drawUp{
+    background-image: url(img/scene-desert_well.gif) ;
+}
+#frame_desert #desert_well.drawDone{
+    background-image: url(img/scene-desert_wellDone.svg) ;
+}
+
+#frame_desert #desert_bg01{
+    height: 100%;
+    background-image: url(img/scene-desert_bg1.svg);
+    background-size: cover;
+    z-index: 6;
+}
+#frame_desert #desert_bg02{
+    height: 100%;
+    background-image: url(img/scene-desert_bg2.svg);
+    background-size: cover;
+    z-index: 3;
+}
+#frame_desert #desert_bg03{
+    height: 100%;
+    background-image: url(img/scene-desert_bg3.svg);
+    background-size: cover;
+    z-index: 2;
+}
+#frame_desert #desert_sand{
+    position: absolute;
+    width: 579px;
+    height: 162px;
+    bottom: 30px;
+    left: 882px;
+    background-image: url(img/scene-desert_sand.svg);
+    background-size: cover;
+    z-index: 11;
+    animation: sandBlow 15s ease-out 0s infinite forwards;
+}
+@keyframes sandBlow {
+     0%{ left: 702px; opacity: 0; }
+     3%{ opacity: 1; }
+     7%{ opacity: 1; }
+    10%{ left: 390px; opacity: 0; }
+    100%{ left: 390px; opacity: 0;  }
+}
+#frame_desert #desert_wind{
+    width: 100%;
+    /* height: 100%; */
+    left: 1000px;
+    background-image: url(img/scene-desert_wind.png);
+    background-size: cover;
+    z-index: 15;
+    animation: windBlow 10s ease-out 1s infinite forwards;
+}
+@keyframes windBlow {
+     0%{ left: 2000px; }
+     74%{ left: 2000px; }
+    100%{ left: -2000px; }
+}
+#frame_desert #desert_camelCaravan{
+    position: absolute;
+    bottom: 81px;
+    left: 640px;
+    background-image: url(img/scene-desert_camelCaravan.gif);
+    background-size: cover;
+    width: 213px;
+    height: 39px;
+    opacity: 0.8;
+    z-index: 4;
+}
+#frame_desert #desert_tumbleweed01{
+    position: absolute;
+    left: 2010px;
+    bottom: 12px;
+    background-image: url(img/scene-desert_tumbleweed01.gif);
+    background-size: cover;
+    width: 51px;
+    height: 45px;
+    z-index: 13;
+    animation: tumbleweedRooling01 22s linear 5s infinite forwards;
+}
+#frame_desert #desert_tumbleweed02,#frame_desert #desert_tumbleweed03{
+    position: absolute;
+    left: 2010px;
+    bottom: 60px;
+    background-image: url(img/scene-desert_tumbleweed02.gif);
+    background-size: cover;
+    width: 24px;
+    height: 21px;
+    z-index: 4;
+    animation: tumbleweedRooling02 20s linear 0s infinite forwards;
+}
+#frame_desert #desert_tumbleweed03{
+    width: 24px;
+    height: 21px;
+    animation: tumbleweedRooling01 65s linear 3s infinite forwards;
+    z-index: 13;
+}
+@keyframes tumbleweedRooling01 {
+      0%{ left: 2010px; bottom: -45px; }
+      17%{ bottom: 10px; }
+      19%{ bottom: 12px; }
+      20.5%{ bottom: 26px; }
+      23%{ bottom: 12px; }
+      23.5%{ bottom: 18px; }
+      24%{ bottom: 12px; }
+
+      31%{ bottom: 10px; }
+      32%{ bottom: 20px; }
+      35%{ bottom: 8px; }
+      36%{ bottom: 12px; }
+      36.5%{ bottom: 8px; }
+
+     50%{ left: 0px; }
+     50.0000001%{ left: -100px; }
+    100%{ left: -100px; }
+}
+@keyframes tumbleweedRooling02 {
+      0%{ left: 2010px; }
+    100%{ left: -100px; }
+}
+#frame_desert #desert_Jeff{
+    position: absolute;
+    left: 102px;
+    bottom: 30px;
+    width: 48px;
+    height: 132px;
+    background-image: url(img/scene-desert_man.gif);
+    background-size: cover;
+    z-index: 12;
+}
+#desert_Jeff_drawWater{
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+    width: 63px;
+    height: 132px;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+#desert_Jeff_drawWater.drawUp{
+    background-image: url(img/scene-desert_drawWater.svg) !important;
+}
+
+#frame_desert #well_bg,
+#frame_desert #well_bucket,
+#frame_desert #bucket_puzzle,
+#frame_desert #bucket_puzzle01{
+    position: fixed;
+    display: block;
+    top: 0;
+    left: 0;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+#frame_desert #well_bg{
+    display: none;
+    /* 測試時關閉 */
+    width: 900px;
+    height: 100%;
+    background-image: url(img/scene-desert_well_bg.svg);
+    z-index: 30;
+}
+#frame_desert #well_bucket{
+    width: 552px;
+    height: 969px;
+    background-image: url(img/scene-desert_well_bucket.svg);
+    z-index: 31;
+
+    top: 0px;
+    /* 測試時關閉 */
+
+    /* top: -369px; */
+    /* 測試用 */
+
+    left: 159px;
+    transition: top 1.2s ease-in;
+}
+#frame_desert #bucket_click{
+    position: absolute;
+    display: block;
+    pointer-events: none;
+    width: 45px;
+    height: 69px;
+    background-image: url(img/scene-desert_well_click.gif);
+    background-size: cover;
+    background-repeat: no-repeat;
+    top: 120px;
+    left: 270px;
+    z-index: 33;
+}
+#frame_desert #well_bucket.show{
+    top: -369px;
+}
+#frame_desert #well_bucket .fontSize_28{
+    position: fixed;
+    display: block;
+    top: -110px;
+    left: 240px;
+    width: 411px;
+    height: 99px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url(img/scene-desert_lightbox.svg);
+    box-sizing: border-box;
+    padding: 27px 120px;
+    transition: top 1.5s ease-out;
+}
+#frame_desert #well_bucket .fontSize_28.show{
+    top: 90px;
+}
+#frame_desert #well_bucket .fontSize_28::before{
+    position: absolute;
+    display: block;
+    content: '';
+    width: 366px;
+    height: 42px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url(img/scene-desert_lightboxBlank.svg);
+    left: 20px;
+    bottom: 30px;
+    transition: all 1.5s ease-out;
+    /* opacity: 0; */
+}
+#frame_desert #blank_Geobacter{
+    position: absolute;
+    display: block;
+    width: 27px;
+    height: 27px;
+    left: 29px;
+    bottom: 36px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url(img/scene-desert_BlankGeobacter.svg);
+    z-index: 36;
+    opacity: 0;
+    transition: opacity 0.5s ease-out;
+}
+#frame_desert span#blank_Geobacter:nth-child(2){
+    left: 83px;
+}
+#frame_desert span#blank_Geobacter:nth-child(3){
+    left: 137px;
+}
+#frame_desert span#blank_Geobacter:nth-child(4){
+    left: 191px;
+}
+#frame_desert span#blank_Geobacter:nth-child(5){
+    left: 245px;
+}
+#frame_desert span#blank_Geobacter:nth-child(6){
+    left: 299px;
+}
+#frame_desert span#blank_Geobacter:nth-child(7){
+    left: 354px;
+}
+#frame_desert span#blank_Geobacter.show{
+    opacity: 1;
+}
+
+#frame_desert #well_bucket i[id^="puzzle"]{
+    position: absolute;
+    display: block;
+    background-size: cover;
+    top: 0;
+    left: 0;  
+    transition: all 0.2s ease-out;
+}
+#frame_desert #well_bucket i[id^="puzzle"]:hover{
+    background-color: rgba(1, 49, 44, 0.7);
+    cursor: pointer;
+}
+#frame_desert #bucket_puzzle01{
+    position: absolute;
+    display: none;
+    width: 315px;
+    height: 156px;
+    left: 120px;
+    bottom: 120px;
+    top: auto;
+    z-index: 32;
+}
+#frame_desert #well_bucket div[id^="bucket_puzzle"].now{
+    display: block;
+}
+#frame_desert #bucket_puzzle01 i{
+    width: 156px;
+    height: 156px;
+}
+#frame_desert #bucket_puzzle01 i#puzzle01_1{
+    /* transform: rotateZ(0deg); 不加transform旋轉功能就可以讓他失效 */
+    background-image: url(img/scene-desert_well_inner01-01.svg );
+}
+#frame_desert #bucket_puzzle01 i#puzzle01_2{
+    transform: rotateZ(-90deg);
+    left: 159px;
+    background-image: url(img/scene-desert_well_inner01-02.svg );
+}
+#frame_desert #puzzle01_glow{
+    position: absolute;
+    pointer-events: none;
+    opacity: 0;
+    width: 238px;
+    height: 122px;
+    top: 28px;
+    left: 53px;
+    background-image: url(img/scene-desert_well_inner1_glow.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: 33;
+    transition: top 1.5s ease-out, opacity 1.0s ease-out 0.5s;
+}
+#frame_desert #puzzle02_glow{
+    position: absolute;
+    pointer-events: none;
+    opacity: 0;
+    width: 256px;
+    height: 190px;
+    top: 22px;
+    left: 22px;
+    background-image: url(img/scene-desert_well_inner2_glow.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: 33;
+    transition: top 1.5s ease-out, opacity 1.0s ease-out 0.5s;
+}
+#frame_desert #puzzle03_glow{
+    position: absolute;
+    pointer-events: none;
+    opacity: 0;
+    width: 282px;
+    height: 192px;
+    top: 15px;
+    left: 15px;
+    background-image: url(img/scene-desert_well_inner3_glow.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: 33;
+    transition: top 1.5s ease-out, opacity 1.0s ease-out 0.5s;
+}
+#frame_desert #puzzle01_glow.show,
+#frame_desert #puzzle02_glow.show,
+#frame_desert #puzzle03_glow.show{
+    opacity: 1;
+}
+#frame_desert #puzzle01_glow.get,
+#frame_desert #puzzle02_glow.get,
+#frame_desert #puzzle03_glow.get{
+    opacity: 0;
+    top: -24px;
+}
+
+#frame_desert #bucket_puzzle02{
+    position: absolute;
+    display: none;
+    width: 297px;
+    height: 222px;
+    left: 120px;
+    bottom: 120px;
+    top: auto;
+    z-index: 32;
+}
+#frame_desert #bucket_puzzle02 i{
+    width: 75px;
+    height: 75px;
+    transform: rotateZ(0deg);
+}
+#frame_desert #bucket_puzzle02 i#puzzle02_1{
+    top: 0;
+}
+#frame_desert #bucket_puzzle02 i#puzzle02_5,
+#frame_desert #bucket_puzzle02 i#puzzle02_6,
+#frame_desert #bucket_puzzle02 i#puzzle02_7,
+#frame_desert #bucket_puzzle02 i#puzzle02_8{
+    top: 78px;
+}
+#frame_desert #bucket_puzzle02 i#puzzle02_9,
+#frame_desert #bucket_puzzle02 i#puzzle02_10,
+#frame_desert #bucket_puzzle02 i#puzzle02_11,
+#frame_desert #bucket_puzzle02 i#puzzle02_12{
+    top: 156px;
+}
+#frame_desert #bucket_puzzle02 i#puzzle02_2,
+#frame_desert #bucket_puzzle02 i#puzzle02_6,
+#frame_desert #bucket_puzzle02 i#puzzle02_10{
+    left: 78px;
+}
+#frame_desert #bucket_puzzle02 i#puzzle02_3,
+#frame_desert #bucket_puzzle02 i#puzzle02_7,
+#frame_desert #bucket_puzzle02 i#puzzle02_11{
+    left: 156px;
+}
+#frame_desert #bucket_puzzle02 i#puzzle02_4,
+#frame_desert #bucket_puzzle02 i#puzzle02_8,
+#frame_desert #bucket_puzzle02 i#puzzle02_12{
+    left: 234px;
+}
+
+#frame_desert #bucket_puzzle03{
+    position: absolute;
+    display: none;
+    width: 312px;
+    height: 222px;
+    left: 120px;
+    bottom: 99px;
+    top: auto;
+    z-index: 32;
+}
+#frame_desert #bucket_puzzle03 i{
+    width: 42px;
+    height: 42px;
+    transform: rotateZ(0deg);
+}
+#frame_desert #bucket_puzzle03 i#puzzle03_1{
+    top: 0;
+}
+#frame_desert #bucket_puzzle03 i#puzzle03_8,
+#frame_desert #bucket_puzzle03 i#puzzle03_9,
+#frame_desert #bucket_puzzle03 i#puzzle03_10,
+#frame_desert #bucket_puzzle03 i#puzzle03_11,
+#frame_desert #bucket_puzzle03 i#puzzle03_12,
+#frame_desert #bucket_puzzle03 i#puzzle03_13,
+#frame_desert #bucket_puzzle03 i#puzzle03_14{
+    top: 45px;
+}
+#frame_desert #bucket_puzzle03 i#puzzle03_15,
+#frame_desert #bucket_puzzle03 i#puzzle03_16,
+#frame_desert #bucket_puzzle03 i#puzzle03_17,
+#frame_desert #bucket_puzzle03 i#puzzle03_18,
+#frame_desert #bucket_puzzle03 i#puzzle03_19,
+#frame_desert #bucket_puzzle03 i#puzzle03_20,
+#frame_desert #bucket_puzzle03 i#puzzle03_21{
+    top: 90px;
+}
+#frame_desert #bucket_puzzle03 i#puzzle03_22,
+#frame_desert #bucket_puzzle03 i#puzzle03_23,
+#frame_desert #bucket_puzzle03 i#puzzle03_24,
+#frame_desert #bucket_puzzle03 i#puzzle03_25,
+#frame_desert #bucket_puzzle03 i#puzzle03_26,
+#frame_desert #bucket_puzzle03 i#puzzle03_27,
+#frame_desert #bucket_puzzle03 i#puzzle03_28{
+    top: 135px;
+}
+#frame_desert #bucket_puzzle03 i#puzzle03_29,
+#frame_desert #bucket_puzzle03 i#puzzle03_30,
+#frame_desert #bucket_puzzle03 i#puzzle03_31,
+#frame_desert #bucket_puzzle03 i#puzzle03_32,
+#frame_desert #bucket_puzzle03 i#puzzle03_33,
+#frame_desert #bucket_puzzle03 i#puzzle03_34,
+#frame_desert #bucket_puzzle03 i#puzzle03_35{
+    top: 180px;
+}
+#frame_desert #bucket_puzzle03 i#puzzle03_2,
+#frame_desert #bucket_puzzle03 i#puzzle03_9,
+#frame_desert #bucket_puzzle03 i#puzzle03_16,
+#frame_desert #bucket_puzzle03 i#puzzle03_23,
+#frame_desert #bucket_puzzle03 i#puzzle03_30{
+    left: 45px;
+}
+#frame_desert #bucket_puzzle03 i#puzzle03_3,
+#frame_desert #bucket_puzzle03 i#puzzle03_10,
+#frame_desert #bucket_puzzle03 i#puzzle03_17,
+#frame_desert #bucket_puzzle03 i#puzzle03_24,
+#frame_desert #bucket_puzzle03 i#puzzle03_31{
+    left: 90px;
+}
+#frame_desert #bucket_puzzle03 i#puzzle03_4,
+#frame_desert #bucket_puzzle03 i#puzzle03_11,
+#frame_desert #bucket_puzzle03 i#puzzle03_18,
+#frame_desert #bucket_puzzle03 i#puzzle03_25,
+#frame_desert #bucket_puzzle03 i#puzzle03_32{
+    left: 135px;
+}
+#frame_desert #bucket_puzzle03 i#puzzle03_5,
+#frame_desert #bucket_puzzle03 i#puzzle03_12,
+#frame_desert #bucket_puzzle03 i#puzzle03_19,
+#frame_desert #bucket_puzzle03 i#puzzle03_26,
+#frame_desert #bucket_puzzle03 i#puzzle03_33{
+    left: 180px;
+}
+#frame_desert #bucket_puzzle03 i#puzzle03_6,
+#frame_desert #bucket_puzzle03 i#puzzle03_13,
+#frame_desert #bucket_puzzle03 i#puzzle03_20,
+#frame_desert #bucket_puzzle03 i#puzzle03_27,
+#frame_desert #bucket_puzzle03 i#puzzle03_34{
+    left: 225px;
+}
+#frame_desert #bucket_puzzle03 i#puzzle03_7,
+#frame_desert #bucket_puzzle03 i#puzzle03_14,
+#frame_desert #bucket_puzzle03 i#puzzle03_21,
+#frame_desert #bucket_puzzle03 i#puzzle03_28,
+#frame_desert #bucket_puzzle03 i#puzzle03_35{
+    left: 270px;
+}
+#frame_desert #bucket_puzzle02 i#puzzle02_5,
+#frame_desert #bucket_puzzle02 i#puzzle02_6,
+#frame_desert #bucket_puzzle02 i#puzzle02_12,
+#frame_desert #bucket_puzzle03 i#puzzle03_7,
+#frame_desert #bucket_puzzle03 i#puzzle03_18,
+#frame_desert #bucket_puzzle03 i#puzzle03_28{
+    transform: rotateZ(-90deg);
+}
+#frame_desert #bucket_puzzle02 i#puzzle02_8,
+#frame_desert #bucket_puzzle02 i#puzzle02_10,
+#frame_desert #bucket_puzzle03 i#puzzle03_4,
+#frame_desert #bucket_puzzle03 i#puzzle03_14,
+#frame_desert #bucket_puzzle03 i#puzzle03_22,
+#frame_desert #bucket_puzzle03 i#puzzle03_28{
+    transform: rotateZ(-180deg);
+}
+#frame_desert #bucket_puzzle02 i#puzzle02_2,
+#frame_desert #bucket_puzzle02 i#puzzle02_3,
+#frame_desert #bucket_puzzle02 i#puzzle02_9,
+#frame_desert #bucket_puzzle03 i#puzzle03_3,
+#frame_desert #bucket_puzzle03 i#puzzle03_25{
+    transform: rotateZ(-270deg);
+}
+
+section#frame_desert #success{
+    width: 900px;
+    background-color: rgba(201,169,117,.7);
+    z-index: 40;
+}
+section#frame_desert #success #text{
+    left: 441px;
+}
+section#frame_desert #success_bg{
+    background-image: url(img/scene-desert_success_bg.svg);
+}
+section#frame_desert #capsule{
+    left: 471px;
+}
+section#frame_desert #capsule_worm{
+    background-image: url(img/scene-desert_capsule_worm.svg);
+    width: 183px;
+    height: 276px;
+}
+section#frame_desert #capsule_top,
+section#frame_desert #capsule_hole,
+section#frame_desert #capsule_bottom{
+    filter: hue-rotate(202deg) brightness(1.5) grayscale(0.2);
+}
+section#frame_desert #success_btn{
+    left: 444px;
+    background-image: url(img/btn-desert.svg);
+}
+section#frame_desert #success_btn:hover{
+    background-image: url(img/btn-desert_down.svg);
+}
+/* frame_desert end */
+
+
+/* lightbox */
+#game_lightbox{
+    position: absolute;
+    /* display: none; */
+    display: block;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    /* background-color: rgba(0, 0, 0, 0.65); */
+    background-size: cover;
+    z-index: 20;
+    transform: translateX(770px);
+    transition: transform 0.5s ease;
+}
+#game_lightbox div{
+    position: absolute;
+    /* display: none; */
+    background-size: cover;
+}
+#bag{
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    width: 558px;
+    height: 357px;
+    background-image: url(img/bag.svg);
+}
+#game_lightbox #bag,
+#game_lightbox #map,
+#game_lightbox #lightbox_frame{
+    opacity: 0;
+    z-index: -1;
+    pointer-events: none;
+    transition: opacity 0s linear 1s,
+    z-index 0s linear 1s;
+}
+#game_lightbox.bagShow #bag,
+#game_lightbox.mapShow #map,
+#game_lightbox.lightFrameShow #lightbox_frame{
+    opacity: 1;
+    z-index: 50;
+    pointer-events: auto;
+}
+#bag_close{
+    display: block;
+    width: 27px;
+    height: 27px;
+    left: 512px;
+    top: 18px;
+    background-image: url(img/bag-close.svg);
+}
+#bag .bag_space{
+    display: block;
+    width: 177px;
+    height: 177px;
+    top: 63px;
+    left: 81px;
+    background-image: url(img/bag-block.svg);
+    background-size: cover;
+    cursor: pointer;
+    z-index: 6;
+}
+#bag.taking .bag_space,
+#bag .bag_space.end{
+    pointer-events: none;
+}
+#bag .bag_space + .bag_space{
+    left: 309px;
+}
+#bag .bag_space:hover{
+    filter: contrast(1.5);
+}
+#bag .bag_space .bag_capsule{
+    position: absolute;
+    display: block;
+    content: "";
+    left: 24px;
+    top: -12px;
+    width: 126px;
+    height: 171px;
+    z-index: 17;
+    transition: top 0.2s ease;
+}
+#bag .bag_space:hover .bag_capsule{
+    filter: contrast(0.7);
+    top: -21px;
+}
+#bag .bag_space.gotSeaWorm .bag_capsule{
+    background-image: url(img/bag-seaWorm.svg);
+}
+#bag .bag_space.gotDesertWorm .bag_capsule{
+    background-image: url(img/bag-desertWorm.svg);
+}
+
+#game_lightbox #map div{
+    display: block;
+}
+#map, #map #location_home,
+#map #sign_desert,#map #sign_Jeff,
+#map #sign_sea,#map #map_submarine,
+#map #map_jeff{
+    position: absolute;
+    background-size: cover;
+}
+#map{
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    background-image: url(img/map-main.svg);
+    width: 603px;
+    height: 402px;
+}
+#map #location_home,
+#map #location_desert,
+#map #location_sea{
+    cursor: pointer;
+}
+
+#map #location_home.here,
+#map #location_desert.here,
+#map #location_sea.here{
+    cursor: default;
+    pointer-events: none;
+}
+#map #location_home{
+    background-image: url(img/map-location_home.svg);
+    width: 54px;
+    height: 39px;
+    left: 90px;
+    top: 225px;
+    z-index: 1;
+}
+#map #location_home.here::before{
+    position: absolute;
+    display: block;
+    content: "";
+    background-image: url(img/map-location_home_here.svg);
+    width: 54px;
+    height: 15px;
+    left: 0px;
+    top: 24px;
+    z-index: 1;
+}
+#map #location_home:hover{
+    background-image: url(img/map-location_home_hover.svg);
+}
+#map #location_desert{
+    background-image: url(img/map-location_desert.svg);
+    width: 54px;
+    height: 18px;
+    left: 303px;
+    top: 84px;
+    z-index: 1;
+}
+#map #location_desert:not(.here){
+    animation: locationShin 2s linear infinite forwards;
+}
+#map #location_sea{
+    background-image: url(img/map-location_sea.svg);
+    width: 54px;
+    height: 18px;
+    left: 405px;
+    top: 354px;
+    z-index: 1;
+}
+#map #location_sea:not(.here){
+    animation: locationShin 2s linear infinite forwards;
+}
+@keyframes locationShin {
+    0%{ filter: contrast(1.0); }
+    49.99999999%{ filter: contrast(1.0); }
+    50%{ filter: contrast(1.3); }
+    99.99999%{ filter: contrast(1.3); }
+}
+#map #location_sea.here,#map #location_desert.here{
+    background-image: url(img/map-location_here.svg);
+}
+
+#map.desertFin #location_desert,
+#map.seaFin #location_sea{
+    pointer-events: none;
+    animation: none;
+}
+#map #sign_desert{
+    background-image: url(img/map-sign_desert.svg);
+    width: 66px;
+    height: 69px;
+    left: 414px;
+    top: 36px;
+    z-index: 1;
+}
+#map #sign_sea{
+    background-image: url(img/map-sign_sea.svg);
+    width: 66px;
+    height: 81px;
+    left: 513px;
+    top: 192px;
+    z-index: 1;
+}
+#map #sign_sea::before,
+#map #sign_desert::before{
+    position: absolute;
+    display: none;
+    right: 44.5px;
+    top: 45px;
+    content: "";
+    width: 27px;
+    height: 27px;
+    background-size: cover;
+    z-index: 2;
+    background-image: url(img/map-location_check.svg);
+}
+
+#map.seaFin #sign_sea::before,
+#map.dsertFin #sign_desert::before{
+    display: block;
+}
+#map #sign_desert::before{
+    right: -6px;
+    top: -3px;
+}
+#map #sign_Jeff{
+    background-image: url(img/map-sign_Jeff.svg);
+    width: 24px;
+    height: 39px;
+    z-index: 5;
+    animation: signJeff01 2s ease-in 0s infinite forwards;
+}
+@keyframes signJeff01 {
+    0%{ top: -42px; }
+    10%{ top: -39px; }
+    20%{ top: -42px; }
+    100%{ top: -42px; }
+}
+@keyframes signJeff02 {
+    0%{ top: -78px; }
+    10%{ top: -75px; }
+    20%{ top: -78px; }
+    100%{ top: -78px; }
+}
+@keyframes signJeff03 {
+    0%{ top: -95px; }
+    10%{ top: -92px; }
+    20%{ top: -95px; }
+    100%{ top: -95px; }
+}
+#map #location_home #sign_Jeff{
+    display: none;
+    left: 18px;
+    top: -42px;
+}
+#map #location_sea #sign_Jeff{
+    display: none;
+    left: 15px;
+    top: -78px;
+    animation: signJeff02 2s ease-in 0s infinite forwards;
+}
+#map #location_desert #sign_Jeff{
+    display: none;
+    left: 18px;
+    top: -42px;
+    animation: signJeff03 2s ease-in 0s infinite forwards;
+}
+#map #location_home.here #sign_Jeff,
+#map #location_sea.here #sign_Jeff,
+#map #location_desert.here #sign_Jeff{
+    display: block;
+}
+#map #map_submarine{
+    background-image: url(img/map-submarine.svg);
+    width: 57px;
+    height: 51px;
+    left: 264px;
+    top: 294px;
+    z-index: 1;
+}
+
+#map #map_jeff{
+    background-image: url(img/map-Jeff_stand.gif);
+    background-size: cover;
+    width: 15px;
+    height: 59px;
+    opacity: 0;
+    z-index: 1;
+}
+
+#map.toSea #map_jeff,
+#map.SeaToHome #map_jeff,
+#map.toDesert #map_jeff,
+#map.desertToHome #map_jeff,
+#map.DesertToSea div#map_jeff,
+#map.SeaToDesert div#map_jeff{
+    width: 32px;
+    height: 58px;
+    background-image: url(img/map-Jeff_walk.gif);
+    transform: translateX(-6px) rotateY(180deg);
+}
+#map.toSea #map_jeff{
+    animation: homeToSeaJeff 5s linear forwards;
+}
+#map.SeaToHome #map_jeff{
+    animation: SeaTohomeJeff 5s linear 2s forwards;
+}
+#map.toDesert #map_jeff{
+    animation: homeToDesertJeff 7s linear forwards;
+}
+#map.desertToHome div#map_jeff{
+    animation: desertToHomeJeff 6s linear forwards;
+}
+@keyframes homeToSeaJeff {
+      0%{ left: 102px; top: 221px; opacity: 0; }
+     0.0000001%{ opacity: 1; }
+     20%{ left: 84px; top: 261px; }
+     32%{ left: 62px; top: 274px; }
+     37.999999%{ transform: rotateY(180deg) }
+     38%{ left: 62px; top: 286px; transform: rotateY(0deg) }
+     50%{ left: 83px; top: 301px; }
+     /* 下樓梯 */
+     64%{ left: 131px; top: 307px; }
+     70%{ left: 150px; top: 322px;}
+     76%{ left: 161px; top: 322px; }
+     84%{ left: 179px; top: 292px; }
+     /* 過橋 */
+     88%{ 
+        left: 194px;
+        top: 289px;
+     }
+     99.9999%{ opacity: 1; }
+    100%{ left: 242px; top: 289px; transform: rotateY(0deg); opacity: 0; }
+}
+@keyframes SeaTohomeJeff {
+     /* 過橋 */
+    0%{ 
+        left: 242px;
+        top: 289px;
+        transform: rotateY(180deg);
+        opacity: 0; }
+    0.000001%{ opacity: 1; }
+     12%{ 
+        left: 194px;
+        top: 289px;
+     }
+
+    /* 上樓梯 */
+    16%{ left: 179px; top: 292px; }
+    24%{ left: 161px; top: 322px; }
+    30%{ left: 150px; top: 322px;}
+    36%{ left: 131px; top: 307px; }
+
+    /* 蜿蜒路 */
+    50%{ left: 83px; top: 301px; }
+    62%{ left: 62px; top: 286px; transform: rotateY(180deg) }
+    62.0000001%{ transform: rotateY(0deg) }
+    68%{ left: 62px; top: 274px; }
+    80%{ left: 84px; top: 261px; }
+    99.99999999%{ opacity: 1; }
+    100%{ left: 102px; top: 221px; opacity: 0;transform: rotateY(0deg) }
+}
+
+@keyframes homeToDesertJeff {
+    0%{ opacity: 0;
+        left: 110px;
+        top: 163px;
+        transform:rotateY(180deg) }
+    0.000001%{opacity: 1;}
+    7%{ left: 100px; top: 151px; }
+    21%{ left: 66px; top: 128px; }
+    28%{ left: 59px; top: 106px;transform:rotateY(180deg) }
+    28.000001%{ transform:rotateY(0deg) }
+    /* 過橋 */
+    32%{ left: 62px; top: 94px; }
+    51%{ left: 113px; top: 43px; }
+    /* 直行到底 */
+    62%{ left: 140px; top: 34px;
+        transform:rotateY(0deg); }
+    99.99999999%{
+        width: 32px;
+        height: 58px;
+        transform:rotateY(0deg);
+        background-image: url(img/map-Jeff_walk.gif);
+    }
+    100%{ 
+        width: 15px;
+        height: 59px;
+        left: 321px;
+        top: 34px;
+        opacity: 1;
+        transform:rotateY(0deg);
+        background-image: url(img/map-Jeff_stand.gif);
+    }
+}
+@keyframes desertToHomeJeff {
+    0%{ 
+        width: 32px;
+        height: 58px;
+        left: 321px;
+        top: 34px;
+        opacity: 1;
+    }
+    38%{ left: 140px; top: 34px; }
+    /* 過橋 */
+    49%{ left: 113px; top: 43px; }
+    68%{ left: 62px; top: 94px; }
+    /* 蜿蜒路 */
+    71.99999999%{ transform:rotateY(180deg) }
+    72%{ left: 59px; top: 106px;transform:rotateY(0deg) }
+    79%{ left: 66px; top: 128px; }
+    93%{ left: 100px; top: 151px; }
+    99.9999991%{opacity: 1;}
+    100%{ opacity: 0;
+        width: 32px;
+        height: 58px;
+        left: 110px;
+        top: 163px;
+        transform:rotateY(0deg)
+    }
+}
+
+#map.SeaToDesert div#map_jeff{
+    animation: SeaToDesert 13s linear 2s forwards;
+}
+@keyframes SeaToDesert{
+    /* Sea To home */
+     /* 過橋 */
+    0%{ 
+        left: 242px;
+        top: 289px;
+        transform: rotateY(180deg);
+        opacity: 0; }
+    0.000001%{ opacity: 1; }
+    6%{ 
+    left: 194px;
+    top: 289px;
+    }
+
+    /* 上樓梯 */
+    8%{ left: 179px; top: 292px; }
+    12%{ left: 161px; top: 322px; }
+    15%{ left: 150px; top: 322px;}
+    18%{ left: 131px; top: 307px; }
+
+    /* 蜿蜒路 */
+    25%{ left: 83px; top: 301px; }
+    31%{ left: 62px; top: 286px; transform: rotateY(180deg) }
+    31.0000001%{ transform: rotateY(0deg) }
+    34%{ left: 62px; top: 274px; }
+    40%{ left: 84px; top: 261px; }
+    49.99999999%{ opacity: 1; }
+    50%{ left: 102px; top: 221px; ;transform: rotateY(0deg) }
+
+    /* home To Desert */
+    /* 0%{ opacity: 0;
+        left: 110px;
+        top: 163px;
+        transform:rotateY(180deg) } */
+    50.000001%{transform:rotateY(180deg)}
+    53.5%{ left: 100px; top: 151px; }
+    60.5%{ left: 66px; top: 128px; }
+    64%{ left: 59px; top: 106px;transform:rotateY(180deg) }
+    64.000001%{ transform:rotateY(0deg) }
+    /* 過橋 */
+    66%{ left: 62px; top: 94px; }
+    75.5%{ left: 113px; top: 43px; }
+    /* 直行到底 */
+    81%{ left: 140px; top: 34px;
+        transform:rotateY(0deg); }
+    99.99999999%{
+        width: 32px;
+        height: 58px;
+        transform:rotateY(0deg);
+        background-image: url(img/map-Jeff_walk.gif);
+    }
+    100%{ 
+        width: 15px;
+        height: 59px;
+        left: 321px;
+        top: 34px;
+        opacity: 1;
+        transform:rotateY(0deg);
+        background-image: url(img/map-Jeff_stand.gif);
+    }
+}
+
+#map.DesertToSea div#map_jeff{
+    animation: DesertToSea 13s linear forwards;
+}
+@keyframes DesertToSea{
+    /* Desert To Home */
+    0%{ 
+        width: 32px;
+        height: 58px;
+        left: 321px;
+        top: 34px;
+        opacity: 1;
+    }
+    19%{ left: 140px; top: 34px; }
+    /* 過橋 */
+    24.5%{ left: 113px; top: 43px; }
+    34%{ left: 62px; top: 94px; }
+    /* 蜿蜒路 */
+    35.99999999%{ transform:rotateY(180deg) }
+    36%{ left: 59px; top: 106px;transform:rotateY(0deg) }
+    39.5%{ left: 66px; top: 128px; }
+    46.5%{ left: 100px; top: 151px; }
+    49.99999999%{ transform:rotateY(0deg) }
+    50%{
+        /* opacity: 0; */
+        width: 32px;
+        height: 58px;
+        left: 110px;
+        top: 163px;
+        transform:rotateY(180deg) }
+
+    /* Home To Sea */
+    /* 0%{ left: 102px; top: 221px; opacity: 0; } */
+    60%{ left: 84px; top: 261px; }
+    66%{ left: 62px; top: 274px; }
+    68.999999%{ transform: rotateY(180deg) }
+    69%{ left: 62px; top: 286px; transform: rotateY(0deg) }
+    75%{ left: 83px; top: 301px; }
+    /* 下樓梯 */
+    82%{ left: 131px; top: 307px; }
+    85%{ left: 150px; top: 322px;}
+    85.5%{ left: 161px; top: 322px; }
+    92%{ left: 179px; top: 292px; }
+    /* 過橋 */
+    94%{ 
+        left: 194px;
+        top: 289px;
+    }
+    99.9999%{ opacity: 1; }
+    100%{ left: 242px; top: 289px; transform: rotateY(0deg); opacity: 0; }
+}
+
+#map.toSea #map_submarine{
+    animation: homeToSeaSubmarine 2s linear 5s forwards;
+}
+#map.SeaToHome #map_submarine{
+    animation: SeaTohomeSubmarine 2s linear 0s forwards;
+}
+#map.SeaToDesert #map_submarine{
+    animation: SeaTohomeSubmarine 2s linear 0s forwards;
+}
+#map.DesertToSea #map_submarine{
+    animation: homeToSeaSubmarine 2s linear 13s forwards;
+}
+@keyframes homeToSeaSubmarine {
+    /* into submarine */
+      0%{ 
+        height: 66px;
+        background-image: url(img/map-intoSubmarine.gif);
+    }
+     35%{
+        height: 66px;
+        top: 294px;
+        background-image: url(img/map-intoSubmarine.gif);
+    }
+     35.999999%{
+        height: 39px;
+        top: 336px;
+        background-image: url(img/map-submarine_down.svg);
+    }
+    /* go */
+     36%{ top: 324px; left: 300px; }
+     75%{ top: 324px;left: 375px; }
+     89%{ top: 324px; }
+     90%{ top: 321px; left: 408px; }
+    100%{ 
+        height: 39px;
+        top: 321px;
+        left: 414px;
+        background-image: url(img/map-submarine_down.svg);
+    }
+}
+@keyframes SeaTohomeSubmarine {
+    /* go */
+    0%{ 
+        opacity: 1;
+        transform: rotateY(180deg);
+        height: 39px;
+        top: 321px;
+        left: 414px;
+        background-image: url(img/map-submarine_down.svg);
+    }
+    10%{ top: 321px; left: 408px; }
+    11%{ top: 324px; }
+    25%{ top: 324px;left: 375px; }
+    64%{ top: 324px; left: 300px; }
+    /* into submarine */
+     64.999999%{
+        height: 39px;
+        top: 336px;
+        background-image: url(img/map-submarine_down.svg);
+    }
+    65%{
+       height: 66px;
+       top: 294px;
+       background-image: url(img/map-getoutSubmarine.gif);
+    }
+    99.9999999%{ 
+        background-image: url(img/map-getoutSubmarine.gif);
+        height: 66px;
+     }
+    100%{ 
+        transform: rotateY(180deg);
+        height: 51px;
+        background-image: url(img/map-submarine.svg);
+        opacity: 1;
+    }
+}
+/* #map.atSea #map_submarine{
+    height: 39px;
+    top: 321px;
+    left: 414px;
+    background-image: url(img/map-submarine_down.svg);
+} */
+
+/* 到定位 */
+#map #location_home.here ~ #map_submarine{
+    animation: none;
+}
+#map #location_sea.here ~ #map_submarine{
+    animation: none;
+    height: 39px;
+    top: 321px;
+    left: 414px;
+    background-image: url(img/map-submarine_down.svg);
+}
+#map #location_desert.here ~ #map_submarine{
+    animation: none;
+    
+}
+#map #location_home.here ~ #map_jeff{
+    animation: none;
+    opacity: 0;
+
+}
+#map #location_sea.here ~ #map_jeff{
+    animation: none;
+    opacity: 0;
+}
+#map #location_desert.here ~ #map_jeff{
+    animation: none;
+    width: 15px;
+    height: 59px;
+    left: 321px;
+    top: 34px;
+    opacity: 1;
+    transform:rotateY(0deg);
+    background-image: url(img/map-Jeff_stand.gif);
+}
+
+
+#map div#map_text_bg{
+    position: absolute;
+    display: none;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    width: 258px;
+    height: 108px;
+    background-image: url(img/map-lightbox.svg);
+    background-size: cover;
+}
+#map #map_text{
+    padding: 0 27px;
+    margin: 21px 0 10px;
+}
+#map span[id^="map_btn_"]{
+    position: absolute;
+    display: none;
+    left: 47px;
+    bottom: -18px;
+    padding: 4.75px 21.55px;
+    /* 75 36 */
+    background-image: url(img/map-btn.svg);
+    background-size: cover;
+    z-index: 1;
+    cursor: pointer;
+}
+#map span[id^="map_btn_"]:hover{
+    filter: brightness(0.9);
+}
+#map span[id^="map_btn_"] + span{
+    left: 132px;
+    padding: 4.75px 27px;
+}
+
+#FinalEnding{
+    position: fixed;
+    display: none;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-image: url(img/scene-finalEnding.gif);
+    background-size: cover;
+    z-index: 20;
+    transform: translateY(0%);
+    transition: transform 15s linear;
+}
+#FinalEnding.scrollUp{
+    transform: translateY(-100%);
+}
+
+#Credits{
+    position: fixed;
+    display: block;
+    width: 100%;
+    height: 1200px;
+    box-sizing: border-box;
+    padding: 0 20%;
+    transition: transform 30s linear;
+    transform: translateY(610px);
+    letter-spacing: 1px;
+    z-index: -1;
+
+    /* 測試時開啟 */
+    /* z-index: 10000;
+    display: block;
+    transform: translateY(0%);
+    transition: transform 0s linear;
+    background-color: #1d2023; */
+}
+#Credits div{
+    padding-bottom: 16px;
+}
+#Credits span,#Credits i{
+    display: block;
+}
+#Credits.scrollUp{
+    transform: translateY(-600px);
+    z-index: 23;
+}
+#Credits #Thanks{
+    margin-top: 400px;
+    text-align: center;
+}
+#Credits #restart{
+    width: 153px;
+    padding: 18px 0;
+    margin: 30px auto 0 auto;
+    text-align: center;
+    background-image: url(img/btn-blue.svg);
+    cursor: pointer;
+}
+#Credits #restart:hover{
+    background-image: url(img/btn-blue_down.svg);
+}
+
+#lightbox_frame{
+    top: 50%;
+    left: 50%;
+    width: 603px;
+    height: 402px;
+    background-image: url(img/scene-lightbox.svg);
+    transform: translateX(-50%) translateY(-50%);
+}
+#lightbox_frame span{
+    position: relative;
+    display: inline-block;
+}
+#lightbox_frame span + span{
+    padding-top: 20px;
+}
+#photoL{
+    top: 51%;
+    left: 14%;
+    transform: translateY(-50%);
+    width: 180px;
+    height: 354px;
+    background-image: url(img/scene-home-photo-l.svg);
+}
+#lightbox_frame #font_1{
+    width: 41%;
+    left: 50%;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* lightbox end */

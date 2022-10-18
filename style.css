@@ -150,11 +150,11 @@ i{
     transform: translateX(-50%) translateY(-50%);
 }
 /* 1 dpr & 96dpi 以上 */
-@media (-webkit-max-device-pixel-ratio: 1),(max-resolution: 96dpi){
+/* @media (-webkit-max-device-pixel-ratio: 1),(max-resolution: 96dpi){
     #game_frame{
         transform: translateX(-50%) translateY(-50%) scale(1.2);
     }
-}
+} */
 
 /* game_menu */
 #game_menu{

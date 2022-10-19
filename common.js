@@ -59,6 +59,12 @@ function init() {
         $('.c_showLightbox').removeClass('c_showLightbox mapShow bagShow lightFrameShow');
         event.stopPropagation(); // 阻止泡泡事件
     });
+    
+    function ifCatchBothBagShine() {
+        if($('#bag').children().hasClass('gotSeaWorm') && $('#bag').children().hasClass('gotDesertWorm') ){
+            $('.btn_bag').addClass('jump');
+        }
+    }
 
     ////////////  ＢＡＧ end  /////////////////////
     //////////// BAG CAPSULE TO HOME STOVE ///////
@@ -294,7 +300,6 @@ function init() {
                 $('#map #location_sea').addClass('here');
 
                 //// 前往sea
-                // $('#frame_volcano').addClass('open');
                 $('.c_frameNow').removeClass('c_frameNow');
                 $('#frame_volcano').addClass('c_frameNow');
                 volcanoSTART();
@@ -303,7 +308,7 @@ function init() {
             $toSea = 0;
 
             setTimeout(function () {
-                $('#game_lightbox').removeClass('c_showLightbox mapShow bagShow lightFrameShow'); //收起的很突然
+                $('#game_lightbox').removeClass('c_showLightbox mapShow bagShow lightFrameShow');
             }, 7400);
 
         } else if ($('#map #location_home').hasClass('here') == true && $toDesert == 1) {
@@ -320,7 +325,7 @@ function init() {
 
             $toDesert = 0;
             setTimeout(function () {
-                $('#game_lightbox').removeClass('c_showLightbox mapShow bagShow lightFrameShow'); //收起的很突然
+                $('#game_lightbox').removeClass('c_showLightbox mapShow bagShow lightFrameShow');
             }, 7900);
 
         } else if ($('#map #location_desert').hasClass('here') == true && $toSea == 1) {
@@ -340,7 +345,7 @@ function init() {
 
             $toSea = 0;
             setTimeout(function () {
-                $('#game_lightbox').removeClass('c_showLightbox mapShow bagShow lightFrameShow'); //收起的很突然
+                $('#game_lightbox').removeClass('c_showLightbox mapShow bagShow lightFrameShow');
             }, 15400);
 
         } else if ($('#map #location_desert').hasClass('here') == true && $toHome == 1) {
@@ -358,7 +363,8 @@ function init() {
 
             $toHome = 0;
             setTimeout(function () {
-                $('#game_lightbox').removeClass('c_showLightbox mapShow bagShow lightFrameShow'); //收起的很突然
+                ifCatchBothBagShine()
+                $('#game_lightbox').removeClass('c_showLightbox mapShow bagShow lightFrameShow');
             }, 6900);
 
         } else if ($('#map #location_sea').hasClass('here') == true && $toHome == 1) {
@@ -376,7 +382,8 @@ function init() {
 
             $toHome = 0;
             setTimeout(function () {
-                $('#game_lightbox').removeClass('c_showLightbox mapShow bagShow lightFrameShow'); //收起的很突然
+                ifCatchBothBagShine()
+                $('#game_lightbox').removeClass('c_showLightbox mapShow bagShow lightFrameShow');
             }, 7900);
         } else if ($('#map #location_sea').hasClass('here') == true && $toDesert == 1) {
             // Sea to Desert 15s 測試中
@@ -392,7 +399,7 @@ function init() {
 
             $toDesert = 0;
             setTimeout(function () {
-                $('#game_lightbox').removeClass('c_showLightbox mapShow bagShow lightFrameShow'); //收起的很突然
+                $('#game_lightbox').removeClass('c_showLightbox mapShow bagShow lightFrameShow');
             }, 15900);
         } else {
             console.log('something went wrong :(');
@@ -401,6 +408,13 @@ function init() {
     $('#map #map_btn_n').click(function () {
         $('#map #map_text_bg').hide();
     });
+
+    // 地圖 回家提示
+    function checkGotBothworms() {
+        if($('#map').hasClass('dsertFin') && $('#map').hasClass('seaFin') ){
+            $('#location_home').addClass('goHomeHint');
+        }
+    }
     ////////////   ＭＡＰ end   //////////////////////
     ////////////   ＢＥＧＩＮＩＮＧ  ///////////////////
     $('#game_menu #menu_start').click(function () {
@@ -534,8 +548,8 @@ function init() {
         $('#frame_home').addClass('opening');
         $('#frame_home').show();
     }
-
     ////////////   ＨＯＭＥ end  /////////////////////
+
     ////////////   ＳＥＡ ＶＯＬＣＡＮＯ   /////////////
 
     // capsule放進包包 animation
@@ -568,6 +582,7 @@ function init() {
         setTimeout(function () {
             // 移除 Map Sea
             $('#map').addClass('seaFin');
+            checkGotBothworms();
         }, 4510);
     });
     
@@ -1105,9 +1120,7 @@ function init() {
 
                 // 自動開啟地圖
                 $('.c_showLightbox').removeClass('c_showLightbox mapShow bagShow lightFrameShow');
-                // $("#game_lightbox , #map , #map_close").addClass('c_showLightbox'); //#game_lightbox 背景出現的很突然
-                $('#game_lightbox').addClass('c_showLightbox');
-                // event.stopPropagation(); // 阻止泡泡事件
+                $('#game_lightbox').addClass('c_showLightbox mapShow');
             }, 2210);
 
             setTimeout(function () {
@@ -1117,6 +1130,8 @@ function init() {
             setTimeout(function () {
                 // 移除 Map Desert
                 $('#map').addClass('dsertFin');
+                checkGotBothworms();
+
             }, 4510);
         });
     }
@@ -1125,6 +1140,7 @@ function init() {
     ////////////   ＥＮＤＩＮＧ   /////////////////////////
     function finalEnding() {
         // console.log("finalEnding");
+        $('.btn_bag').removeClass('jump');
         $('#frame_btnBtm , #frame_btnTop').animate({ right: '-70px' });
 
         setTimeout(function () {
@@ -1155,9 +1171,9 @@ jQuery(document).ready(init());
 
 ///////////////  test  //////////////////////////
 // 跳過前導動畫，直接到家裡
-// $('#game_menu , #frame_doctors').remove();
-// $('#frame_home').addClass("begining");
-// $('#frame_btnBtm').removeClass('hide');
+$('#game_menu , #frame_doctors').remove();
+$('#frame_home').addClass("begining");
+$('#frame_btnBtm').removeClass('hide');
 
 //  seaVolcano 抓取測試
 // $('#game_menu , #frame_doctors').remove();

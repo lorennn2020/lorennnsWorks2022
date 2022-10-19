@@ -206,11 +206,19 @@ i{
     /* left: 4px; */
     top: 0;
     left: 0;
-
-
     background-image: url(img/btn-bag.svg);
     transition: left 0.5s ease-out;
-
+}
+.btn_bag.jump{
+    animation: jump 1.5s infinite forwards;
+}
+@keyframes jump {
+    0%{ left: 0px; }
+    13%{ left: -10px; }
+    20%{ left: 0px; }
+    23%{ left: -2px; }
+    24%{ left: 0px; }
+    100%{ left: 0px; }
 }
 .btn_bagOpen{
     position: absolute;
@@ -352,19 +360,23 @@ i{
 #frame_doctors #doctors_animaEquip,
 #frame_doctors #doctors_animaFront{
     position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
     background-size: contain;
     background-repeat: no-repeat;
     height: 100vh;
     transition: opacity 0.8s linear;
 }
 #frame_doctors #doctors_animaEquip{
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
     z-index: 3;
 }
 #frame_doctors #doctors_animaFront{
+    width: 564px;
+    height: 600px;
+    right: 0;
+    top: 0;
     z-index: 5;
 }
 
@@ -1910,15 +1922,42 @@ section#frame_desert #success_btn:hover{
     top: 354px;
     z-index: 1;
 }
-#map #location_sea:not(.here){
-    animation: locationShin 2s linear infinite forwards;
+#map #location_desert:not(.here)::before,
+#map #location_sea:not(.here)::before,
+#map #location_home.goHomeHint::before{
+    position: absolute;
+    display: block;
+    content: "";
+    background-image: url(img/map-location_here.svg);
+    background-size: cover;
+    width: 54px;
+    height: 18px;
+    left: 0px;
+    top: 0px;
+    z-index: 1;
+    opacity: 0;
+    animation: locationShine 2s infinite forwards;
 }
-@keyframes locationShin {
-    0%{ filter: contrast(1.0); }
-    49.99999999%{ filter: contrast(1.0); }
-    50%{ filter: contrast(1.8); }
-    99.99999%{ filter: contrast(1.8); }
+#map #location_home.goHomeHint::before{
+    background-image: url(img/map-location_home_here.svg);
+    height: 15px;
+    top: 24px;
 }
+@keyframes locationShine {
+    0%{ opacity: 0; }
+    50%{ opacity: 0; }
+    50.00000001%{ opacity: 1; }
+    100%{ opacity: 1; }
+}
+#map.dsertFin #location_desert,
+#map.seaFin #location_sea{
+    pointer-events: none;
+}
+#map.dsertFin #location_desert::before,
+#map.seaFin #location_sea::before{
+    display: none;
+}
+
 #map #location_sea.here,#map #location_desert.here{
     background-image: url(img/map-location_here.svg);
 }

@@ -573,11 +573,11 @@ i{
     left: 6px;
 }
 section#frame_home div#ingredientsBlock i.seaWorm{
-    background-image: url(img/bag-SeaWorm.svg);
+    background-image: url(img/bag-seaWorm.svg);
     opacity: 1;
 }
 section#frame_home div#ingredientsBlock i.desertWorm{
-    background-image: url(img/bag-DesertWorm.svg);
+    background-image: url(img/bag-desertWorm.svg);
     opacity: 1;
 }
 /* frame_home end */

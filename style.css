@@ -1383,7 +1383,7 @@ section#frame_desert #start_keyboard02 .fontSize_28 {
 }
 #frame_desert #bucket_click{
     position: absolute;
-    display: block;
+    display: none;
     pointer-events: none;
     width: 45px;
     height: 69px;

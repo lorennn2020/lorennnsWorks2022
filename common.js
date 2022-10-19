@@ -885,6 +885,10 @@ function init() {
                 $('#frame_desert #well_bucket').addClass('show');
                 $('#frame_desert .fontSize_28').addClass('show');
             }, 1500);
+
+            setTimeout(() => {
+                $('#frame_desert #bucket_click').fadeIn();
+            }, 3500);
         }
 
         // 點擊puzzle旋轉

@@ -1,5 +1,8 @@
 /* IMG: ASEPRITE RESIZE:100% width & heigh x 3 */
-/* GIF: ASEPRITE RESIZE:600% width & heigh x 3 */
+
+/* GIF: ASEPRITE RESIZE:300%
+(600% More clear)
+width & heigh x 3 */
 
 
 /* fonts */
@@ -10,21 +13,6 @@
     font-display: swap;
     src: url(fonts/enter_command_pixel-16/EnterCommand.ttf) format('TrueType');
 }
-@font-face {
-    font-family: 'prstartk';
-    font-display: swap;
-    src: url(fonts/press_start_pixel-8/prstartk.ttf) format('TrueType');
-}
-@font-face {
-    font-family: 'PrStart';
-    font-display: swap;
-    src: url(fonts/press_start_pixel-8/PrStart.ttf) format('TrueType');
-}
-/* @font-face {
-    font-family: 'silkscreen_pixel-8';
-    font-display: swap;
-    src: url(fonts/press_start_pixel-8/prstartk.ttf) format('TrueType');
-} */
 
 body, html{
     min-height: 100vh;
@@ -164,7 +152,7 @@ i{
     bottom: 0;
     left: 0;
     right: 0;
-    background-image: url(img/scene-beginning.gif);
+    background-image: url(img/scene-beginning_900x600.gif);
     background-size: cover;
     z-index: 100;
     transition: transform 1.5s ease;
@@ -2479,7 +2467,8 @@ section#frame_desert #success_btn:hover{
     bottom: 0;
     left: 0;
     right: 0;
-    background-image: url(img/scene-finalEnding.gif);
+    /* background-image: url(img/scene-finalEnding.gif); */
+    background-image: url(img/scene-finalEnding_900x600.gif);
     background-size: cover;
     z-index: 20;
     transform: translateY(0%);

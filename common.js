@@ -39,8 +39,8 @@ function init() {
     audio_ingreBeep.loop = true;
     audio_ingreBeep.autoplay = true; //之後要讓音樂自動播放（點擊遊戲開始，即根網頁互動、即可自動播放）
 
-    var audio_footsteps = document.createElement('audio');
-    audio_footsteps.src = 'audio/footsteps.mp3';
+    // var audio_footsteps = document.createElement('audio');
+    // audio_footsteps.src = 'audio/footsteps.mp3';
 
     // var audio_click = document.createElement('audio');
     // audio_click.src = 'audio/click.mp3';
@@ -487,7 +487,8 @@ function init() {
 
         // 醫師診斷 貓快死了
         setTimeout(function () {
-            $('#frame_doctors #doctors_anima01').css('background-image', 'url(img/animation-doctors01.gif)');
+            // $('#frame_doctors #doctors_anima01').css('background-image', 'url(img/animation-doctors01.gif)');
+            $('#frame_doctors #doctors_anima01').css('background-image', 'url(img/animation-doctors_900x600.gif)');
         }, 1460);
 
         setTimeout(function () {
@@ -504,7 +505,8 @@ function init() {
 
         // 回家哭哭，撿傳單
         setTimeout(function () {
-            $('#frame_doctors #doctors_homeSad').css('background-image', 'url(img/animation-homeSad.gif)'); // 9.5s
+            // $('#frame_doctors #doctors_homeSad').css('background-image', 'url(img/animation-homeSad.gif)'); // 9.5s
+            $('#frame_doctors #doctors_homeSad').css('background-image', 'url(img/animation-homeSad_900x600.gif)'); // 9.5s
             $('#frame_doctors #doctors_img01').remove();
         }, 12760);
 
@@ -534,7 +536,8 @@ function init() {
 
             // weirdDoctorEquip 動畫開始
             setTimeout(function () {
-                $('#frame_doctors #doctors_animaEquip').css('background-image', 'url(img/animatiom-weirdDoctorEquip.gif)'); // 8.3s
+                // $('#frame_doctors #doctors_animaEquip').css('background-image', 'url(img/animatiom-weirdDoctorEquip.gif)'); // 8.3s
+                $('#frame_doctors #doctors_animaEquip').css('background-image', 'url(img/animatiom-weirdDoctorEquip_900x600.gif)'); // 3s
                 $('#frame_doctors #doctors_weirdDoctorFront').addClass('show');
             }, 2000);
 
@@ -542,23 +545,28 @@ function init() {
                 $('#frame_doctors #doctors_homeSadAD').remove();
                 $('#frame_doctors #doctors_animaEquip').remove();
                 $('#frame_doctors #doctors_weirdDoctorEquip').addClass('fade');
-            }, 10300);
+            // }, 10300);
+            }, 5000);
 
             // weirdDoctorFront 動畫開始
             setTimeout(function () {
-                $('#frame_doctors #doctors_animaFront').css('background-image', 'url(img/animatiom-weirdDoctorFront.gif)'); // 29s
+                // $('#frame_doctors #doctors_animaFront').css('background-image', 'url(img/animatiom-weirdDoctorFront.gif)'); // 29s
+                $('#frame_doctors #doctors_animaFront').css('background-image', 'url(img/animatiom-weirdDoctorFront_900x600.gif)'); // 29s
                 $('#frame_doctors #doctors_weirdDoctorFront').remove();
-            }, 10800);
+            // }, 10800);
+            }, 5500);
 
             setTimeout(function () {
                 //返家
                 $('#frame_home').addClass('begining');
-            }, 37800);
+            // }, 37800);
+            }, 32500);
 
             setTimeout(function () {
                 $('#frame_doctors #doctors_weirdDoctorMain').css('opacity', '1');
                 $('#frame_doctors #doctors_animaFront').remove();
-            }, 39800);
+            // }, 39800);
+            }, 34500);
 
             // 返家後開啟地圖
             setTimeout(function () {
@@ -569,7 +577,8 @@ function init() {
 
                 $('#frame_btnBtm').removeClass('hide');
                 $('#frame_doctors').remove();
-            }, 41500);
+            // }, 41500);
+            }, 36200);
         });
     }
 
@@ -1246,9 +1255,9 @@ jQuery(document).ready(init());
 
 ///////////////  test  //////////////////////////
 // 跳過前導動畫，直接到家裡
-$('#game_menu , #frame_doctors').remove();
-$('#frame_home').addClass("begining");
-$('#frame_btnBtm').removeClass('hide');
+// $('#game_menu , #frame_doctors').remove();
+// $('#frame_home').addClass("begining");
+// $('#frame_btnBtm').removeClass('hide');
 
 //  seaVolcano 抓取測試
 // $('#game_menu , #frame_doctors').remove();

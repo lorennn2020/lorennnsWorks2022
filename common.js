@@ -20,9 +20,6 @@ var $toHome, $toSea, $toDesert;
 var $taking, $clicking, $bag_spaceLR, $mousePosX, $mousePosY, $ingredientsBlock;
 
 function init() {
-    // console.log($(window).height());
-    // console.log($(window).width());
-
     //////////// ＬＩＧＨＴＢＯＸ ////////////////////
 
     // 點擊lightbox底 關閉所有lightbox
@@ -104,7 +101,7 @@ function init() {
             $taking = 2;
             $('#ingredientsBlock i').addClass('desertWorm');
         } else {
-            console.log('sth went wrong :(');
+            // console.log('sth went wrong :(');
         }
         mouseMove();
     }
@@ -122,7 +119,7 @@ function init() {
 
         $(document).mousemove(function (e) {
             if ($taking == 1 || $taking == 2) {
-                console.log('$taking: ', $taking);
+                // console.log('$taking: ', $taking);
 
                 $mousePos(e);
                 ingredientsMove();
@@ -137,7 +134,7 @@ function init() {
             top: $mousePosY + 'px',
             left: $mousePosX + 'px',
         });
-        console.log('$mousePosXtop:', $mousePosX, ' ; $mousePosY:', $mousePosY);
+        // console.log('$mousePosXtop:', $mousePosX, ' ; $mousePosY:', $mousePosY);
     }
 
     // worm 加入鍋子
@@ -167,7 +164,7 @@ function init() {
             $('#ingredientsBlock #B').addClass('full');
             removeOrigWorm();
         } else {
-            console.log('nothing put in');
+            // console.log('nothing put in');
         }
     });
 
@@ -198,7 +195,7 @@ function init() {
             $('.bag_space.R').removeClass('gotSeaWorm , gotDesertWorm');
             $('.bag_space.R').addClass('end');
         } else {
-            console.log('sth went wrong :(');
+            // console.log('sth went wrong :(');
         }
 
         // 移除所有相關數值
@@ -402,7 +399,7 @@ function init() {
                 $('#game_lightbox').removeClass('c_showLightbox mapShow bagShow lightFrameShow');
             }, 15900);
         } else {
-            console.log('something went wrong :(');
+            // console.log('something went wrong :(');
         }
     });
     $('#map #map_btn_n').click(function () {
@@ -612,15 +609,15 @@ function init() {
                 var desertDemoID = e.code;
 
                 if (desertDemoID === 'KeyA') {
-                    console.log('A');
+                    // console.log('A');
                     $('#frame_desert #start_keyboard01 i:nth-child(1)').addClass('down');
                 }
                 if (desertDemoID === 'KeyD') {
-                    console.log('D');
+                    // console.log('D');
                     $('#frame_desert #start_keyboard01 i:nth-child(2)').addClass('down');
                 }
                 if (desertDemoID === 'Space') {
-                    console.log('Spacebar');
+                    // console.log('Spacebar');
                     $('#frame_desert #start_keyboard02 i:nth-child(1)').addClass('down');
                 }
             },
@@ -631,15 +628,15 @@ function init() {
             function (e) {
                 var desertDemokeyupID = e.code;
                 if (desertDemokeyupID === 'KeyA') {
-                    console.log('A');
+                    // console.log('A');
                     $('#frame_desert #start_keyboard01 i:nth-child(1)').removeClass('down');
                 }
                 if (desertDemokeyupID === 'KeyD') {
-                    console.log('D');
+                    // console.log('D');
                     $('#frame_desert #start_keyboard01 i:nth-child(2)').removeClass('down');
                 }
                 if (desertDemokeyupID === 'Space') {
-                    console.log('Spacebar');
+                    // console.log('Spacebar');
                     $('#frame_desert #start_keyboard02 i:nth-child(1)').removeClass('down');
                 }
             },
@@ -649,7 +646,7 @@ function init() {
         // START!
         $('#frame_desert #start_btn').click(function () {
             window.removeEventListener('keydown,keyup', function () {
-                console.log('removeEventListener keydown,keyup FAIL');
+                // console.log('removeEventListener keydown,keyup FAIL');
             });
             $('#frame_desert #c_instruction').fadeOut();
 
@@ -671,12 +668,12 @@ function init() {
                     var desertKeyID = e.code;
                     var $desertJeffOffsetDistance = parseInt($('#desert_Jeff').offset().left) - parseInt($gameFrameleft);
 
-                    console.log('$desertPos: ', $desertPos);
+                    // console.log('$desertPos: ', $desertPos);
                     // console.log("$desertJeffLeft: ",$desertJeffLeft);
-                    console.log('$desertJeffOffsetDistance: ', $desertJeffOffsetDistance);
+                    // console.log('$desertJeffOffsetDistance: ', $desertJeffOffsetDistance);
 
                     if (desertKeyID === 'KeyA') {
-                        console.log('A');
+                        // console.log('A');
                         $desertJeff.css('background-image', 'url(img/scene-desert_manWalk.gif)');
                         $desertJeff.css('transform', 'rotateY(180deg)');
 
@@ -694,12 +691,12 @@ function init() {
                         }
                     }
                     if (desertKeyID === 'KeyD') {
-                        console.log('D');
+                        // console.log('D');
 
                         $desertJeff.css('transform', 'rotateY(0deg)');
 
                         if ($desertPos > -1044) {
-                            console.log('$desertPos:', $desertPos);
+                            // console.log('$desertPos:', $desertPos);
 
                             if ($desertJeffOffsetDistance < 700) {
                                 $desertJeff.css('background-image', 'url(img/scene-desert_manWalk.gif)');
@@ -724,7 +721,7 @@ function init() {
 
                     // Jeff隨沙丘改變高度
                     if (desertKeyID === 'KeyA' || desertKeyID === 'KeyD') {
-                        console.log('$desertJeffLeft: ', $desertJeffLeft);
+                        // console.log('$desertJeffLeft: ', $desertJeffLeft);
 
                         // 第一個沙丘開始
                         if ($desertJeffLeft > 161 && $desertJeffLeft < 187) {
@@ -830,7 +827,7 @@ function init() {
 
                     // Jeff draw water
                     if (desertKeyID === 'Space') {
-                        console.log('Spacebar');
+                        // console.log('Spacebar');
                         if ($desertJeffLeft > 1493 && $desertJeffLeft < 1627) {
                             $desertJeff.css('transform', 'rotateY(0deg)');
                             $desertJeff.css('background-image', 'none');
@@ -865,7 +862,6 @@ function init() {
         function drawWater() {
             //移除draw water gif
             setTimeout(() => {
-                console.log('setTimeout');
                 $('#desert_Jeff_drawWater').addClass('drawUp');
                 $('#desert_well').addClass('drawDone');
             }, 5700);
@@ -877,7 +873,6 @@ function init() {
 
         // well puzzle
         function wellShow() {
-            console.log('wellShow');
             $('#frame_desert #bucket_puzzle01').addClass('now');
             $('#well_bg').fadeIn();
 
@@ -894,7 +889,6 @@ function init() {
 
         // 點擊puzzle旋轉
         $('#well_bucket i[id^="puzzle"]').click(function () {
-            console.log('clicked puzzle');
             $('#frame_desert #bucket_click').fadeOut();
 
             let $rotateZ = $(this).css('transform');
@@ -927,7 +921,7 @@ function init() {
                 $(this).css('transform', 'rotate(-180deg)');
                 $rotateZ = $(this).css('transform');
             } else {
-                console.log('X(');
+                // console.log('X(');
             }
 
             // console.log("af: ",$rotateZ);
@@ -951,13 +945,13 @@ function init() {
                 $('#frame_desert #bucket_puzzle02 i').each(function () {
                     if ($(this).css('transform') == 'matrix(1, 0, 0, 1, 0, 0)') {
                         $puzzle02Num++;
-                        console.log('$puzzle02Num: ', $puzzle02Num);
+                        // console.log('$puzzle02Num: ', $puzzle02Num);
                     }
                 });
                 if ($puzzle02Num == 12) {
                     puzzleExamCorrect();
                 } else {
-                    console.log('error :(');
+                    // console.log('error :(');
                 }
             } else {
                 // puzzle03
@@ -972,14 +966,13 @@ function init() {
                 if ($puzzle03Num == 35) {
                     puzzleExamCorrect();
                 } else {
-                    console.log('error :(');
+                    // console.log('error :(');
                 }
             }
         }
 
         // 角度驗證正確
         function puzzleExamCorrect() {
-            console.log('success!');
 
             if ($('#frame_desert #bucket_puzzle01').hasClass('now') == true) {
                 // puzzle01
@@ -1065,7 +1058,7 @@ function init() {
         function desertEnding() {
             // 移除鍵盤控制
             window.removeEventListener('keydown', function () {
-                console.log('removeEventListener keydown FAIL');
+                // console.log('removeEventListener keydown FAIL');
             });
 
             // $("#game_lightbox #bag").addClass("gotDesertWorm");

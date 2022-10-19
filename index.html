@@ -7,27 +7,23 @@
     <title>home</title>
     <link rel="icon" href="favicon.svg">
     <link rel="stylesheet" href="style.css">
-
+    <script src="jquery-1.11.2.min.js"></script>
+    <script src="common.js" defer type="module"></script>
 </head>
-<body>
+<body> 
     <article id="game_frame">
         <!-- btn -->
-        <section id="frame_btnTop">
+        <!-- <section id="frame_btnTop">
             <div class="btn_vol_on c_pointer audio_click"></div>
             <div class="btn_vol_off c_pointer"></div>
-            <!-- <div class="btn_lan_en c_pointer audio_click"></div>
-            <div class="btn_lan_zn c_pointer audio_click"></div> -->
-        </section>
+        </section> -->
         <section id="frame_btnBtm" class="hide"> 
-            <div class="btn_bag c_pointer audio_click">
+            <div class="btn_bag c_pointer">
                 <span class="btn_bagOpen"></span>
             </div>
-            <div class="btn_map c_pointer audio_click">
+            <div class="btn_map c_pointer">
             </div>
         </section>
-
-        <!-- 地圖補間動畫 -->
-        <span id="map_anima" class=""></span>
 
         <!-- Menu -->
         <section id="game_menu">
@@ -94,7 +90,6 @@
         
         <!-- scence:home -->
         <section id="frame_home" class="">
-            <!-- <div id="man"></div> -->
             <div id="manSitting"></div>
             <div id="cat"></div>
             <div id="plant" class="c_pointer_e_none"></div>
@@ -106,13 +101,13 @@
                 <span id="animaSea"></span>
                 <span id="animaDesert"></span>
             </div>
-            <div id="photoS" class="c_pointer audio_click"></div>
+            <div id="photoS" class="c_pointer"></div>
         </section>
 
         <!-- scence:volcano -->
-        <section id="frame_volcano" class="">
+        <section id="frame_volcano" class="opening">
             <!-- TARGET & CONTROL -->
-            <div id="c_start">
+            <div id="c_instruction">
                 <div id="target">
                     <i id="start_title" class="fontSize_28 font_enterCommand font_758ca9">TARGET</i>
                     <i id="start_text" class="fontSize_28 font_enterCommand font_E2EFFE">Catch 5 deep sea worms.</i>
@@ -176,7 +171,7 @@
         <!-- scence:desert -->
         <section id="frame_desert" class="">
             <!-- TARGET & CONTROL -->
-            <div id="c_start">
+            <div id="c_instruction">
                 <div id="target">
                     <i id="start_title" class="fontSize_28 font_enterCommand font_ffd8aa">TARGET</i>
                     <i id="start_text" class="fontSize_28 font_enterCommand font_FFF">Catch 7 Geobacters form the well.</i>
@@ -267,7 +262,7 @@
             </div>
             <div>
                 <span class="fontSize_28 font_enterCommand font_abc0da">Programming Consultant</span>
-                <i class="fontSize_28 font_enterCommand font_E2EFFE">Mason You</i>
+                <i class="fontSize_28 font_enterCommand font_E2EFFE">Jamie Yu</i>
             </div>
             <div>
                 <span class="fontSize_28 font_enterCommand font_abc0da">Graphics Artists</span>
@@ -294,7 +289,7 @@
         <!-- lightbox -->
         <article id="game_lightbox">
             <div id="bag">
-                <div id="bag_close" class="c_pointer audio_click"></div>
+                <div id="bag_close" class="c_pointer"></div>
                 <div class="bag_space L"><span class="bag_capsule"></span></div>
                 <div class="bag_space R"><span class="bag_capsule"></span></div>
                 <!-- 測試時開啟 -->
@@ -303,7 +298,7 @@
             </div>
 
             <div id="map">
-                <div id="map_close" class="c_pointer audio_click"></div>
+                <div id="map_close" class="c_pointer"></div>
                 <div id="location_home" class="here">
                     <span id="sign_Jeff"></span>
                 </div>
@@ -337,11 +332,4 @@
             </div>
         </article>
     </article>
-
-
-    <script src="jquery-1.11.2.min.js"></script>
-    <script src="common.js"></script>
-    <script>
-
-    </script>
 </body>

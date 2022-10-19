@@ -190,10 +190,9 @@ i{
 }
 /* game_menu end */
 /* frame_btn */
-#frame_btnTop{
+/* #frame_btnTop{
     position: absolute;
     display: block;
-    /* width: 133px; */
     width: 66px;
     height: 47px;
     top: 12px;
@@ -201,7 +200,7 @@ i{
     right: 0;
     z-index: 100;
 }
-.btn_vol_on,.btn_vol_off,.btn_lan_en,.btn_lan_zn{
+.btn_vol_on,.btn_vol_off{
     position: absolute;
     display: block;
     width: 54px;
@@ -214,16 +213,7 @@ i{
 }
 .btn_vol_off{
     background-image: url(img/btn-volume-off.svg);
-}
-.btn_lan_en{
-    left: 67px;
-    background-image: url(img/btn-lan-en.svg);
-    z-index: 1;
-}
-.btn_lan_zn{
-    left: 67px;
-    background-image: url(img/btn-lan-zn.svg);
-}
+} */
 
 #frame_btnBtm{
     position: absolute;
@@ -281,31 +271,6 @@ i{
     transition: bottom 0.5s ease-out 0.2s;
 }
 /* frame_btn end */
-
-/* 地圖補間動畫 */
-#game_frame #map_anima{
-    position: absolute;
-    display: block;
-    transform: translateX(-50%) translateY(-50%);
-    background-image: url(img/map-anima.svg);
-    width: 603px;
-    height: 402px;
-    top: 56%;
-    left: 60%;
-    transform: scale(0.05);
-    z-index: -1;
-}
-#game_frame #map_anima.pop{
-    transform: scale(1) translateX(-50%) translateY(-50%);
-    top: 50%;
-    left: 50%;
-    transition: all 0.5s ease;
-    z-index: 19;
-}
-/* 地圖補間動畫 end */
-
-
-
 /* frame_doctors */
 #frame_doctors,
 #frame_doctors #doctors_BG,
@@ -518,17 +483,6 @@ i{
     background-size: cover;
     z-index: 6;
 }
-/* #man{
-    position: absolute;
-    display: block;
-    bottom: 90px;
-    width:54px;
-    height: 165px;
-    background-image: url(img/manA-stand.svg);
-    background-size: cover;
-    transform: rotateY(0deg);
-    z-index: 9;
-} */
 #cat{
     position: absolute;
     display: block;
@@ -656,8 +610,8 @@ section#frame_home div#ingredientsBlock i.desertWorm{
 /* frame_home end */
 
 
-/* c_start */
-section #c_start{
+/* c_instruction */
+section #c_instruction{
     position: absolute;
     display: none;
     width: 100%;
@@ -665,19 +619,19 @@ section #c_start{
     background-color: rgba(7, 33, 51, 0.85);
     z-index: 10;
 }
-section #c_start #target{
+section #c_instruction #target{
     position: relative;
     width: calc(100% - 50px);
     height: 207px;
     left: 25px;
     border-bottom: 3px solid rgb(226 239 254 / 10%);
 }
-section #c_start #target i#start_text{
+section #c_instruction #target i#start_text{
     position: absolute;
     top: 100px;
     left: 195px;
 }
-section #c_start #target span{
+section #c_instruction #target span{
     position: absolute;
     bottom: 0;
     left: 510px;
@@ -687,18 +641,18 @@ section #c_start #target span{
     background-size: cover;
 }
 
-section #c_start #control{
+section #c_instruction #control{
     position: relative;
     width: calc(100% - 50px);
     height: 324px;
     left: 25px;
 }
-section #c_start #start_title{
+section #c_instruction #start_title{
     padding: 20px 0px;
     letter-spacing: 5px;
 }
-section #c_start span,
-section #c_start i{
+section #c_instruction span,
+section #c_instruction i{
     position: absolute;
     display: block;
 }
@@ -797,7 +751,7 @@ section #start_keyboard01 i{
     padding: 3px 0 0 24px;
     box-sizing: border-box;
 }
-/* c_start end */
+/* c_instruction end */
 
 
 /* frame_volcano */
@@ -1221,11 +1175,11 @@ section #success_btn i{
     transform: translateY(0%);
 }
 
-section#frame_desert #c_start{
+section#frame_desert #c_instruction{
     z-index: 20;
     background-color: rgba(184, 138, 88, 0.9);
 }
-section#frame_desert #c_start #target span{
+section#frame_desert #c_instruction #target span{
     width: 105px;
     height: 120px;
     background-image: url(img/scene-desert_miniWell.svg);
@@ -1236,8 +1190,8 @@ section#frame_desert span#start_btn{
     z-index: 21;
     filter: hue-rotate(170deg);
 }
-section#frame_desert #c_start #start_keyboard01 i.fontSize_40,
-section#frame_desert #c_start #start_keyboard02 i.fontSize_40{
+section#frame_desert #c_instruction #start_keyboard01 i.fontSize_40,
+section#frame_desert #c_instruction #start_keyboard02 i.fontSize_40{
     filter: hue-rotate(160deg);
 }
 section#frame_desert #start_keyboard01{
@@ -2001,8 +1955,8 @@ section#frame_desert #success_btn:hover{
 @keyframes locationShin {
     0%{ filter: contrast(1.0); }
     49.99999999%{ filter: contrast(1.0); }
-    50%{ filter: contrast(1.3); }
-    99.99999%{ filter: contrast(1.3); }
+    50%{ filter: contrast(1.8); }
+    99.99999%{ filter: contrast(1.8); }
 }
 #map #location_sea.here,#map #location_desert.here{
     background-image: url(img/map-location_here.svg);

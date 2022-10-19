@@ -45,7 +45,7 @@ class Worms {
             this.wormsCatched[num] += 1;
         } else {
             // 空抓
-            console.log("空抓");
+            // console.log("空抓");
             this.showSubmarineCatch();
         }
         console.log('$wormInCapsule: ', this.$wormInCapsule);
@@ -105,9 +105,6 @@ class Worms {
             $('#frame_volcano #text').addClass('show');
             $('#frame_volcano #success_btn').addClass('show');
         }, 6500);
-
-        // 移除 Map Sea
-        $('#map').addClass('seaFin');
     }
     
     // 範圍內抓取worms
@@ -427,7 +424,7 @@ export function volcanoSTART() {
     setTimeout(() => {
         $('#frame_volcano #c_instruction').fadeIn();
         $('#frame_volcano #submarine').removeClass('beforeOpening');
-    }, 4900);
+    }, 4400);
 
     // 鍵盤控制 demo
     window.addEventListener(

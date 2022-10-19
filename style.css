@@ -155,7 +155,7 @@ i{
     background-image: url(img/scene-beginning_900x600.gif);
     background-size: cover;
     z-index: 100;
-    transition: transform 1.5s ease;
+    transition: transform 1.2s ease;
     transform: translateY(0%);
 }
 #game_frame.starting #game_menu{
@@ -178,31 +178,6 @@ i{
 }
 /* game_menu end */
 /* frame_btn */
-/* #frame_btnTop{
-    position: absolute;
-    display: block;
-    width: 66px;
-    height: 47px;
-    top: 12px;
-    left: auto;
-    right: 0;
-    z-index: 100;
-}
-.btn_vol_on,.btn_vol_off{
-    position: absolute;
-    display: block;
-    width: 54px;
-    height: 48px;
-    background-size: cover;
-}
-.btn_vol_on{
-    background-image: url(img/btn-volume-on.svg);
-    z-index: 1;
-}
-.btn_vol_off{
-    background-image: url(img/btn-volume-off.svg);
-} */
-
 #frame_btnBtm{
     position: absolute;
     display: block;
@@ -422,8 +397,6 @@ i{
     opacity: 0;
 }
 /* frame_doctors end */
-
-
 /* frame_home */
 #frame_home{
     position: absolute;
@@ -465,8 +438,8 @@ i{
     display: block;
     width: 54px;
     height: 93px;
-    bottom: 100px;
-    right: 233px;
+    bottom: 93px;
+    right: 228px;
     background-image: url(img/scene-home-Jeffsitting.gif);
     background-size: cover;
     z-index: 6;
@@ -477,8 +450,8 @@ i{
     width: 72px;
     height: 42px;
     left: auto;
-    right: 180px;
-    bottom: 97px;
+    right: 174px;
+    bottom: 90px;
     background-image: url(img/scene-home-cat.gif);
     background-size: cover;
     z-index: 5;
@@ -500,9 +473,9 @@ i{
     display: block;
     width: 120px;
     height: 204px;
-    bottom: 113px;
+    bottom: 120px;
     left: auto;
-    right: 141px;
+    right: 138px;
     background-image: url(img/scene-home-plant.gif);
     background-size: cover;
     z-index: 4;

@@ -2,79 +2,26 @@ import { volcanoSTART } from './seaVolcano.js';
 ///////  variable declaration  //////////////////
 
 // 全域參數宣告
+var gameFramePos = $("#game_frame").position();
+$(window).resize(function() {
+    gameFramePos = $("#game_frame").position();
+});
+
 var $bag_spaceLR;
 
 var $gameFrameleft = $('#game_frame').offset().left;
-var $frame_home = $('#frame_home');
-var $man = $('#man');
 
-
-var $desert = $('#frame_desert');
 var $desertJeff = $('#desert_Jeff');
 var $desert_Jeff_drawWater = $('#desert_Jeff_drawWater');
 var $desertJeffLeft = 102;
 var $desertPos = 0;
-var $desertJeffOffsetLeft = $desertJeff.offset().left;
 
 var $toHome, $toSea, $toDesert;
 var $taking, $clicking, $bag_spaceLR, $mousePosX, $mousePosY, $ingredientsBlock;
 
-// 環境參數宣告
-// var $mouseX,
-//     $mousePreX = 120,
-//     $mouseY,
-//     $mousePreY = 120;
-
-
 function init() {
     // console.log($(window).height());
     // console.log($(window).width());
-
-    $man.css('left', 120 + 'px');
-
-    // - 音樂參數宣告
-    var audio_ingreBeep = document.createElement('audio');
-    audio_ingreBeep.src = 'audio/ingredientsBeep.mp3';
-    audio_ingreBeep.volume = 0.2;
-    audio_ingreBeep.loop = true;
-    audio_ingreBeep.autoplay = true; //之後要讓音樂自動播放（點擊遊戲開始，即根網頁互動、即可自動播放）
-
-    // var audio_footsteps = document.createElement('audio');
-    // audio_footsteps.src = 'audio/footsteps.mp3';
-
-    // var audio_click = document.createElement('audio');
-    // audio_click.src = 'audio/click.mp3';
-
-    // var audio_clickOff = document.createElement('audio');
-    // audio_clickOff.src = 'audio/clickOff.mp3';
-
-    //////////// 介面功能開始 ////////////////////////
-
-    // 點擊聲音開關
-    // $('.audio_click').click(function (event) {
-    //     audio_click.play();
-    //     event.stopPropagation(); // 阻止泡泡事件
-    // });
-
-    // 右上角 聲音開關
-    // $('.btn_vol_on').click(function () {
-    //     if (audio_footsteps.muted == false) {
-    //         $('.btn_vol_on').css({
-    //             opacity: 0,
-    //         });
-    //         audio_footsteps.muted = true;
-    //         audio_click.muted = true;
-    //         audio_clickOff.muted = true;
-    //     } else {
-    //         $('.btn_vol_on').css({
-    //             opacity: 1,
-    //         });
-    //         audio_footsteps.muted = false;
-    //         audio_click.muted = false;
-    //         audio_clickOff.muted = false;
-    //     }
-    //     event.stopPropagation(); // 阻止泡泡事件
-    // });
 
     //////////// ＬＩＧＨＴＢＯＸ ////////////////////
 
@@ -158,9 +105,8 @@ function init() {
 
     // 判別滑鼠位置
     function $mousePos(e) {
-        // e.page目前是與網頁的距離，改成與 ＃game_frame 的距離
-        $mousePosX = e.pageX + 0;
-        $mousePosY = e.pageY - 0;
+        $mousePosX = e.pageX - gameFramePos.left;
+        $mousePosY = e.pageY - gameFramePos.top;
         // console.log("$mousePosX:",$mousePosX," ; $mousePosY:",$mousePosY);
     }
 
@@ -459,10 +405,7 @@ function init() {
     ////////////   ＢＥＧＩＮＩＮＧ  ///////////////////
     $('#game_menu #menu_start').click(function () {
         $('#game_frame').addClass('starting');
-
-        // setTimeout(function(){
         doctorSTART();
-        // }, 0);
     });
     ////////////   ＢＥＧＩＮＩＮＧ end  ///////////////
     ////////////   ＤＯＣＴＯＲＳ  /////////////////////
@@ -482,8 +425,9 @@ function init() {
                 }
             }, 90 * $i);
         }
-
-        $('#game_menu').remove();
+        setTimeout(function () {
+            $('#game_menu').remove();
+        }, 1200);
 
         // 醫師診斷 貓快死了
         setTimeout(function () {
@@ -587,50 +531,8 @@ function init() {
 
     // 點擊畫面移動James
     function homeSTART() {
-        // if ($("#frame_home").hasClass("open") == true) {
         $('#frame_home').addClass('opening');
         $('#frame_home').show();
-
-        // $("html").click(function(e){
-        //     // 點擊時獲取滑鼠X軸位置
-        //     $mouseX = e.pageX - $frame_home.offset().left - 30;
-        //     // console.log('$mouseX: ',$mouseX,'$mousePreX',$mousePreX)
-
-        //     // 判斷是否超出畫面？
-        //     if ( $mouseX > 1 && $mouseX < 830 ) {
-        //         // 判斷需不需要轉身？
-        //         if ( $mouseX - $mousePreX < 1 ) {
-        //             $man.css('transform', 'rotateY(180deg)');
-        //         } else {
-        //             $man.css('transform', 'rotateY(0deg)');
-        //         }
-        //         // 人物走到點擊位置
-        //         var $walkTime = 0.004*Math.abs($mouseX - $mousePreX);
-        //         // console.log('$mouseX - $mousePreX',$mouseX - $mousePreX);
-        //         // console.log('$walkTime',$walkTime);
-        //         $man.css('transition','left linear ' + $walkTime + 's 0s');
-
-        //         // 人物走動
-        //         audio_footsteps.play();
-        //         $man.css('background-image','url(img/manA-walk.gif)');
-
-        //         // 人物移動
-        //         $man.css('left', $mouseX + 'px');
-        //         // 確認走到位後停止音效
-        //         var setInt = setInterval(function(){
-        //             // console.log('$mouseX,',$mouseX);
-        //             if( $man.position().left == $mouseX ){
-        //                 // console.log('$man.position().left,',$man.position().left);
-        //                 // console.log('$mouseX,',$mouseX);
-
-        //                 $man.css('background-image','url(img/manA-stand.svg)');
-        //                 audio_footsteps.pause();
-        //                 clearInterval(setInt);
-        //             }
-        //         }, 500);
-        //         $mousePreX = $mouseX;
-        //     }
-        // });
     }
 
     ////////////   ＨＯＭＥ end  /////////////////////
@@ -662,6 +564,11 @@ function init() {
         setTimeout(function () {
             $('#frame_volcano #success').fadeOut();
         }, 2510);
+
+        setTimeout(function () {
+            // 移除 Map Sea
+            $('#map').addClass('seaFin');
+        }, 4510);
     });
     
     ////////////   ＳＥＡ ＶＯＬＣＡＮＯ end   ///////////////////
@@ -751,7 +658,6 @@ function init() {
 
                     console.log('$desertPos: ', $desertPos);
                     // console.log("$desertJeffLeft: ",$desertJeffLeft);
-                    // console.log("$desertJeffOffsetLeft: ",$desertJeffOffsetLeft);
                     console.log('$desertJeffOffsetDistance: ', $desertJeffOffsetDistance);
 
                     if (desertKeyID === 'KeyA') {
@@ -1127,8 +1033,7 @@ function init() {
 
                 setTimeout(() => {
                     $('#frame_desert #puzzle03_glow').addClass('get');
-                    $(
-                        '#frame_desert #blank_Geobacter:nth-child(4) , #frame_desert #blank_Geobacter:nth-child(5) , #frame_desert #blank_Geobacter:nth-child(6) , #frame_desert #blank_Geobacter:nth-child(7)'
+                    $('#frame_desert #blank_Geobacter:nth-child(4) , #frame_desert #blank_Geobacter:nth-child(5) , #frame_desert #blank_Geobacter:nth-child(6) , #frame_desert #blank_Geobacter:nth-child(7)'
                     ).addClass('show');
                 }, 1500);
 
@@ -1178,9 +1083,6 @@ function init() {
                 $('#frame_desert #text').addClass('show');
                 $('#frame_desert #success_btn').addClass('show');
             }, 6500);
-
-            // 移除 Map Desert
-            $('#map').addClass('dsertFin');
         }
 
         // capsule放進包包 animation
@@ -1211,6 +1113,11 @@ function init() {
             setTimeout(function () {
                 $('#frame_desert #success').fadeOut();
             }, 2510);
+
+            setTimeout(function () {
+                // 移除 Map Desert
+                $('#map').addClass('dsertFin');
+            }, 4510);
         });
     }
 
@@ -1242,13 +1149,6 @@ function init() {
         });
     }
     ////////////   ＥＮＤＩＮＧ end   /////////////////////
-
-    //////////// 其他函數包 ////////////////////////
-
-    //四捨五入到num後面的n位
-    function getResult(num, n) {
-        return Math.round(num * Math.pow(10, n)) / Math.pow(10, n);
-    }
 }
 
 jQuery(document).ready(init());

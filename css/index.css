@@ -4,6 +4,11 @@
     font-family: 'Courier New', Courier, monospace;
     letter-spacing: 0.5px;
 }
+a{
+    color: black;
+    text-decoration: none;
+}
+
 html,body{
     background-color: rgb(216, 224, 233);
     overflow-x: hidden;
@@ -39,38 +44,45 @@ article{
     display: block;
     width: 100%;
 }
-section{
+.wrap{
+    position: relative;
     display: block;
     width: 60%;
     margin: auto;
-    padding-top: 8%;
+    padding: 8% 0%;
     font-size: 0;
 }
-section > div{
+
+#works .wrap > div{
     position: relative;
     display: inline-block;
     width: 48%;
     padding-bottom: 33.3%;
     margin: 0 3.9% 7% 0 ;
     background-color: #fff;
-    font-size: 12px;
+    font-size: 1.3vw;
     background-size: cover;
     border-radius: 5px;
     transition: all 0.3s ease ;
 }
-section > div:hover{
+
+#works .wrap > div:hover{
     box-shadow: 0px 5px 25px rgba(27, 96, 176, 0.2);
     transform: translateY(-0.5%);
 }
-section > div:first-child{
+
+#works .wrap > div:first-child{
     width: 100%;
     padding-bottom: 66.6%;
 }
-section > div:nth-child(2n+1),
-section > div:first-child{
+
+#works .wrap > div:nth-child(2n+1),
+
+#works .wrap > div:first-child{
     margin-right: 0%;
 }
-section > div > a{
+
+#works .wrap > div > a{
     position: absolute;
     display: block;
     top: 0;
@@ -78,17 +90,31 @@ section > div > a{
     left: 0;
     right: 0;
 }
-section > div > p{
+
+#works .wrap > div > p{
     position: absolute;
     bottom: -5%;
     left: 0;
     opacity: 0;
     transition: all 0.3s ease;
 }
-section > div:hover p{
+
+#works .wrap > div:hover p{
     bottom: -6.2%;
     opacity: 1;
+}
+#works .wrap > div:not(#savingBOB) p{
+    bottom: -11%;
+}
 
+.space_2{
+    padding-bottom: 2%;
+}
+.space_4{
+    padding-bottom: 4%;
+}
+.text_center{
+    text-align: center;
 }
 /* common end */
 /* works */
@@ -97,6 +123,42 @@ section > div:hover p{
 }
 #works #savingBOB{
     background-image: url(/img/scene-beginning_900x600.gif);
+}
+#works #motionGrapic{
+    background-image: url(/worksImg/motionGrapic.png);
+}
+#works #illustration{
+    background-image: url(/worksImg/ROOM.png);
+}
+#works #ip{
+    background-image: url(/worksImg/IPCharacter.png);
+}
+#works #WebDesign{
+    background-image: url(/worksImg/BENNS.png);
+}
+#ipCharacterInner .ip_textUp,
+#ipCharacterInner .ip_textBelow{
+    position: absolute;
+    display: block;
+}
+#ipCharacterInner .ip_textUp{
+    width: 40%;
+    top: 14%;
+    right: 5%;
+}
+#ipCharacterInner .ip_textBelow{
+    width: 40%;
+    top: 34%;
+    right: 50%;
+}
+#ipCharacterInner .ip_p{
+    font-size: 1.6vw;
+    padding-bottom: 4%;
+    color: #00788E;
+}
+#ipCharacterInner .ip_span{
+    display: block;
+    font-size: 1.3vw;
 }
 /* works end */
 /* about */
@@ -110,3 +172,69 @@ section > div:hover p{
     transform: translateX(100%);
 }
 /* about end */
+
+
+
+/* inner */
+body.inner header a{
+    position: relative;
+    padding-left: 13px;
+}
+body.inner header a::before{
+    position: absolute;
+    display: block;
+    content: "";
+    width: 0;
+    height: 0;
+    border-top: 4px solid transparent;
+    border-bottom: 4px solid transparent;
+    border-right: 7px solid black;
+    border-left: 0px solid transparent;
+    top: 5px;
+    left: 0;
+}
+body.inner .warp{
+    font-size: 0;
+}
+body.inner h1{
+    font-size: 2vw;
+
+    font-weight: 400;
+    margin-bottom: 8%;
+}
+body.inner div.inner_video{
+    position: relative;
+    display: inline-block;
+    width: 49%;
+    padding-bottom: 49%;
+    margin-bottom: 1.9%;
+}
+body.inner div.inner_video:nth-child(2n){
+    margin-right: 1.9%;
+}
+body.inner video{
+    position: absolute;
+    display: block;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+body.inner p{
+    font-size: 1.6vw;
+    color: black;
+}
+
+body.inner .inner_img{
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    margin-bottom: 1.9%;
+}
+body.inner .inner_img img{
+    width: 100%;
+}
+body.inner p{
+
+}
+/* inner end */

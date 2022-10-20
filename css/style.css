@@ -11,7 +11,7 @@ width & heigh x 3 */
 @font-face {
     font-family: 'enter-command';
     font-display: swap;
-    src: url(fonts/enter_command_pixel-16/EnterCommand.ttf) format('TrueType');
+    src: url(../fonts/enter_command_pixel-16/EnterCommand.ttf) format('TrueType');
 }
 
 body, html{
@@ -152,7 +152,7 @@ i{
     bottom: 0;
     left: 0;
     right: 0;
-    background-image: url(img/scene-beginning_900x600.gif);
+    background-image: url(../img/scene-beginning_900x600.gif);
     background-size: cover;
     z-index: 100;
     transition: transform 1.2s ease;
@@ -163,7 +163,7 @@ i{
 }
 #game_menu #menu_start{
     position: absolute;
-    background-image: url(img/btn-orange.svg);
+    background-image: url(../img/btn-orange.svg);
     /* width: 162px;
     height: 66px; */
     padding: 19.75px 39px;
@@ -174,7 +174,7 @@ i{
     cursor: pointer;
 }
 #game_menu #menu_start:hover{
-    background-image: url(img/btn-orange_down.svg);
+    background-image: url(../img/btn-orange_down.svg);
 }
 /* game_menu end */
 /* frame_btn */
@@ -206,7 +206,7 @@ i{
     /* left: 4px; */
     top: 0;
     left: 0;
-    background-image: url(img/btn-bag.svg);
+    background-image: url(../img/btn-bag.svg);
     transition: left 0.5s ease-out;
 }
 .btn_bag.jump{
@@ -227,7 +227,7 @@ i{
     left: 0;
     width: 66px;
     height: 72px;
-    background-image: url(img/btn-open_bag.gif);
+    background-image: url(../img/btn-open_bag.gif);
     background-size: cover;
     transition: opacity 0.5s step-start 0s;
 }
@@ -238,7 +238,7 @@ i{
     /* left: 84px; */
     bottom: 0;
     left: 0;
-    background-image: url(img/btn-map.svg);
+    background-image: url(../img/btn-map.svg);
     transition: bottom 0.5s ease-out 0.2s;
 }
 /* frame_btn end */
@@ -292,7 +292,7 @@ i{
     z-index: 4;
 }
 #frame_doctors #doctors_img01{
-    background-image: url(img/scene-doctors_anima01.svg);
+    background-image: url(../img/scene-doctors_anima01.svg);
     z-index: -1;
     opacity: 0;
     transition: top 1.0s;
@@ -301,7 +301,7 @@ i{
     z-index: 5;
 }
 #frame_doctors #doctors_homeSadBegin{
-    background-image: url(img/scence-homeSadBegin.svg);
+    background-image: url(../img/scence-homeSadBegin.svg);
     z-index: -1;
     opacity: 0;
     height: 100vh;
@@ -309,12 +309,12 @@ i{
     transition: top 1.0s;
 }
 #frame_doctors #doctors_homeSadImg{
-    background-image: url(img/scence-homeSad.svg);
+    background-image: url(../img/scence-homeSad.svg);
     z-index: -1;
     opacity: 0;
 }
 #frame_doctors #doctors_homeSadAD{
-    background-image: url(img/scence-homeSadAD.svg);
+    background-image: url(../img/scence-homeSadAD.svg);
     width: 384px;
     height: 552px;
     top: 150%;
@@ -323,7 +323,7 @@ i{
     transition: top 0.8s ease-in;
 }
 #frame_doctors #doctors_homeSadCTA{
-    background-image: url(img/scence-homeSadCTAmap.svg);
+    background-image: url(../img/scence-homeSadCTAmap.svg);
     width: 84px;
     height: 51px;
     right: 10px;
@@ -336,7 +336,7 @@ i{
     position: absolute;
     display: block;
     content: "";
-    background-image: url(img/scence-homeSadCTAarrow.svg);
+    background-image: url(../img/scence-homeSadCTAarrow.svg);
     width: 24px;
     height: 24px;
     bottom: 21px;
@@ -354,7 +354,7 @@ i{
     top: 100%;
     height: 100vh;
     z-index: 1;
-    background-image: url(img/scene-weirdDoctorBG.svg);
+    background-image: url(../img/scene-weirdDoctorBG.svg);
     transition: top 0.8s linear;
 }
 #frame_doctors #doctors_animaEquip,
@@ -381,14 +381,14 @@ i{
 }
 
 #frame_doctors #doctors_weirdDoctorEquip{
-    background-image: url(img/scene-weirdDoctorEquip.svg);
+    background-image: url(../img/scene-weirdDoctorEquip.svg);
     top: 100%;
     height: 100vh;
     z-index: 2;
     opacity: 1;
 }
 #frame_doctors #doctors_weirdDoctorFront{
-    background-image: url(img/scene-weirdDoctorFront.svg);
+    background-image: url(../img/scene-weirdDoctorFront.svg);
     top: 100%;
     height: 100vh;
     z-index: 4;
@@ -404,7 +404,7 @@ i{
     transition: opacity 0.8s linear;
 }
 #frame_doctors #doctors_weirdDoctorMain{
-    background-image: url(img/scene-weirdDoctorMain.svg);
+    background-image: url(../img/scene-weirdDoctorMain.svg);
     z-index: 4;
     opacity: 0;
 }
@@ -417,7 +417,7 @@ i{
     bottom: 0;
     left: 0;
     right: 0;
-    background-image: url(img/scene-home.svg);
+    background-image: url(../img/scene-home.svg);
     background-size: cover;
     transition: transform 3s ease 0.8s;
     transform: translateY(100%);
@@ -452,7 +452,7 @@ i{
     height: 93px;
     bottom: 93px;
     right: 228px;
-    background-image: url(img/scene-home-Jeffsitting.gif);
+    background-image: url(../img/scene-home-Jeffsitting.gif);
     background-size: cover;
     z-index: 6;
 }
@@ -464,7 +464,7 @@ i{
     left: auto;
     right: 174px;
     bottom: 90px;
-    background-image: url(img/scene-home-cat.gif);
+    background-image: url(../img/scene-home-cat.gif);
     background-size: cover;
     z-index: 5;
 }
@@ -476,7 +476,7 @@ i{
     right: 110px;
     width: 54px;
     height: 120px;
-    background-image: url(img/scene-home-photo-s.svg);
+    background-image: url(../img/scene-home-photo-s.svg);
     background-size: cover;
     z-index: 1;
 }
@@ -488,7 +488,7 @@ i{
     bottom: 120px;
     left: auto;
     right: 138px;
-    background-image: url(img/scene-home-plant.gif);
+    background-image: url(../img/scene-home-plant.gif);
     background-size: cover;
     z-index: 4;
 }
@@ -499,7 +499,7 @@ i{
     height: 12px;
     left: 270px;
     bottom: 180px;
-    background-image: url(img/scene-home-stoveFire.gif);
+    background-image: url(../img/scene-home-stoveFire.gif);
     background-size: cover;
     z-index: 1;
     opacity: 0.8;
@@ -527,10 +527,10 @@ i{
     transition: opacity 0.5s ease 2s, top 0.5s ease 2s;
 }
 #ingredientsBlock #A{
-    background-image: url(img/scene-home-ingredientsBlockA.gif);
+    background-image: url(../img/scene-home-ingredientsBlockA.gif);
 }
 #ingredientsBlock #B{
-    background-image: url(img/scene-home-ingredientsBlockB.gif);
+    background-image: url(../img/scene-home-ingredientsBlockB.gif);
     left: 48px;
 }
 #ingredientsBlock #A.full,
@@ -540,10 +540,10 @@ i{
     top: -20px;
 }
 #ingredientsBlock #A.full{
-    background-image: url(img/scene-home-ingredients01.svg);
+    background-image: url(../img/scene-home-ingredients01.svg);
 }
 #ingredientsBlock #B.full{
-    background-image: url(img/scene-home-ingredients02.svg);
+    background-image: url(../img/scene-home-ingredients02.svg);
 }
 
 #ingredientsBlock i{
@@ -564,20 +564,20 @@ i{
     height: 102px;
     left: 9px;
     top: -32px;
-    background-image: url(img/scene-home-ingredients01.gif);
+    background-image: url(../img/scene-home-ingredients01.gif);
     background-size: cover;
     z-index: 5;
 }
 #ingredientsBlock #animaDesert{
-    background-image: url(img/scene-home-ingredients02.gif);
+    background-image: url(../img/scene-home-ingredients02.gif);
     left: 6px;
 }
 section#frame_home div#ingredientsBlock i.seaWorm{
-    background-image: url(img/bag-seaWorm.svg);
+    background-image: url(../img/bag-seaWorm.svg);
     opacity: 1;
 }
 section#frame_home div#ingredientsBlock i.desertWorm{
-    background-image: url(img/bag-desertWorm.svg);
+    background-image: url(../img/bag-desertWorm.svg);
     opacity: 1;
 }
 /* frame_home end */
@@ -610,7 +610,7 @@ section #c_instruction #target span{
     left: 510px;
     width: 102px;
     height: 135px;
-    background-image: url(img/scene-volcano_target.gif);
+    background-image: url(../img/scene-volcano_target.gif);
     background-size: cover;
 }
 
@@ -630,7 +630,7 @@ section #c_instruction i{
     display: block;
 }
 section #start_keyboard01 i.down{
-    background-image: url(img/scene-volcano_keyboardDown01.svg);
+    background-image: url(../img/scene-volcano_keyboardDown01.svg);
     padding: 6px 0 0 24px;
 }
 section #start_keyboard01 i+i.fontSize_40{
@@ -663,14 +663,14 @@ section #start_keyboard02{
 section #start_keyboard02 i{
     width: 189px;
     height: 57px;
-    background-image: url(img/scene-volcano_keyboard02.svg);
+    background-image: url(../img/scene-volcano_keyboard02.svg);
     background-size: cover;
     padding: 3px 0 0 33px;
     box-sizing: border-box;
 
 }
 section #start_keyboard02 i.down{
-    background-image: url(img/scene-volcano_keyboardDown02.svg);
+    background-image: url(../img/scene-volcano_keyboardDown02.svg);
     padding: 6px 0 0 33px;
 }
 section #start_keyboard02 .fontSize_28{
@@ -681,7 +681,7 @@ section #start_keyboard02 .fontSize_28{
     padding: 0;
 }
 section span#start_btn{
-    background-image: url(img/btn-blue.svg);
+    background-image: url(../img/btn-blue.svg);
     width: 162px;
     height: 66px;
     top: 480px;
@@ -691,7 +691,7 @@ section span#start_btn{
     cursor: pointer;
 }
 section #start_btn:hover{
-    background-image: url(img/btn-blue_down.svg);
+    background-image: url(../img/btn-blue_down.svg);
 }
 section #start_btn i{
     top: 18px;
@@ -699,7 +699,7 @@ section #start_btn i{
     transform: translateX(-50%);
 }
 section i#keyDown05{
-    background-image: url(img/scene-volcano_keyboard02.svg);
+    background-image: url(../img/scene-volcano_keyboard02.svg);
     width: 189px;
     height: 46px;
     top: 3px;
@@ -715,7 +715,7 @@ section #start_keyboard01{
     left: 192px;
 }
 section #start_keyboard01 i{
-    background-image: url(img/scene-volcano_keyboard01.svg);
+    background-image: url(../img/scene-volcano_keyboard01.svg);
     background-size: cover;
     width: 60px;
     height: 54px;
@@ -735,7 +735,7 @@ section #start_keyboard01 i{
     bottom: 0;
     left: 0;
     right: 0;
-    background-image: url(img/scene-volcano.png);
+    background-image: url(../img/scene-volcano.png);
     background-size: cover;
     background-position: 0% 100%;
     z-index: 1;
@@ -746,7 +746,7 @@ section #start_keyboard01 i{
     position: absolute;
     display: block;
     content: "";
-    background-image: url(img/scene-volcano_openingBg.svg);
+    background-image: url(../img/scene-volcano_openingBg.svg);
     background-size: cover;
     width: 900px;
     height: 600px;
@@ -764,7 +764,7 @@ section #start_keyboard01 i{
     height: 144px;
     top: 231px;
     left: 113px;
-    background-image: url(img/scene-volcano_submarine.svg);
+    background-image: url(../img/scene-volcano_submarine.svg);
     background-size: cover;
     z-index: 2;
     transition: top linear 0.2s 0s,left linear 0.2s 0s;
@@ -793,7 +793,7 @@ section #start_keyboard01 i{
 }
 #frame_volcano .seaLight{
     position: absolute;
-    background-image: url(img/scene-volcano_seaLight.svg);
+    background-image: url(../img/scene-volcano_seaLight.svg);
     width: 732px;
     height: 636px;
     left: 0px;
@@ -865,63 +865,63 @@ section #start_keyboard01 i{
     transition: right linear 0.2s 0s;
 }
 #frame_volcano .worm1{
-    background-image: url(img/scene-volcano_worm_1.gif);
+    background-image: url(../img/scene-volcano_worm_1.gif);
     width: 30px;
     height: 30px;
     right: 36px;
     bottom: 66px;
 }
 #frame_volcano .worm2{
-    background-image: url(img/scene-volcano_worm_2.gif);
+    background-image: url(../img/scene-volcano_worm_2.gif);
     width: 33px;
     height: 21px;
     right: 0px;
     bottom: 63px;
 }
 #frame_volcano .worm3{
-    background-image: url(img/scene-volcano_worm_3.gif);
+    background-image: url(../img/scene-volcano_worm_3.gif);
     width: 24px;
     height: 21px;
     right: -6px;
     bottom: 36px;
 }
 #frame_volcano .worm4{
-    background-image: url(img/scene-volcano_worm_4.gif);
+    background-image: url(../img/scene-volcano_worm_4.gif);
     width: 33px;
     height: 33px;
     right: -180px;
     bottom: 27px;
 }
 #frame_volcano .worm5{
-    background-image: url(img/scene-volcano_worm_5.gif);
+    background-image: url(../img/scene-volcano_worm_5.gif);
     width: 48px;
     height: 33px;
     right: -195px;
     bottom: 87px;
 }
 #frame_volcano .worm6{
-    background-image: url(img/scene-volcano_worm_6.gif);
+    background-image: url(../img/scene-volcano_worm_6.gif);
     width: 30px;
     height: 30px;
     right: -219px;
     bottom: 66px;
 }
 #frame_volcano .worm7{
-    background-image: url(img/scene-volcano_worm_7.gif);
+    background-image: url(../img/scene-volcano_worm_7.gif);
     width: 9px;
     height: 21px;
     right: -222px;
     bottom: 39px;
 }
 #frame_volcano .worm8{
-    background-image: url(img/scene-volcano_worm_8.gif);
+    background-image: url(../img/scene-volcano_worm_8.gif);
     width: 27px;
     height: 27px;
     right: -477px;
     bottom: 288px;
 }
 #frame_volcano .worm9{
-    background-image: url(img/scene-volcano_worm_9.gif);
+    background-image: url(../img/scene-volcano_worm_9.gif);
     width: 12px;
     height: 9px;
     right: -477px;
@@ -949,7 +949,7 @@ section #success_bg{
     top: 50%;
     left: 0;
     transform: translateY(-50%);
-    background-image: url(img/scene-volcano_success_bg.svg);
+    background-image: url(../img/scene-volcano_success_bg.svg);
     background-position: 100% 0%;
     animation: successBgShow 0.5s ease-in 0s 1 forwards;
 }
@@ -998,7 +998,7 @@ section #capsule i{
     right ease-in 0.3s 0s;
 }
 section #capsule_worm{
-    background-image: url(img/scene-volcano_capsule_worm.svg);
+    background-image: url(../img/scene-volcano_capsule_worm.svg);
     width: 198px;
     height: 258px;
     top: 45%;
@@ -1019,7 +1019,7 @@ section #capsule_worm{
     }
 }
 section #capsule_top{
-    background-image: url(img/scene-volcano_capsule_top.svg);
+    background-image: url(../img/scene-volcano_capsule_top.svg);
     width: 174px;
     height: 186px;
     top: 0px;
@@ -1028,7 +1028,7 @@ section #capsule_top{
     opacity: 0;
 }
 section #capsule_hole{
-    background-image: url(img/scene-volcano_capsule_hole.svg);
+    background-image: url(../img/scene-volcano_capsule_hole.svg);
     width: 114px;
     height: 57px;
     top: 132px;
@@ -1037,7 +1037,7 @@ section #capsule_hole{
     opacity: 0;
 }
 section #capsule_bottom{
-    background-image: url(img/scene-volcano_capsule_bottom.svg);
+    background-image: url(../img/scene-volcano_capsule_bottom.svg);
     width: 174px;
     height: 183px;
     left: 0px;
@@ -1091,7 +1091,7 @@ section #success_btn.show{
 	to { top: 35%; } 
 }
 section #success_btn{
-    background-image: url(img/btn-blue.svg);
+    background-image: url(../img/btn-blue.svg);
     width: 162px;
     height: 66px;
     bottom: 102px;
@@ -1102,7 +1102,7 @@ section #success_btn{
     cursor: pointer;
 }
 section #success_btn:hover{
-    background-image: url(img/btn-blue_down.svg);
+    background-image: url(../img/btn-blue_down.svg);
 }
 section #success_btn i{
     top: 18px;
@@ -1155,7 +1155,7 @@ section#frame_desert #c_instruction{
 section#frame_desert #c_instruction #target span{
     width: 105px;
     height: 120px;
-    background-image: url(img/scene-desert_miniWell.svg);
+    background-image: url(../img/scene-desert_miniWell.svg);
     bottom: -12px;
 }
 section#frame_desert span#start_btn{
@@ -1191,7 +1191,7 @@ section#frame_desert #start_keyboard02 .fontSize_28 {
 
 #frame_desert #desert_sky{
     width: 100%;
-    background-image: url(img/scene-desert_sky.svg);
+    background-image: url(../img/scene-desert_sky.svg);
     background-size: contain;
     z-index: 1;
 }
@@ -1199,34 +1199,34 @@ section#frame_desert #start_keyboard02 .fontSize_28 {
     position: absolute;
     width: 246px;
     height: 258px;
-    background-image: url(img/scene-desert_well.svg);
+    background-image: url(../img/scene-desert_well.svg);
     background-size: contain;
     left: 1416px;
     bottom: 0;
     z-index: 7;
 }
 #frame_desert #desert_well.drawUp{
-    background-image: url(img/scene-desert_well.gif) ;
+    background-image: url(../img/scene-desert_well.gif) ;
 }
 #frame_desert #desert_well.drawDone{
-    background-image: url(img/scene-desert_wellDone.svg) ;
+    background-image: url(../img/scene-desert_wellDone.svg) ;
 }
 
 #frame_desert #desert_bg01{
     height: 100%;
-    background-image: url(img/scene-desert_bg1.svg);
+    background-image: url(../img/scene-desert_bg1.svg);
     background-size: cover;
     z-index: 6;
 }
 #frame_desert #desert_bg02{
     height: 100%;
-    background-image: url(img/scene-desert_bg2.svg);
+    background-image: url(../img/scene-desert_bg2.svg);
     background-size: cover;
     z-index: 3;
 }
 #frame_desert #desert_bg03{
     height: 100%;
-    background-image: url(img/scene-desert_bg3.svg);
+    background-image: url(../img/scene-desert_bg3.svg);
     background-size: cover;
     z-index: 2;
 }
@@ -1236,7 +1236,7 @@ section#frame_desert #start_keyboard02 .fontSize_28 {
     height: 162px;
     bottom: 30px;
     left: 882px;
-    background-image: url(img/scene-desert_sand.svg);
+    background-image: url(../img/scene-desert_sand.svg);
     background-size: cover;
     z-index: 11;
     animation: sandBlow 15s ease-out 0s infinite forwards;
@@ -1252,7 +1252,7 @@ section#frame_desert #start_keyboard02 .fontSize_28 {
     width: 100%;
     /* height: 100%; */
     left: 1000px;
-    background-image: url(img/scene-desert_wind.png);
+    background-image: url(../img/scene-desert_wind.png);
     background-size: cover;
     z-index: 15;
     animation: windBlow 10s ease-out 1s infinite forwards;
@@ -1266,7 +1266,7 @@ section#frame_desert #start_keyboard02 .fontSize_28 {
     position: absolute;
     bottom: 81px;
     left: 640px;
-    background-image: url(img/scene-desert_camelCaravan.gif);
+    background-image: url(../img/scene-desert_camelCaravan.gif);
     background-size: cover;
     width: 213px;
     height: 39px;
@@ -1277,7 +1277,7 @@ section#frame_desert #start_keyboard02 .fontSize_28 {
     position: absolute;
     left: 2010px;
     bottom: 12px;
-    background-image: url(img/scene-desert_tumbleweed01.gif);
+    background-image: url(../img/scene-desert_tumbleweed01.gif);
     background-size: cover;
     width: 51px;
     height: 45px;
@@ -1288,7 +1288,7 @@ section#frame_desert #start_keyboard02 .fontSize_28 {
     position: absolute;
     left: 2010px;
     bottom: 60px;
-    background-image: url(img/scene-desert_tumbleweed02.gif);
+    background-image: url(../img/scene-desert_tumbleweed02.gif);
     background-size: cover;
     width: 24px;
     height: 21px;
@@ -1330,7 +1330,7 @@ section#frame_desert #start_keyboard02 .fontSize_28 {
     bottom: 30px;
     width: 48px;
     height: 132px;
-    background-image: url(img/scene-desert_man.gif);
+    background-image: url(../img/scene-desert_man.gif);
     background-size: cover;
     z-index: 12;
 }
@@ -1344,7 +1344,7 @@ section#frame_desert #start_keyboard02 .fontSize_28 {
     background-repeat: no-repeat;
 }
 #desert_Jeff_drawWater.drawUp{
-    background-image: url(img/scene-desert_drawWater.svg) !important;
+    background-image: url(../img/scene-desert_drawWater.svg) !important;
 }
 
 #frame_desert #well_bg,
@@ -1363,13 +1363,13 @@ section#frame_desert #start_keyboard02 .fontSize_28 {
     /* 測試時關閉 */
     width: 900px;
     height: 100%;
-    background-image: url(img/scene-desert_well_bg.svg);
+    background-image: url(../img/scene-desert_well_bg.svg);
     z-index: 30;
 }
 #frame_desert #well_bucket{
     width: 552px;
     height: 969px;
-    background-image: url(img/scene-desert_well_bucket.svg);
+    background-image: url(../img/scene-desert_well_bucket.svg);
     z-index: 31;
 
     top: 0px;
@@ -1387,7 +1387,7 @@ section#frame_desert #start_keyboard02 .fontSize_28 {
     pointer-events: none;
     width: 45px;
     height: 69px;
-    background-image: url(img/scene-desert_well_click.gif);
+    background-image: url(../img/scene-desert_well_click.gif);
     background-size: cover;
     background-repeat: no-repeat;
     top: 120px;
@@ -1406,7 +1406,7 @@ section#frame_desert #start_keyboard02 .fontSize_28 {
     height: 99px;
     background-size: cover;
     background-repeat: no-repeat;
-    background-image: url(img/scene-desert_lightbox.svg);
+    background-image: url(../img/scene-desert_lightbox.svg);
     box-sizing: border-box;
     padding: 27px 120px;
     transition: top 1.5s ease-out;
@@ -1422,7 +1422,7 @@ section#frame_desert #start_keyboard02 .fontSize_28 {
     height: 42px;
     background-size: cover;
     background-repeat: no-repeat;
-    background-image: url(img/scene-desert_lightboxBlank.svg);
+    background-image: url(../img/scene-desert_lightboxBlank.svg);
     left: 20px;
     bottom: 30px;
     transition: all 1.5s ease-out;
@@ -1437,7 +1437,7 @@ section#frame_desert #start_keyboard02 .fontSize_28 {
     bottom: 36px;
     background-size: cover;
     background-repeat: no-repeat;
-    background-image: url(img/scene-desert_BlankGeobacter.svg);
+    background-image: url(../img/scene-desert_BlankGeobacter.svg);
     z-index: 36;
     opacity: 0;
     transition: opacity 0.5s ease-out;
@@ -1495,12 +1495,12 @@ section#frame_desert #start_keyboard02 .fontSize_28 {
 }
 #frame_desert #bucket_puzzle01 i#puzzle01_1{
     /* transform: rotateZ(0deg); 不加transform旋轉功能就可以讓他失效 */
-    background-image: url(img/scene-desert_well_inner01-01.svg );
+    background-image: url(../img/scene-desert_well_inner01-01.svg );
 }
 #frame_desert #bucket_puzzle01 i#puzzle01_2{
     transform: rotateZ(-90deg);
     left: 159px;
-    background-image: url(img/scene-desert_well_inner01-02.svg );
+    background-image: url(../img/scene-desert_well_inner01-02.svg );
 }
 #frame_desert #puzzle01_glow{
     position: absolute;
@@ -1510,7 +1510,7 @@ section#frame_desert #start_keyboard02 .fontSize_28 {
     height: 122px;
     top: 28px;
     left: 53px;
-    background-image: url(img/scene-desert_well_inner1_glow.svg);
+    background-image: url(../img/scene-desert_well_inner1_glow.svg);
     background-size: cover;
     background-repeat: no-repeat;
     z-index: 33;
@@ -1524,7 +1524,7 @@ section#frame_desert #start_keyboard02 .fontSize_28 {
     height: 190px;
     top: 22px;
     left: 22px;
-    background-image: url(img/scene-desert_well_inner2_glow.svg);
+    background-image: url(../img/scene-desert_well_inner2_glow.svg);
     background-size: cover;
     background-repeat: no-repeat;
     z-index: 33;
@@ -1538,7 +1538,7 @@ section#frame_desert #start_keyboard02 .fontSize_28 {
     height: 192px;
     top: 15px;
     left: 15px;
-    background-image: url(img/scene-desert_well_inner3_glow.svg);
+    background-image: url(../img/scene-desert_well_inner3_glow.svg);
     background-size: cover;
     background-repeat: no-repeat;
     z-index: 33;
@@ -1731,13 +1731,13 @@ section#frame_desert #success #text{
     left: 441px;
 }
 section#frame_desert #success_bg{
-    background-image: url(img/scene-desert_success_bg.svg);
+    background-image: url(../img/scene-desert_success_bg.svg);
 }
 section#frame_desert #capsule{
     left: 471px;
 }
 section#frame_desert #capsule_worm{
-    background-image: url(img/scene-desert_capsule_worm.svg);
+    background-image: url(../img/scene-desert_capsule_worm.svg);
     width: 183px;
     height: 276px;
 }
@@ -1748,10 +1748,10 @@ section#frame_desert #capsule_bottom{
 }
 section#frame_desert #success_btn{
     left: 444px;
-    background-image: url(img/btn-desert.svg);
+    background-image: url(../img/btn-desert.svg);
 }
 section#frame_desert #success_btn:hover{
-    background-image: url(img/btn-desert_down.svg);
+    background-image: url(../img/btn-desert_down.svg);
 }
 /* frame_desert end */
 
@@ -1782,7 +1782,7 @@ section#frame_desert #success_btn:hover{
     transform: translateX(-50%) translateY(-50%);
     width: 558px;
     height: 357px;
-    background-image: url(img/bag.svg);
+    background-image: url(../img/bag.svg);
 }
 #game_lightbox #bag,
 #game_lightbox #map,
@@ -1806,7 +1806,7 @@ section#frame_desert #success_btn:hover{
     height: 27px;
     left: 512px;
     top: 18px;
-    background-image: url(img/bag-close.svg);
+    background-image: url(../img/bag-close.svg);
 }
 #bag .bag_space{
     display: block;
@@ -1814,7 +1814,7 @@ section#frame_desert #success_btn:hover{
     height: 177px;
     top: 63px;
     left: 81px;
-    background-image: url(img/bag-block.svg);
+    background-image: url(../img/bag-block.svg);
     background-size: cover;
     cursor: pointer;
     z-index: 6;
@@ -1845,10 +1845,10 @@ section#frame_desert #success_btn:hover{
     top: -21px;
 }
 #bag .bag_space.gotSeaWorm .bag_capsule{
-    background-image: url(img/bag-seaWorm.svg);
+    background-image: url(../img/bag-seaWorm.svg);
 }
 #bag .bag_space.gotDesertWorm .bag_capsule{
-    background-image: url(img/bag-desertWorm.svg);
+    background-image: url(../img/bag-desertWorm.svg);
 }
 
 #game_lightbox #map div{
@@ -1865,7 +1865,7 @@ section#frame_desert #success_btn:hover{
     top: 50%;
     left: 50%;
     transform: translateX(-50%) translateY(-50%);
-    background-image: url(img/map-main.svg);
+    background-image: url(../img/map-main.svg);
     width: 603px;
     height: 402px;
 }
@@ -1882,7 +1882,7 @@ section#frame_desert #success_btn:hover{
     pointer-events: none;
 }
 #map #location_home{
-    background-image: url(img/map-location_home.svg);
+    background-image: url(../img/map-location_home.svg);
     width: 54px;
     height: 39px;
     left: 90px;
@@ -1893,7 +1893,7 @@ section#frame_desert #success_btn:hover{
     position: absolute;
     display: block;
     content: "";
-    background-image: url(img/map-location_home_here.svg);
+    background-image: url(../img/map-location_home_here.svg);
     width: 54px;
     height: 15px;
     left: 0px;
@@ -1901,10 +1901,10 @@ section#frame_desert #success_btn:hover{
     z-index: 1;
 }
 #map #location_home:hover{
-    background-image: url(img/map-location_home_hover.svg);
+    background-image: url(../img/map-location_home_hover.svg);
 }
 #map #location_desert{
-    background-image: url(img/map-location_desert.svg);
+    background-image: url(../img/map-location_desert.svg);
     width: 54px;
     height: 18px;
     left: 303px;
@@ -1915,7 +1915,7 @@ section#frame_desert #success_btn:hover{
     animation: locationShin 2s linear infinite forwards;
 }
 #map #location_sea{
-    background-image: url(img/map-location_sea.svg);
+    background-image: url(../img/map-location_sea.svg);
     width: 54px;
     height: 18px;
     left: 405px;
@@ -1928,7 +1928,7 @@ section#frame_desert #success_btn:hover{
     position: absolute;
     display: block;
     content: "";
-    background-image: url(img/map-location_here.svg);
+    background-image: url(../img/map-location_here.svg);
     background-size: cover;
     width: 54px;
     height: 18px;
@@ -1939,7 +1939,7 @@ section#frame_desert #success_btn:hover{
     animation: locationShine 2s infinite forwards;
 }
 #map #location_home.goHomeHint::before{
-    background-image: url(img/map-location_home_here.svg);
+    background-image: url(../img/map-location_home_here.svg);
     height: 15px;
     top: 24px;
 }
@@ -1959,7 +1959,7 @@ section#frame_desert #success_btn:hover{
 }
 
 #map #location_sea.here,#map #location_desert.here{
-    background-image: url(img/map-location_here.svg);
+    background-image: url(../img/map-location_here.svg);
 }
 
 #map.desertFin #location_desert,
@@ -1968,7 +1968,7 @@ section#frame_desert #success_btn:hover{
     animation: none;
 }
 #map #sign_desert{
-    background-image: url(img/map-sign_desert.svg);
+    background-image: url(../img/map-sign_desert.svg);
     width: 66px;
     height: 69px;
     left: 414px;
@@ -1976,7 +1976,7 @@ section#frame_desert #success_btn:hover{
     z-index: 1;
 }
 #map #sign_sea{
-    background-image: url(img/map-sign_sea.svg);
+    background-image: url(../img/map-sign_sea.svg);
     width: 66px;
     height: 81px;
     left: 513px;
@@ -1994,7 +1994,7 @@ section#frame_desert #success_btn:hover{
     height: 27px;
     background-size: cover;
     z-index: 2;
-    background-image: url(img/map-location_check.svg);
+    background-image: url(../img/map-location_check.svg);
 }
 
 #map.seaFin #sign_sea::before,
@@ -2006,7 +2006,7 @@ section#frame_desert #success_btn:hover{
     top: -3px;
 }
 #map #sign_Jeff{
-    background-image: url(img/map-sign_Jeff.svg);
+    background-image: url(../img/map-sign_Jeff.svg);
     width: 24px;
     height: 39px;
     z-index: 5;
@@ -2053,7 +2053,7 @@ section#frame_desert #success_btn:hover{
     display: block;
 }
 #map #map_submarine{
-    background-image: url(img/map-submarine.svg);
+    background-image: url(../img/map-submarine.svg);
     width: 57px;
     height: 51px;
     left: 264px;
@@ -2062,7 +2062,7 @@ section#frame_desert #success_btn:hover{
 }
 
 #map #map_jeff{
-    background-image: url(img/map-Jeff_stand.gif);
+    background-image: url(../img/map-Jeff_stand.gif);
     background-size: cover;
     width: 15px;
     height: 59px;
@@ -2078,7 +2078,7 @@ section#frame_desert #success_btn:hover{
 #map.SeaToDesert div#map_jeff{
     width: 32px;
     height: 58px;
-    background-image: url(img/map-Jeff_walk.gif);
+    background-image: url(../img/map-Jeff_walk.gif);
     transform: translateX(-6px) rotateY(180deg);
 }
 #map.toSea #map_jeff{
@@ -2163,7 +2163,7 @@ section#frame_desert #success_btn:hover{
         width: 32px;
         height: 58px;
         transform:rotateY(0deg);
-        background-image: url(img/map-Jeff_walk.gif);
+        background-image: url(../img/map-Jeff_walk.gif);
     }
     100%{ 
         width: 15px;
@@ -2172,7 +2172,7 @@ section#frame_desert #success_btn:hover{
         top: 34px;
         opacity: 1;
         transform:rotateY(0deg);
-        background-image: url(img/map-Jeff_stand.gif);
+        background-image: url(../img/map-Jeff_stand.gif);
     }
 }
 @keyframes desertToHomeJeff {
@@ -2254,7 +2254,7 @@ section#frame_desert #success_btn:hover{
         width: 32px;
         height: 58px;
         transform:rotateY(0deg);
-        background-image: url(img/map-Jeff_walk.gif);
+        background-image: url(../img/map-Jeff_walk.gif);
     }
     100%{ 
         width: 15px;
@@ -2263,7 +2263,7 @@ section#frame_desert #success_btn:hover{
         top: 34px;
         opacity: 1;
         transform:rotateY(0deg);
-        background-image: url(img/map-Jeff_stand.gif);
+        background-image: url(../img/map-Jeff_stand.gif);
     }
 }
 
@@ -2334,17 +2334,17 @@ section#frame_desert #success_btn:hover{
     /* into submarine */
       0%{ 
         height: 66px;
-        background-image: url(img/map-intoSubmarine.gif);
+        background-image: url(../img/map-intoSubmarine.gif);
     }
      35%{
         height: 66px;
         top: 294px;
-        background-image: url(img/map-intoSubmarine.gif);
+        background-image: url(../img/map-intoSubmarine.gif);
     }
      35.999999%{
         height: 39px;
         top: 336px;
-        background-image: url(img/map-submarine_down.svg);
+        background-image: url(../img/map-submarine_down.svg);
     }
     /* go */
      36%{ top: 324px; left: 300px; }
@@ -2355,7 +2355,7 @@ section#frame_desert #success_btn:hover{
         height: 39px;
         top: 321px;
         left: 414px;
-        background-image: url(img/map-submarine_down.svg);
+        background-image: url(../img/map-submarine_down.svg);
     }
 }
 @keyframes SeaTohomeSubmarine {
@@ -2366,7 +2366,7 @@ section#frame_desert #success_btn:hover{
         height: 39px;
         top: 321px;
         left: 414px;
-        background-image: url(img/map-submarine_down.svg);
+        background-image: url(../img/map-submarine_down.svg);
     }
     10%{ top: 321px; left: 408px; }
     11%{ top: 324px; }
@@ -2376,21 +2376,21 @@ section#frame_desert #success_btn:hover{
      64.999999%{
         height: 39px;
         top: 336px;
-        background-image: url(img/map-submarine_down.svg);
+        background-image: url(../img/map-submarine_down.svg);
     }
     65%{
        height: 66px;
        top: 294px;
-       background-image: url(img/map-getoutSubmarine.gif);
+       background-image: url(../img/map-getoutSubmarine.gif);
     }
     99.9999999%{ 
-        background-image: url(img/map-getoutSubmarine.gif);
+        background-image: url(../img/map-getoutSubmarine.gif);
         height: 66px;
      }
     100%{ 
         transform: rotateY(180deg);
         height: 51px;
-        background-image: url(img/map-submarine.svg);
+        background-image: url(../img/map-submarine.svg);
         opacity: 1;
     }
 }
@@ -2398,7 +2398,7 @@ section#frame_desert #success_btn:hover{
     height: 39px;
     top: 321px;
     left: 414px;
-    background-image: url(img/map-submarine_down.svg);
+    background-image: url(../img/map-submarine_down.svg);
 } */
 
 /* 到定位 */
@@ -2410,7 +2410,7 @@ section#frame_desert #success_btn:hover{
     height: 39px;
     top: 321px;
     left: 414px;
-    background-image: url(img/map-submarine_down.svg);
+    background-image: url(../img/map-submarine_down.svg);
 }
 #map #location_desert.here ~ #map_submarine{
     animation: none;
@@ -2433,7 +2433,7 @@ section#frame_desert #success_btn:hover{
     top: 34px;
     opacity: 1;
     transform:rotateY(0deg);
-    background-image: url(img/map-Jeff_stand.gif);
+    background-image: url(../img/map-Jeff_stand.gif);
 }
 
 
@@ -2445,7 +2445,7 @@ section#frame_desert #success_btn:hover{
     transform: translateX(-50%) translateY(-50%);
     width: 258px;
     height: 108px;
-    background-image: url(img/map-lightbox.svg);
+    background-image: url(../img/map-lightbox.svg);
     background-size: cover;
 }
 #map #map_text{
@@ -2459,7 +2459,7 @@ section#frame_desert #success_btn:hover{
     bottom: -18px;
     padding: 4.75px 21.55px;
     /* 75 36 */
-    background-image: url(img/map-btn.svg);
+    background-image: url(../img/map-btn.svg);
     background-size: cover;
     z-index: 1;
     cursor: pointer;
@@ -2479,8 +2479,8 @@ section#frame_desert #success_btn:hover{
     bottom: 0;
     left: 0;
     right: 0;
-    /* background-image: url(img/scene-finalEnding.gif); */
-    background-image: url(img/scene-finalEnding_900x600.gif);
+    /* background-image: url(../img/scene-finalEnding.gif); */
+    background-image: url(../img/scene-finalEnding_900x600.gif);
     background-size: cover;
     z-index: 20;
     transform: translateY(0%);
@@ -2528,11 +2528,11 @@ section#frame_desert #success_btn:hover{
     padding: 18px 0;
     margin: 30px auto 0 auto;
     text-align: center;
-    background-image: url(img/btn-blue.svg);
+    background-image: url(../img/btn-blue.svg);
     cursor: pointer;
 }
 #Credits #restart:hover{
-    background-image: url(img/btn-blue_down.svg);
+    background-image: url(../img/btn-blue_down.svg);
 }
 
 #lightbox_frame{
@@ -2540,7 +2540,7 @@ section#frame_desert #success_btn:hover{
     left: 50%;
     width: 603px;
     height: 402px;
-    background-image: url(img/scene-lightbox.svg);
+    background-image: url(../img/scene-lightbox.svg);
     transform: translateX(-50%) translateY(-50%);
 }
 #lightbox_frame span{
@@ -2556,7 +2556,7 @@ section#frame_desert #success_btn:hover{
     transform: translateY(-50%);
     width: 180px;
     height: 354px;
-    background-image: url(img/scene-home-photo-l.svg);
+    background-image: url(../img/scene-home-photo-l.svg);
 }
 #lightbox_frame #font_1{
     width: 41%;

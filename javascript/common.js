@@ -1168,9 +1168,9 @@ jQuery(document).ready(init());
 
 ///////////////  test  //////////////////////////
 // 跳過前導動畫，直接到家裡
-$('#game_menu , #frame_doctors').remove();
-$('#frame_home').addClass("begining");
-$('#frame_btnBtm').removeClass('hide');
+// $('#game_menu , #frame_doctors').remove();
+// $('#frame_home').addClass("begining");
+// $('#frame_btnBtm').removeClass('hide');
 
 //  seaVolcano 抓取測試
 // $('#game_menu , #frame_doctors').remove();

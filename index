@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Loren Lin's portfolio</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="Saving BOB, Jeff, Bob, Cat, RPG, Web game, Online game">
+    <meta name="author" content="Loren Lin">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Saving BOB is an online Web RPG game. Jeff has to find a way to cure Bob. Explore the world and collect ingredients to make a magical jelly. Bring his cat back to life and be happy ever after.">
+    <link rel="icon" href="favicon.svg">
+    <link rel="stylesheet" href="style.css">
+    <script src="javascript/jquery-1.11.2.min.js"></script>
+    <script src="" defer></script>
+</head>
+<body>
+    
+</body>
+</html>

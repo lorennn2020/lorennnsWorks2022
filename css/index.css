@@ -1,0 +1,112 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: 'Courier New', Courier, monospace;
+    letter-spacing: 0.5px;
+}
+html,body{
+    background-color: rgb(216, 224, 233);
+    overflow-x: hidden;
+}
+
+/* common */
+header{
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 10;
+}
+header ul{
+    margin: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+header li{
+    list-style: none;
+    padding: 10px;
+    cursor: pointer;
+}
+body.openAbout header li{
+    color:  rgb(216, 224, 233);;
+}
+body.openAbout #about{
+    transform: translateX(0%);
+}
+
+article{
+    display: block;
+    width: 100%;
+}
+section{
+    display: block;
+    width: 60%;
+    margin: auto;
+    padding-top: 8%;
+    font-size: 0;
+}
+section > div{
+    position: relative;
+    display: inline-block;
+    width: 48%;
+    padding-bottom: 33.3%;
+    margin: 0 3.9% 7% 0 ;
+    background-color: #fff;
+    font-size: 12px;
+    background-size: cover;
+    border-radius: 5px;
+    transition: all 0.3s ease ;
+}
+section > div:hover{
+    box-shadow: 0px 5px 25px rgba(27, 96, 176, 0.2);
+    transform: translateY(-0.5%);
+}
+section > div:first-child{
+    width: 100%;
+    padding-bottom: 66.6%;
+}
+section > div:nth-child(2n+1),
+section > div:first-child{
+    margin-right: 0%;
+}
+section > div > a{
+    position: absolute;
+    display: block;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+section > div > p{
+    position: absolute;
+    bottom: -5%;
+    left: 0;
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+section > div:hover p{
+    bottom: -6.2%;
+    opacity: 1;
+
+}
+/* common end */
+/* works */
+#works{
+    width: 100%;
+}
+#works #savingBOB{
+    background-image: url(/img/scene-beginning_900x600.gif);
+}
+/* works end */
+/* about */
+#about{
+    position: absolute;
+    width: 100%;
+    top: 0;
+    bottom: 0;
+    background-color: rgb(37, 38, 39);
+    transition: transform 1s ease;
+    transform: translateX(100%);
+}
+/* about end */

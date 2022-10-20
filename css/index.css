@@ -122,19 +122,19 @@ article{
     width: 100%;
 }
 #works #savingBOB{
-    background-image: url(/img/scene-beginning_900x600.gif);
+    background-image: url(../img/scene-beginning_900x600.gif);
 }
 #works #motionGrapic{
-    background-image: url(/worksImg/motionGrapic.png);
+    background-image: url(../worksImg/motionGrapic.png);
 }
 #works #illustration{
-    background-image: url(/worksImg/ROOM.png);
+    background-image: url(../worksImg/ROOM.png);
 }
 #works #ip{
-    background-image: url(/worksImg/IPCharacter.png);
+    background-image: url(../worksImg/IPCharacter.png);
 }
 #works #WebDesign{
-    background-image: url(/worksImg/BENNS.png);
+    background-image: url(../worksImg/BENNS.png);
 }
 #ipCharacterInner .ip_textUp,
 #ipCharacterInner .ip_textBelow{
@@ -233,8 +233,5 @@ body.inner .inner_img{
 }
 body.inner .inner_img img{
     width: 100%;
-}
-body.inner p{
-
 }
 /* inner end */

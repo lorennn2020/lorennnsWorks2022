@@ -685,7 +685,7 @@ function init() {
                     if (desertKeyID === 'KeyA') {
                         // console.log('A');
                         $desertJeff.css('background-image', 'url(img/scene-desert_manWalk.gif)');
-                        $desertJeff.css('transform', 'rotateY(180deg)');
+                        $desertJeff.css({'-webkit-transform':'rotateY(180deg)','-moz-transform':'rotateY(180deg)','-ms-transform':'rotateY(180deg)','transform':'rotateY(180deg)'});
 
                         if ($desertJeffOffsetDistance > 101) {
                             $desertJeffLeft = $desertJeffLeft - 12;
@@ -703,7 +703,7 @@ function init() {
                     if (desertKeyID === 'KeyD') {
                         // console.log('D');
 
-                        $desertJeff.css('transform', 'rotateY(0deg)');
+                        $desertJeff.css({'-webkit-transform':'rotateY(0deg)','-moz-transform':'rotateY(0deg)','-ms-transform':'rotateY(0deg)','transform':'rotateY(0deg)'});
 
                         if ($desertPos > -1044) {
                             // console.log('$desertPos:', $desertPos);
@@ -839,7 +839,7 @@ function init() {
                     if (desertKeyID === 'Space') {
                         // console.log('Spacebar');
                         if ($desertJeffLeft > 1493 && $desertJeffLeft < 1627) {
-                            $desertJeff.css('transform', 'rotateY(0deg)');
+                            $desertJeff.css({'-webkit-transform':'rotateY(0deg)','-moz-transform':'rotateY(0deg)','-ms-transform':'rotateY(0deg)','transform':'rotateY(0deg)'});
                             $desertJeff.css('background-image', 'none');
                             $desertJeff.css('left', '1521px');
                             $desert_Jeff_drawWater.css('background-image', 'url(img/scene-desert_drawWater.gif');

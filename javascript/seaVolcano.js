@@ -12,11 +12,19 @@ function isSubMarineInRightSide() {
 }
 
 class Worms {
-    wormsQty = [3, 3, 2];
-    wormsCatched = [0, 0, 0];
-    $wormInCapsule = 0;
+    constructor() {
+        this.wormsQty = [3, 3, 2];
+        this.wormsCatched = [0, 0, 0];
+        this.$wormInCapsule = 0;
+    }
 
-    constructor() {}
+
+// class Worms {
+//     wormsQty = [3, 3, 2];
+//     wormsCatched = [0, 0, 0];
+//     $wormInCapsule = 0;
+
+//     constructor() {}
 
     volcanoPosChang() {
         // console.log("volcanoPosChang $volcanoPos:",$volcanoPos);

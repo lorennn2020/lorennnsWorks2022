@@ -18,8 +18,19 @@ var $desertPos = 0;
 
 var $toHome, $toSea, $toDesert;
 var $taking, $clicking, $bag_spaceLR, $mousePosX, $mousePosY, $ingredientsBlock;
-
+  
 function init() {
+    // 防止 spaceber 滾動畫面
+    window.addEventListener(
+        'keydown',
+        function (e) {
+            var $windowKey = e.code;
+            if ($windowKey === 'Space') {
+                // preventScroll(e);
+                e.preventDefault();
+                return false;
+            }
+    }, false);
     //////////// ＬＩＧＨＴＢＯＸ ////////////////////
 
     // 點擊lightbox底 關閉所有lightbox
@@ -423,7 +434,7 @@ function init() {
     function doctorSTART() {
         // 模糊效果
         for (let $i = 5; $i < 21; $i++) {
-            console.log('$i:', $i);
+            // console.log('$i:', $i);
 
             let $doctorBurTimeout = setTimeout(function () {
                 if ($('#doctors_opening feMorphology:nth-child(5)').attr('radius') == 2) {
@@ -546,7 +557,6 @@ function init() {
         $('#frame_home').show();
     }
     ////////////   ＨＯＭＥ end  /////////////////////
-
     ////////////   ＳＥＡ ＶＯＬＣＡＮＯ   /////////////
 
     // capsule放進包包 animation

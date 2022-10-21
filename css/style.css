@@ -130,12 +130,10 @@ i{
 #game_frame{
     position: absolute;
     display: block;
-    top: 50%;
-    left: 50%;
     width: 900px;
     height: 600px;
     overflow: hidden;
-    transform: translateX(-50%) translateY(-50%);
+    margin: 10% calc(50% - 450px) 5% calc(50% - 450px);
 }
 /* 1 dpr & 96dpi 以上 */
 /* @media (-webkit-max-device-pixel-ratio: 1),(max-resolution: 96dpi){
@@ -144,6 +142,13 @@ i{
     }
 } */
 
+#savingBOBInner{
+    padding-top: 700px;
+}
+#savingBOBInner p{ 
+    font-size: 1.6vw;
+    color: black;
+}
 /* game_menu */
 #game_menu{
     position: absolute;
@@ -166,7 +171,7 @@ i{
     background-image: url(../img/btn-orange.svg);
     /* width: 162px;
     height: 66px; */
-    padding: 19.75px 39px;
+    padding: 21px 39.6px;
     top: 450px;
     left: 50%;
     transform: translateX(-50%);

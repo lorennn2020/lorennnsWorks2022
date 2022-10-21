@@ -906,36 +906,72 @@ function init() {
             $('#frame_desert #bucket_click').fadeOut();
 
             let $rotateZ = $(this).css('transform');
-            // console.log("be: ",$rotateZ);
+            console.log("be: ",$rotateZ);
 
             if ($rotateZ == 'matrix(1, 0, 0, 1, 0, 0)') {
                 //0deg
                 $(this).css({
-                    transition: 'all 0s',
-                    transform: 'rotate(-360deg)',
+                    "-webkit-transition":  'all 0s',
+                    "-moz-transition":  'all 0s',
+                    "-o-transition":  'all 0s',
+                    "transition": 'all 0s',
+                    "-webkit-transform": 'rotate(-360deg)',
+                    "-moz-transform": 'rotate(-360deg)',
+                    "-ms-transform": 'rotate(-360deg)',
+                    "-o-transform": 'rotate(-360deg)',
+                    "transform": 'rotate(-360deg)',
                 });
 
                 // 度數由-270deg轉至0deg時會逆著轉，故調整transition，並最小限度的延遲讓程式生效
                 setTimeout(() => {
-                    $(this).css('transition', 'all 0.2s ease-out');
-                    $(this).css('transform', 'rotate(-270deg)');
+                    $(this).css({
+                        "-webkit-transition": 'all 0.2s ease-out',
+                        "-moz-transition": 'all 0.2s ease-out',
+                        "-o-transition": 'all 0.2s ease-out',
+                        'transition': 'all 0.2s ease-out'
+                    });
+                    $(this).css({
+                        "-webkit-transform":  'rotate(-270deg)',
+                        "-moz-transform": 'rotate(-270deg)',
+                        "-ms-transform": 'rotate(-270deg)',
+                        "-o-transform": 'rotate(-270deg)',
+                        'transform': 'rotate(-270deg)',
+                    });
                 }, 1);
 
                 $rotateZ = $(this).css('transform');
             } else if ($rotateZ == 'matrix(6.12323e-17, -1, 1, 6.12323e-17, 0, 0)') {
                 //-90deg
-                $(this).css('transform', 'rotate(0deg)');
+                $(this).css({
+                    "-webkit-transform": 'rotate(0deg)',
+                    "-moz-transform":'rotate(0deg)',
+                    "-ms-transform":'rotate(0deg)',
+                    "-o-transform": 'rotate(0deg)',
+                    'transform': 'rotate(0deg)',
+                });
                 $rotateZ = $(this).css('transform');
             } else if ($rotateZ == 'matrix(-1, -1.22465e-16, 1.22465e-16, -1, 0, 0)') {
                 //-180deg
-                $(this).css('transform', 'rotate(-90deg)');
+                $(this).css({
+                    "-webkit-transform": 'rotate(-90deg)',
+                    "-moz-transform":'rotate(-90deg)',
+                    "-ms-transform":'rotate(-90deg)',
+                    "-o-transform":'rotate(-90deg)',
+                    'transform': 'rotate(-90deg)',
+                });
                 $rotateZ = $(this).css('transform');
             } else if ($rotateZ == 'matrix(-1.83697e-16, 1, -1, -1.83697e-16, 0, 0)') {
                 //-270deg
-                $(this).css('transform', 'rotate(-180deg)');
+                $(this).css({
+                    "-webkit-transform":  'rotate(-180deg)',
+                    "-moz-transform": 'rotate(-180deg)',
+                    "-ms-transform": 'rotate(-180deg)',
+                    "-o-transform": 'rotate(-180deg)',
+                    'transform': 'rotate(-180deg)',
+                });
                 $rotateZ = $(this).css('transform');
             } else {
-                // console.log('X(');
+                console.log('X(');
             }
 
             // console.log("af: ",$rotateZ);

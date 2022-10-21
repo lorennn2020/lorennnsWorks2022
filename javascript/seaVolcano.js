@@ -11,13 +11,13 @@ function isSubMarineInRightSide() {
     return $submarine.css('transform') == 'matrix(1, 0, 0, 1, 0, 0)';
 }
 
+// safari, FireFox 可兼容
 class Worms {
     constructor() {
         this.wormsQty = [3, 3, 2];
         this.wormsCatched = [0, 0, 0];
         this.$wormInCapsule = 0;
     }
-
 
 // class Worms {
 //     wormsQty = [3, 3, 2];

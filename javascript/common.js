@@ -19,6 +19,15 @@ var $desertPos = 0;
 var $toHome, $toSea, $toDesert;
 var $taking, $clicking, $bag_spaceLR, $mousePosX, $mousePosY, $ingredientsBlock;
   
+
+// desert 迴圈生成puzzle
+for (let i = 1; i < 13; i++) {
+    $('#bucket_puzzle02').append('<i id="puzzle02_' + i + '" style="background-image: url(img/scene-desert_well_inner02-' + i + '.svg )"></i>');
+}
+for (let i = 1; i < 36; i++) {
+    $('#bucket_puzzle03').append('<i id="puzzle03_' + i + '" style="background-image: url(img/scene-desert_well_inner03-' + i + '.svg )"></i>');
+}
+
 function init() {
     // 防止 spaceber 滾動畫面
     window.addEventListener(
@@ -604,13 +613,6 @@ function init() {
             $('#frame_desert #c_instruction').fadeIn();
         }, 3900);
 
-        // 迴圈生成puzzle
-        for (let i = 1; i < 13; i++) {
-            $('#bucket_puzzle02').append('<i id="puzzle02_' + i + '" style="background-image: url(img/scene-desert_well_inner02-' + i + '.svg )"></i>');
-        }
-        for (let i = 1; i < 36; i++) {
-            $('#bucket_puzzle03').append('<i id="puzzle03_' + i + '" style="background-image: url(img/scene-desert_well_inner03-' + i + '.svg )"></i>');
-        }
 
         // 鍵盤控制 demo
         window.addEventListener(
@@ -901,14 +903,56 @@ function init() {
             }, 3500);
         }
 
+
+        // 判別element rotate 角度
+        function getCurrentRotation( elementId ) {
+            console.log(el);
+            var el = document.getElementById("puzzle0"+elementId);
+            var st = window.getComputedStyle(el, null);
+            var tr = st.getPropertyValue("-webkit-transform") ||
+                 st.getPropertyValue("-moz-transform") ||
+                 st.getPropertyValue("-ms-transform") ||
+                 st.getPropertyValue("-o-transform") ||
+                 st.getPropertyValue("transform") ||
+                 "fail...";
+          
+            if( tr !== "none") {
+                console.log('Matrix: ' + tr);
+            
+                var values = tr.split('(')[1];
+                    values = values.split(')')[0];
+                    values = values.split(',');
+                var a = values[0];
+                var b = values[1];
+                var radians = Math.atan2(b, a);
+                if ( radians < 0 ) {
+                    radians += (2 * Math.PI);
+                }
+                var rotateAngle = Math.round( radians * (180/Math.PI));
+                
+            } else {
+                var rotateAngle = 0;
+            }
+          
+            console.log('Rotate: ' + rotateAngle + 'deg');
+            return rotateAngle;
+        }
+
         // 點擊puzzle旋轉
         $('#well_bucket i[id^="puzzle"]').click(function () {
             $('#frame_desert #bucket_click').fadeOut();
+            
+            // 字串處理 puzzle01_1 > 1_1
+            var elString = $(this).attr('id');
+            var finalElString = elString.split("puzzle0",2);
+            console.log("finalElString[1]:",finalElString[1]);
 
-            let $rotateZ = $(this).css('transform');
-            console.log("be: ",$rotateZ);
+            // let rotateAngle = $(this).css('transform');
+            let rotateAngle = getCurrentRotation(finalElString[1]);
+            
+            console.log("be: ",rotateAngle);
 
-            if ($rotateZ == 'matrix(1, 0, 0, 1, 0, 0)') {
+            if (rotateAngle == 0) {
                 //0deg
                 $(this).css({
                     "-webkit-transition":  'all 0s',
@@ -939,8 +983,8 @@ function init() {
                     });
                 }, 1);
 
-                $rotateZ = $(this).css('transform');
-            } else if ($rotateZ == 'matrix(6.12323e-17, -1, 1, 6.12323e-17, 0, 0)') {
+                rotateAngle = $(this).css('transform');
+            } else if (rotateAngle == -90 || rotateAngle == 270) {
                 //-90deg
                 $(this).css({
                     "-webkit-transform": 'rotate(0deg)',
@@ -949,8 +993,8 @@ function init() {
                     "-o-transform": 'rotate(0deg)',
                     'transform': 'rotate(0deg)',
                 });
-                $rotateZ = $(this).css('transform');
-            } else if ($rotateZ == 'matrix(-1, -1.22465e-16, 1.22465e-16, -1, 0, 0)') {
+                rotateAngle = $(this).css('transform');
+            } else if (rotateAngle == 180 || rotateAngle == -180) {
                 //-180deg
                 $(this).css({
                     "-webkit-transform": 'rotate(-90deg)',
@@ -959,8 +1003,8 @@ function init() {
                     "-o-transform":'rotate(-90deg)',
                     'transform': 'rotate(-90deg)',
                 });
-                $rotateZ = $(this).css('transform');
-            } else if ($rotateZ == 'matrix(-1.83697e-16, 1, -1, -1.83697e-16, 0, 0)') {
+                rotateAngle = $(this).css('transform');
+            } else if (rotateAngle == 90 ||rotateAngle == -270) {
                 //-270deg
                 $(this).css({
                     "-webkit-transform":  'rotate(-180deg)',
@@ -969,12 +1013,13 @@ function init() {
                     "-o-transform": 'rotate(-180deg)',
                     'transform': 'rotate(-180deg)',
                 });
-                $rotateZ = $(this).css('transform');
+                rotateAngle = $(this).css('transform');
             } else {
                 console.log('X(');
             }
 
-            // console.log("af: ",$rotateZ);
+            console.log("af: ",rotateAngle);
+
             // 過快exam會造成吐出值有誤
             setTimeout(() => {
                 puzzleExam();
@@ -1217,6 +1262,18 @@ jQuery(document).ready(init());
 // $('#game_menu , #frame_doctors').remove();
 // $('#frame_home').addClass("begining");
 // $('#frame_btnBtm').removeClass('hide');
+
+// 到達沙漠後跳過前導動畫，直接到拼圖
+// $('#well_bg').fadeIn();
+// // 桶子上提
+// setTimeout(() => {
+//     $('#frame_desert #well_bucket').addClass('show');
+//     $('#frame_desert .fontSize_28').addClass('show');
+// }, 1500);
+
+// setTimeout(() => {
+//     $('#frame_desert #bucket_click').fadeIn();
+// }, 3500);
 
 //  seaVolcano 抓取測試
 // $('#game_menu , #frame_doctors').remove();

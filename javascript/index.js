@@ -25,9 +25,12 @@ function init() {
     });
 
     // 打開#about時，停用滑鼠滾動
-    document.querySelector("#headerAbout").addEventListener('click', disable);
-    document.querySelector("#headerWork").addEventListener('click', enable);
-
+    if ($("#headerAbout").length > 0) {
+        document.querySelector("#headerAbout").addEventListener('click', disable);
+    }
+    if ($("#headerWork").length > 0) {
+        document.querySelector("#headerWork").addEventListener('click', enable);
+    }
     //////////// index end ////////////
     //////////// inner ////////////
     $("article#motionGrapicInner .inner_video").mouseenter(function () {

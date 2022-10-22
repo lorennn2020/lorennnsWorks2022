@@ -4,9 +4,33 @@
     font-family: 'Courier New', Courier, monospace;
     letter-spacing: 0.5px;
 }
+/* @font-face{
+    font-family: 'Noto Sans', sans-serif;
+    src: url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@100;400;600&display=swap");
+} */
+
+
+html{
+    background: -webkit-linear-gradient(to bottom, 0%#cad7df, 49%#cad7df,  50%#D7E0E9, 100%#D7E0E9);
+    background: -moz-linear-gradient(to bottom, 0%#cad7df, 49%#cad7df,  50%#D7E0E9, 100%#D7E0E9);
+    background: -o-linear-gradient(to bottom, 0%#cad7df, 49%#cad7df,  50%#D7E0E9, 100%#D7E0E9);  
+    background-image: linear-gradient(to bottom, 0%#cad7df, 49%#cad7df,  50%#D7E0E9, 100%#D7E0E9);
+}
+body{
+    background-color: #D7E0E9;
+    -ms-overflow-x: hidden;
+    overflow-x: hidden;
+}
+
+.NotoSans{
+    font-family: 'Noto Sans', sans-serif;
+}
 a{
     color: black;
     text-decoration: none;
+}
+i{
+    font-style: normal;
 }
 
 .space_2{
@@ -85,12 +109,6 @@ body.inner p strong,
     flex-direction: row;
 }
 
-html,body{
-    background-color: rgb(216, 224, 233);
-    -ms-overflow-x: hidden;
-    overflow-x: hidden;
-}
-
 /* common */
 header{
     position: fixed;
@@ -121,7 +139,6 @@ header li{
     padding: 10px;
     cursor: pointer;
 }
-
 header li::before{
     position: absolute;
     display: block;
@@ -169,20 +186,18 @@ article{
     position: relative;
     display: inline-block;
     width: 47.9%;
-    padding-bottom: 33.3%;
-    margin: 0 3.9% 7% 0 ;
-    background-color: #fff;
-    font-size: 1.3vw;
+    padding-bottom: 43%;
+    margin: 0 3.9% 10% 0;
     background-size: cover;
-    border-radius: 5px;
     -webkit-transition: all 0.3s ease ;
     -moz-transition: all 0.3s ease ;
     -o-transition: all 0.3s ease ;
     transition: all 0.3s ease ;
+    background-color: aliceblue;
 }
 
 #works .wrap > div:hover{
-    box-shadow: 0px 5px 25px rgba(27, 96, 176, 0.2);
+    box-shadow: 0px 5px 25px rgba(84, 127, 175, 0.2);
     -webkit-transform: translateY(-0.5%);
     -moz-transform: translateY(-0.5%);
     -ms-transform: translateY(-0.5%);
@@ -192,15 +207,39 @@ article{
 
 #works .wrap > div:first-child{
     width: 100%;
-    padding-bottom: 66.6%;
+    padding-bottom: 74%;
 }
-
 #works .wrap > div:nth-child(2n+1),
-
 #works .wrap > div:first-child{
     margin-right: 0%;
 }
-
+#works div.hint{
+    width: 100%;
+    padding: 3% 0;
+    box-sizing: border-box;
+    margin: 7% 0 0 0;
+    background-color: #CAD7DF;
+    border-radius: 5px;
+    text-align: center;
+}
+#works div.hint:hover{
+    box-shadow: none;
+    -webkit-transform: none;
+    -moz-transform: none;
+    -ms-transform: none;
+    -o-transform: none;
+    transform: none;
+}
+#works div.hint img{
+    width: 2%;
+    vertical-align: middle;
+}
+#works div.hint span{
+    color: black;
+    font-size: 1.3vw;
+    vertical-align: middle;
+    padding-left: 1%;
+}
 #works .wrap > div > a{
     position: absolute;
     display: block;
@@ -209,45 +248,52 @@ article{
     left: 0;
     right: 0;
 }
-
+#works .wrap > div img{
+    position: relative;
+    width: 100%;
+}
 #works .wrap > div > p{
     position: absolute;
-    bottom: -5%;
-    left: 0;
-    opacity: 0;
+    top: 83%;
+    left: -1%;
     -webkit-transition: all 0.3s ease;
     -moz-transition: all 0.3s ease;
     -o-transition: all 0.3s ease;
     transition: all 0.3s ease;
-}
-
-#works .wrap > div:hover p{
-    bottom: -6.2%;
     opacity: 1;
+    color: black;
+    font-size: 1.2vw;
+    letter-spacing: 0;
+    padding: 0 4% 0 26%;
+    line-height: 1.2;
+    cursor: pointer;
 }
-#works .wrap > div:not(#savingBOB) p{
-    bottom: -11%;
+#works .wrap > div:hover > p{
+    text-decoration: underline;
+}
+#works .wrap > div#savingBOB p{
+    top: 93.6%;
+    left: 2%;
+}
+#works section.wrap > div > p.tag{
+    font-size: 1.3vw;
+    top: 69%;
+    text-decoration: none;
+    background: -webkit-linear-gradient(to right,#458587 0%,#458587 6%,#5F9DA0 6.0000001%);
+    background: -moz-linear-gradient(to right,#458587 0%,#458587 6%,#5F9DA0 6.0000001%);
+    background: -o-linear-gradient(to right,#458587 0%,#458587 6%,#5F9DA0 6.0000001%);  
+    background-image: linear-gradient(to right,#458587 0%,#458587 6%,#5F9DA0 6.0000001%);
+    padding: 1.6% 4% 1.6% 6%;
+    color:#fff;
+    cursor: pointer;
+}
+#works section.wrap > div#savingBOB > p.tag{
+    top: 86%;
+    left: -1%;
+    padding: 1.6% 2.5% 1.6% 3.5%;
 }
 /* common end */
 /* works */
-#works{
-    width: 100%;
-}
-#works #savingBOB{
-    background-image: url(../img/scene-beginning_900x600.gif);
-}
-#works #motionGrapic{
-    background-image: url(../worksImg/motionGrapic.png);
-}
-#works #illustration{
-    background-image: url(../worksImg/ROOM.png);
-}
-#works #ip{
-    background-image: url(../worksImg/IPCharacter.png);
-}
-#works #WebDesign{
-    background-image: url(../worksImg/BENNS.png);
-}
 #ipCharacterInner .ip_textUp,
 #ipCharacterInner .ip_textBelow{
     position: absolute;
@@ -341,11 +387,12 @@ body.inner h1{
     font-size: 2vw;
     font-weight: 400;
     margin-bottom: 8%;
+    text-decoration: underline;
 }
 body.inner div.inner_video{
     position: relative;
     display: inline-block;
-    width: 49%;
+    width: 48.9%;
     padding-bottom: 49%;
     margin-bottom: 1.9%;
 }
@@ -361,10 +408,9 @@ body.inner video{
     right: 0;
 }
 body.inner p{
-    font-size: 1.6vw;
+    font-size: 1.5vw;
     color: black;
 }
-
 body.inner .inner_img{
     position: relative;
     display: inline-block;

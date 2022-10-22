@@ -19,6 +19,15 @@ var $desertPos = 0;
 var $toHome, $toSea, $toDesert;
 var $taking, $clicking, $bag_spaceLR, $mousePosX, $mousePosY, $ingredientsBlock;
   
+// 判別Firefox
+if (navigator.userAgent.indexOf('Firefox') !== -1) {
+    $('body').addClass('isFireFox');
+}
+
+// Safari
+if (navigator.userAgent.indexOf("Safari") > -1 && navigator.userAgent.indexOf("Chrome") < 0) {
+    $('body').addClass('isSafari');
+}
 
 // desert 迴圈生成puzzle
 for (let i = 1; i < 13; i++) {

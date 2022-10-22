@@ -363,11 +363,13 @@ article{
 
 
 /* inner */
-body.inner header a{
+body.inner header a,
+body.savingBOBInner header a{
     position: relative;
     padding-left: 13px;
 }
-body.inner header a::before{
+body.inner header a::before,
+body.savingBOBInner header a::before{
     position: absolute;
     display: block;
     content: "";

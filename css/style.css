@@ -254,6 +254,30 @@ body.isSafari #game_menu #menu_start{
     -ms-animation: jump 1.5s infinite forwards;
     animation: jump 1.5s infinite forwards;
 }
+@-webkit-keyframes jump {
+    0%{ left: 0px; }
+    13%{ left: -10px; }
+    20%{ left: 0px; }
+    23%{ left: -2px; }
+    24%{ left: 0px; }
+    100%{ left: 0px; }
+}
+@-moz-keyframes jump {
+    0%{ left: 0px; }
+    13%{ left: -10px; }
+    20%{ left: 0px; }
+    23%{ left: -2px; }
+    24%{ left: 0px; }
+    100%{ left: 0px; }
+}
+@-o-keyframes jump {
+    0%{ left: 0px; }
+    13%{ left: -10px; }
+    20%{ left: 0px; }
+    23%{ left: -2px; }
+    24%{ left: 0px; }
+    100%{ left: 0px; }
+}
 @keyframes jump {
     0%{ left: 0px; }
     13%{ left: -10px; }
@@ -412,6 +436,24 @@ body.isSafari #game_menu #menu_start{
     -ms-animation: CTA 1.0s linear 0s infinite forwards;
     animation: CTA 1.0s linear 0s infinite forwards;
 }
+@-webkit-keyframes CTA {
+    0%{left: 0px;}
+   30%{left: 10px;}
+   70%{left: 0px;}
+  100%{left: 0px;}
+}
+@-moz-keyframes CTA {
+    0%{left: 0px;}
+   30%{left: 10px;}
+   70%{left: 0px;}
+  100%{left: 0px;}
+}
+@-o-keyframes CTA {
+    0%{left: 0px;}
+   30%{left: 10px;}
+   70%{left: 0px;}
+  100%{left: 0px;}
+}
 @keyframes CTA {
       0%{left: 0px;}
      30%{left: 10px;}
@@ -424,6 +466,9 @@ body.isSafari #game_menu #menu_start{
     height: 100vh;
     z-index: 1;
     background-image: url(../img/scene-weirdDoctorBG.svg);
+    -webkit-transition: top 0.8s linear;
+    -moz-transition: top 0.8s linear;
+    -o-transition: top 0.8s linear;
     transition: top 0.8s linear;
 }
 #frame_doctors #doctors_animaEquip,
@@ -881,6 +926,9 @@ section #start_keyboard01 i{
     background-image: url(../img/scene-volcano_submarine.svg);
     background-size: cover;
     z-index: 2;
+    -webkit-transition: top linear 0.2s 0s,left linear 0.2s 0s;
+    -moz-transition: top linear 0.2s 0s,left linear 0.2s 0s;
+    -o-transition: top linear 0.2s 0s,left linear 0.2s 0s;
     transition: top linear 0.2s 0s,left linear 0.2s 0s;
 }
 #frame_volcano #submarine.beforeOpening{
@@ -938,6 +986,144 @@ section #start_keyboard01 i{
     -moz-transition: width linear 0.2s 0s ,opacity 1.3s linear 2.2s ;
     -o-transition: width linear 0.2s 0s ,opacity 1.3s linear 2.2s ;
     transition: width linear 0.2s 0s ,opacity 1.3s linear 2.2s ;
+}
+@-webkit-keyframes seaLight{
+    0% {
+        left: 0px;
+        top: 0px;
+    }
+    19.99999% {
+        left: 0px;
+        top: 0px;
+    }
+    20% {
+        left: -3px;
+        top: -3px;
+    }
+    39.99999% {
+        left: -3px;
+        top: -3px;
+    }
+    40% {
+        left: 0px;
+        top: -6px;
+    }
+    59.9999% {
+        left: 0px;
+       top: -6px;
+    }
+    60% {
+        left: -9px;
+        top: -3px;
+    }
+    79.99999% {
+        left: -9px;
+        top: -3px;
+    }
+    80% {
+        left: -3px;
+        top: 0px;
+    }
+    99.99999% {
+        left: -3px;
+        top: 0px;
+    }
+    100% {
+        left: -3px;
+        top: -3px;
+    }
+}
+@-moz-keyframes seaLight{
+    0% {
+        left: 0px;
+        top: 0px;
+    }
+    19.99999% {
+        left: 0px;
+        top: 0px;
+    }
+    20% {
+        left: -3px;
+        top: -3px;
+    }
+    39.99999% {
+        left: -3px;
+        top: -3px;
+    }
+    40% {
+        left: 0px;
+        top: -6px;
+    }
+    59.9999% {
+        left: 0px;
+       top: -6px;
+    }
+    60% {
+        left: -9px;
+        top: -3px;
+    }
+    79.99999% {
+        left: -9px;
+        top: -3px;
+    }
+    80% {
+        left: -3px;
+        top: 0px;
+    }
+    99.99999% {
+        left: -3px;
+        top: 0px;
+    }
+    100% {
+        left: -3px;
+        top: -3px;
+    }
+}
+@-o-keyframes seaLight{
+    0% {
+        left: 0px;
+        top: 0px;
+    }
+    19.99999% {
+        left: 0px;
+        top: 0px;
+    }
+    20% {
+        left: -3px;
+        top: -3px;
+    }
+    39.99999% {
+        left: -3px;
+        top: -3px;
+    }
+    40% {
+        left: 0px;
+        top: -6px;
+    }
+    59.9999% {
+        left: 0px;
+       top: -6px;
+    }
+    60% {
+        left: -9px;
+        top: -3px;
+    }
+    79.99999% {
+        left: -9px;
+        top: -3px;
+    }
+    80% {
+        left: -3px;
+        top: 0px;
+    }
+    99.99999% {
+        left: -3px;
+        top: 0px;
+    }
+    100% {
+        left: -3px;
+        top: -3px;
+    }
 }
 @keyframes seaLight{
     0% {
@@ -1097,6 +1283,30 @@ section #success_bg{
     -ms-animation: successBgShow 0.5s ease-in 0s 1 forwards;
     animation: successBgShow 0.5s ease-in 0s 1 forwards;
 }
+@-webkit-keyframes successBgShow{
+    from{
+        background-position: 100% 0%;
+    }
+    to{
+        background-position: 0% 0%;
+    }
+}
+@-moz-keyframes successBgShow{
+    from{
+        background-position: 100% 0%;
+    }
+    to{
+        background-position: 0% 0%;
+    }
+}
+@-o-keyframes successBgShow{
+    from{
+        background-position: 100% 0%;
+    }
+    to{
+        background-position: 0% 0%;
+    }
+}
 @keyframes successBgShow{
     from{
         background-position: 100% 0%;
@@ -1110,6 +1320,30 @@ section #success_bg.hide{
     -moz-animation: successBgHide 0.5s ease-in 0s 1 forwards;
     -ms-animation: successBgHide 0.5s ease-in 0s 1 forwards;
     animation: successBgHide 0.5s ease-in 0s 1 forwards;
+}
+@-webkit-keyframes successBgHide{
+    from{
+        background-position: 0% 0%;
+    }
+    to{
+        background-position: 100% 0%;
+    }
+}
+@-moz-keyframes successBgHide{
+    from{
+        background-position: 0% 0%;
+    }
+    to{
+        background-position: 100% 0%;
+    }
+}
+@-o-keyframes successBgHide{
+    from{
+        background-position: 0% 0%;
+    }
+    to{
+        background-position: 100% 0%;
+    }
 }
 @keyframes successBgHide{
     from{
@@ -1136,19 +1370,33 @@ section #success #capsule.shrink{
     -ms-animation: shrink 0.8s ease-out 0s 1 forwards;
     animation: shrink 0.8s ease-out 0s 1 forwards;
 }
-@keyframes shrink {
-    form{
-        -webkit-transform: scale(1);
-        -moz-transform: scale(1);
-        -ms-transform: scale(1);
-        -o-transform: scale(1);
-        transform: scale(1);
-    }
+@-webkit-keyframes shrink {
+    form{-webkit-transform: scale(1);}
     to{
         -webkit-transform: scale(0.1);
-        -moz-transform: scale(0.1);
-        -ms-transform: scale(0.1);
-        -o-transform: scale(0.1);
+        top: 7%;
+        left: 77%;
+    }
+}
+@-moz-keyframes shrink {
+    form{
+        -moz-transform: scale(1);
+    }
+    to{ -moz-transform: scale(0.1);
+        top: 7%;
+        left: 77%;
+    }
+}
+@-o-keyframes shrink {
+    form{transform: scale(1);}
+    to{-o-transform: scale(0.1);
+        top: 7%;
+        left: 77%;
+    }
+}
+@keyframes shrink {
+    form{transform: scale(1);}
+    to{
         transform: scale(0.1);
         top: 7%;
         left: 77%;
@@ -1189,6 +1437,35 @@ section #capsule_worm{
     -moz-animation: wormShow 1.5s ease-in 1s 1 forwards;
     -ms-animation: wormShow 1.5s ease-in 1s 1 forwards;
     animation: wormShow 1.5s ease-in 1s 1 forwards;
+}@-webkit-keyframes wormShow{
+    from{
+        top: 45%;
+        opacity: 0;
+    }
+    to{
+        top: 50%;
+        opacity: 1;
+    }
+}
+@-moz-keyframes wormShow{
+    from{
+        top: 45%;
+        opacity: 0;
+    }
+    to{
+        top: 50%;
+        opacity: 1;
+    }
+}
+@-o-keyframes wormShow{
+    from{
+        top: 45%;
+        opacity: 0;
+    }
+    to{
+        top: 50%;
+        opacity: 1;
+    }
 }
 @keyframes wormShow{
     from{
@@ -1251,14 +1528,51 @@ section #capsule_bottom.close{
     -moz-animation: capsuleBottomClose 0.4s ease-in 0s 1 forwards;
     -ms-animation: capsuleBottomClose 0.4s ease-in 0s 1 forwards;
     animation: capsuleBottomClose 0.4s ease-in 0s 1 forwards;
+}@-webkit-keyframes capsuleTopClose{
+    from{ top: 0px; right: 0px;}
+    to{ top: 78px; right: 36px;}
+}
+@-moz-keyframes capsuleTopClose{
+    from{ top: 0px; right: 0px;}
+    to{ top: 78px; right: 36px;}
+}
+@-o-keyframes capsuleTopClose{
+    from{ top: 0px; right: 0px;}
+    to{ top: 78px; right: 36px;}
 }
 @keyframes capsuleTopClose{
     from{ top: 0px; right: 0px;}
     to{ top: 78px; right: 36px;}
 }
+
+@-webkit-keyframes capsuleHoleClose{
+    from{ top: 132px; left: 114px;}
+    to{ top: 210px; left: 78px;}
+}
+@-moz-keyframes capsuleHoleClose{
+    from{ top: 132px; left: 114px;}
+    to{ top: 210px; left: 78px;}
+}
+@-o-keyframes capsuleHoleClose{
+    from{ top: 132px; left: 114px;}
+    to{ top: 210px; left: 78px;}
+}
 @keyframes capsuleHoleClose{
     from{ top: 132px; left: 114px;}
     to{ top: 210px; left: 78px;}
+}
+
+@-webkit-keyframes capsuleBottomClose{
+    from{ left: 0px; bottom: 0px;}
+    to{ bottom: 60px; left: 33px;}
+}
+@-moz-keyframes capsuleBottomClose{
+    from{ left: 0px; bottom: 0px;}
+    to{ bottom: 60px; left: 33px;}
+}
+@-o-keyframes capsuleBottomClose{
+    from{ left: 0px; bottom: 0px;}
+    to{ bottom: 60px; left: 33px;}
 }
 @keyframes capsuleBottomClose{
     from{ left: 0px; bottom: 0px;}
@@ -1266,7 +1580,13 @@ section #capsule_bottom.close{
 }
 section #capsule.float{
     top: 38%;
+    -webkit-transition: top linear 1.5s 0s;
+    -moz-transition: top linear 1.5s 0s;
+    -o-transition: top linear 1.5s 0s;
     transition: top linear 1.5s 0s;
+    -webkit-animation: float 1s infinite 1.5s alternate ease;
+    -moz-animation: float 1s infinite 1.5s alternate ease;
+    -ms-animation: float 1s infinite 1.5s alternate ease;
     animation: float 1s infinite 1.5s alternate ease;
 }
 section #success #text{
@@ -1286,6 +1606,17 @@ section #success_btn.show{
     -moz-transition: opacity ease-in 1s 0s;
     -o-transition: opacity ease-in 1s 0s;
     transition: opacity ease-in 1s 0s;
+}@-webkit-keyframes float {
+    from { top: 38%; }
+	to { top: 35%; } 
+}
+@-moz-keyframes float {
+    from { top: 38%; }
+	to { top: 35%; } 
+}
+@-o-keyframes float {
+    from { top: 38%; }
+	to { top: 35%; } 
 }
 @keyframes float {
     from { top: 38%; }
@@ -1463,7 +1794,31 @@ section#frame_desert #start_keyboard02 .fontSize_28 {
     background-image: url(../img/scene-desert_sand.svg);
     background-size: cover;
     z-index: 11;
+    -webkit-animation: sandBlow 15s ease-out 0s infinite forwards;
+    -moz-animation: sandBlow 15s ease-out 0s infinite forwards;
+    -ms-animation: sandBlow 15s ease-out 0s infinite forwards;
     animation: sandBlow 15s ease-out 0s infinite forwards;
+}
+@-webkit-keyframes sandBlow {
+    0%{ left: 702px; opacity: 0; }
+    3%{ opacity: 1; }
+    7%{ opacity: 1; }
+   10%{ left: 390px; opacity: 0; }
+   100%{ left: 390px; opacity: 0;  }
+}
+@-moz-keyframes sandBlow {
+    0%{ left: 702px; opacity: 0; }
+    3%{ opacity: 1; }
+    7%{ opacity: 1; }
+   10%{ left: 390px; opacity: 0; }
+   100%{ left: 390px; opacity: 0;  }
+}
+@-o-keyframes sandBlow {
+    0%{ left: 702px; opacity: 0; }
+    3%{ opacity: 1; }
+    7%{ opacity: 1; }
+   10%{ left: 390px; opacity: 0; }
+   100%{ left: 390px; opacity: 0;  }
 }
 @keyframes sandBlow {
      0%{ left: 702px; opacity: 0; }
@@ -1483,6 +1838,21 @@ section#frame_desert #start_keyboard02 .fontSize_28 {
     -moz-animation: windBlow 10s ease-out 1s infinite forwards;
     -ms-animation: windBlow 10s ease-out 1s infinite forwards;
     animation: windBlow 10s ease-out 1s infinite forwards;
+}
+@-webkit-keyframes windBlow {
+    0%{ left: 2000px; }
+    74%{ left: 2000px; }
+   100%{ left: -2000px; }
+}
+@-moz-keyframes windBlow {
+    0%{ left: 2000px; }
+    74%{ left: 2000px; }
+   100%{ left: -2000px; }
+}
+@-o-keyframes windBlow {
+    0%{ left: 2000px; }
+    74%{ left: 2000px; }
+   100%{ left: -2000px; }
 }
 @keyframes windBlow {
      0%{ left: 2000px; }
@@ -1537,6 +1907,63 @@ section#frame_desert #start_keyboard02 .fontSize_28 {
     animation: tumbleweedRooling01 65s linear 3s infinite forwards;
     z-index: 13;
 }
+@-webkit-keyframes tumbleweedRooling01 {
+    0%{ left: 2010px; bottom: -45px; }
+    17%{ bottom: 10px; }
+    19%{ bottom: 12px; }
+    20.5%{ bottom: 26px; }
+    23%{ bottom: 12px; }
+    23.5%{ bottom: 18px; }
+    24%{ bottom: 12px; }
+
+    31%{ bottom: 10px; }
+    32%{ bottom: 20px; }
+    35%{ bottom: 8px; }
+    36%{ bottom: 12px; }
+    36.5%{ bottom: 8px; }
+
+   50%{ left: 0px; }
+   50.0000001%{ left: -100px; }
+  100%{ left: -100px; }
+}
+@-moz-keyframes tumbleweedRooling01 {
+    0%{ left: 2010px; bottom: -45px; }
+    17%{ bottom: 10px; }
+    19%{ bottom: 12px; }
+    20.5%{ bottom: 26px; }
+    23%{ bottom: 12px; }
+    23.5%{ bottom: 18px; }
+    24%{ bottom: 12px; }
+
+    31%{ bottom: 10px; }
+    32%{ bottom: 20px; }
+    35%{ bottom: 8px; }
+    36%{ bottom: 12px; }
+    36.5%{ bottom: 8px; }
+
+   50%{ left: 0px; }
+   50.0000001%{ left: -100px; }
+  100%{ left: -100px; }
+}
+@-o-keyframes tumbleweedRooling01 {
+    0%{ left: 2010px; bottom: -45px; }
+    17%{ bottom: 10px; }
+    19%{ bottom: 12px; }
+    20.5%{ bottom: 26px; }
+    23%{ bottom: 12px; }
+    23.5%{ bottom: 18px; }
+    24%{ bottom: 12px; }
+
+    31%{ bottom: 10px; }
+    32%{ bottom: 20px; }
+    35%{ bottom: 8px; }
+    36%{ bottom: 12px; }
+    36.5%{ bottom: 8px; }
+
+   50%{ left: 0px; }
+   50.0000001%{ left: -100px; }
+  100%{ left: -100px; }
+}
 @keyframes tumbleweedRooling01 {
       0%{ left: 2010px; bottom: -45px; }
       17%{ bottom: 10px; }
@@ -1555,6 +1982,19 @@ section#frame_desert #start_keyboard02 .fontSize_28 {
      50%{ left: 0px; }
      50.0000001%{ left: -100px; }
     100%{ left: -100px; }
+}
+
+@-webkit-keyframes tumbleweedRooling02 {
+    0%{ left: 2010px; }
+  100%{ left: -100px; }
+}
+@-moz-keyframes tumbleweedRooling02 {
+    0%{ left: 2010px; }
+  100%{ left: -100px; }
+}
+@-o-keyframes tumbleweedRooling02 {
+    0%{ left: 2010px; }
+  100%{ left: -100px; }
 }
 @keyframes tumbleweedRooling02 {
       0%{ left: 2010px; }
@@ -2265,6 +2705,24 @@ section#frame_desert #success_btn:hover{
     height: 15px;
     top: 24px;
 }
+@-webkit-keyframes locationShine {
+    0%{ opacity: 0; }
+    50%{ opacity: 0; }
+    50.00000001%{ opacity: 1; }
+    100%{ opacity: 1; }
+}
+@-moz-keyframes locationShine {
+    0%{ opacity: 0; }
+    50%{ opacity: 0; }
+    50.00000001%{ opacity: 1; }
+    100%{ opacity: 1; }
+}
+@-o-keyframes locationShine {
+    0%{ opacity: 0; }
+    50%{ opacity: 0; }
+    50.00000001%{ opacity: 1; }
+    100%{ opacity: 1; }
+}
 @keyframes locationShine {
     0%{ opacity: 0; }
     50%{ opacity: 0; }
@@ -2340,17 +2798,73 @@ section#frame_desert #success_btn:hover{
     -ms-animation: signJeff01 2s ease-in 0s infinite forwards;
     animation: signJeff01 2s ease-in 0s infinite forwards;
 }
+@-webkit-keyframes signJeff01 {
+    0%{ top: -42px; }
+    10%{ top: -39px; }
+    20%{ top: -42px; }
+    100%{ top: -42px; }
+}
+@-moz-keyframes signJeff01 {
+    0%{ top: -42px; }
+    10%{ top: -39px; }
+    20%{ top: -42px; }
+    100%{ top: -42px; }
+}
+@-o-keyframes signJeff01 {
+    0%{ top: -42px; }
+    10%{ top: -39px; }
+    20%{ top: -42px; }
+    100%{ top: -42px; }
+}
 @keyframes signJeff01 {
     0%{ top: -42px; }
     10%{ top: -39px; }
     20%{ top: -42px; }
     100%{ top: -42px; }
 }
+
+@-webkit-keyframes signJeff02 {
+    0%{ top: -78px; }
+    10%{ top: -75px; }
+    20%{ top: -78px; }
+    100%{ top: -78px; }
+}
+@-moz-keyframes signJeff02 {
+    0%{ top: -78px; }
+    10%{ top: -75px; }
+    20%{ top: -78px; }
+    100%{ top: -78px; }
+}
+@-o-keyframes signJeff02 {
+    0%{ top: -78px; }
+    10%{ top: -75px; }
+    20%{ top: -78px; }
+    100%{ top: -78px; }
+}
 @keyframes signJeff02 {
     0%{ top: -78px; }
     10%{ top: -75px; }
     20%{ top: -78px; }
     100%{ top: -78px; }
+}
+
+@-webkit-keyframes signJeff03 {
+    0%{ top: -95px; }
+    10%{ top: -92px; }
+    20%{ top: -95px; }
+    100%{ top: -95px; }
+}
+@-moz-keyframes signJeff03 {
+    0%{ top: -95px; }
+    10%{ top: -92px; }
+    20%{ top: -95px; }
+    100%{ top: -95px; }
+}
+@-o-keyframes signJeff03 {
+    0%{ top: -95px; }
+    10%{ top: -92px; }
+    20%{ top: -95px; }
+    100%{ top: -95px; }
 }
 @keyframes signJeff03 {
     0%{ top: -95px; }
@@ -2443,23 +2957,96 @@ section#frame_desert #success_btn:hover{
     -ms-animation: desertToHomeJeff 6s linear forwards;
     animation: desertToHomeJeff 6s linear forwards;
 }
+@-webkit-keyframes homeToSeaJeff {
+    0%{ left: 102px; top: 221px; opacity: 0; }
+   0.0000001%{ opacity: 1; }
+   20%{ left: 84px; top: 261px; }
+   32%{ left: 62px; top: 274px; }
+   37.999999%{
+      -webkit-transform: rotateY(180deg);
+  }
+   38%{ left: 62px; top: 286px;
+      -webkit-transform: rotateY(0deg);
+  }
+   50%{ left: 83px; top: 301px; }
+   /* 下樓梯 */
+   64%{ left: 131px; top: 307px; }
+   70%{ left: 150px; top: 322px;}
+   76%{ left: 161px; top: 322px; }
+   84%{ left: 179px; top: 292px; }
+   /* 過橋 */
+   88%{ 
+      left: 194px;
+      top: 289px;
+   }
+   99.9999%{ opacity: 1; }
+  100%{ left: 242px; top: 289px;
+      -webkit-transform: rotateY(0deg);
+      opacity: 0; }
+}
+@-moz-keyframes homeToSeaJeff {
+    0%{ left: 102px; top: 221px; opacity: 0; }
+   0.0000001%{ opacity: 1; }
+   20%{ left: 84px; top: 261px; }
+   32%{ left: 62px; top: 274px; }
+   37.999999%{
+      -moz-transform: rotateY(180deg);
+  }
+   38%{ left: 62px; top: 286px;
+      -moz-transform: rotateY(0deg);
+  }
+   50%{ left: 83px; top: 301px; }
+   /* 下樓梯 */
+   64%{ left: 131px; top: 307px; }
+   70%{ left: 150px; top: 322px;}
+   76%{ left: 161px; top: 322px; }
+   84%{ left: 179px; top: 292px; }
+   /* 過橋 */
+   88%{ 
+      left: 194px;
+      top: 289px;
+   }
+   99.9999%{ opacity: 1; }
+  100%{ left: 242px; top: 289px;
+      -moz-transform: rotateY(0deg);
+      opacity: 0; }
+}
+@-o-keyframes homeToSeaJeff {
+    0%{ left: 102px; top: 221px; opacity: 0; }
+   0.0000001%{ opacity: 1; }
+   20%{ left: 84px; top: 261px; }
+   32%{ left: 62px; top: 274px; }
+   37.999999%{
+      -o-transform: rotateY(180deg);
+  }
+   38%{ left: 62px; top: 286px;
+      -o-transform: rotateY(0deg);
+  }
+   50%{ left: 83px; top: 301px; }
+   /* 下樓梯 */
+   64%{ left: 131px; top: 307px; }
+   70%{ left: 150px; top: 322px;}
+   76%{ left: 161px; top: 322px; }
+   84%{ left: 179px; top: 292px; }
+   /* 過橋 */
+   88%{ 
+      left: 194px;
+      top: 289px;
+   }
+   99.9999%{ opacity: 1; }
+  100%{ left: 242px; top: 289px;
+      -o-transform: rotateY(0deg);
+      opacity: 0; }
+}
 @keyframes homeToSeaJeff {
       0%{ left: 102px; top: 221px; opacity: 0; }
      0.0000001%{ opacity: 1; }
      20%{ left: 84px; top: 261px; }
      32%{ left: 62px; top: 274px; }
      37.999999%{
-        -webkit-transform: rotateY(180deg);
-        -moz-transform: rotateY(180deg);
-        -ms-transform: rotateY(180deg);
-        -o-transform: rotateY(180deg);
         transform: rotateY(180deg);
     }
      38%{ left: 62px; top: 286px;
-        -webkit-transform: rotateY(0deg);
-        -moz-transform: rotateY(0deg);
-        -ms-transform: rotateY(0deg);
-        -o-transform: rotateY(0deg);
         transform: rotateY(0deg);
     }
      50%{ left: 83px; top: 301px; }
@@ -2475,22 +3062,117 @@ section#frame_desert #success_btn:hover{
      }
      99.9999%{ opacity: 1; }
     100%{ left: 242px; top: 289px;
-        -webkit-transform: rotateY(0deg);
-        -moz-transform: rotateY(0deg);
-        -ms-transform: rotateY(0deg);
-        -o-transform: rotateY(0deg);
         transform: rotateY(0deg);
         opacity: 0; }
+}
+
+@-webkit-keyframes SeaTohomeJeff {
+    /* 過橋 */
+   0%{ 
+       left: 242px;
+       top: 289px;
+       -webkit-transform: rotateY(180deg);
+       opacity: 0; }
+   0.000001%{ opacity: 1; }
+    12%{ 
+       left: 194px;
+       top: 289px;
+    }
+
+   /* 上樓梯 */
+   16%{ left: 179px; top: 292px; }
+   24%{ left: 161px; top: 322px; }
+   30%{ left: 150px; top: 322px;}
+   36%{ left: 131px; top: 307px; }
+
+   /* 蜿蜒路 */
+   50%{ left: 83px; top: 301px; }
+   62%{ left: 62px; top: 286px;
+       -webkit-transform: rotateY(180deg);
+    }
+   62.0000001%{ 
+       -webkit-transform: rotateY(0deg);
+   }
+   68%{ left: 62px; top: 274px; }
+   80%{ left: 84px; top: 261px; }
+   99.99999999%{ opacity: 1; }
+   100%{ left: 102px; top: 221px; opacity: 0;
+       -webkit-transform: rotateY(0deg);
+   }
+}
+@-moz-keyframes SeaTohomeJeff {
+    /* 過橋 */
+   0%{ 
+       left: 242px;
+       top: 289px;
+       -moz-transform: rotateY(180deg);
+       opacity: 0; }
+   0.000001%{ opacity: 1; }
+    12%{ 
+       left: 194px;
+       top: 289px;
+    }
+
+   /* 上樓梯 */
+   16%{ left: 179px; top: 292px; }
+   24%{ left: 161px; top: 322px; }
+   30%{ left: 150px; top: 322px;}
+   36%{ left: 131px; top: 307px; }
+
+   /* 蜿蜒路 */
+   50%{ left: 83px; top: 301px; }
+   62%{ left: 62px; top: 286px;
+       -moz-transform: rotateY(180deg);
+       transform: rotateY(180deg); }
+   62.0000001%{ 
+       -moz-transform: rotateY(0deg);
+   }
+   68%{ left: 62px; top: 274px; }
+   80%{ left: 84px; top: 261px; }
+   99.99999999%{ opacity: 1; }
+   100%{ left: 102px; top: 221px; opacity: 0;
+       -moz-transform: rotateY(0deg) ;
+   }
+}
+@-o-keyframes SeaTohomeJeff {
+    /* 過橋 */
+   0%{ 
+       left: 242px;
+       top: 289px;
+       -o-transform: rotateY(180deg);
+       opacity: 0; }
+   0.000001%{ opacity: 1; }
+    12%{ 
+       left: 194px;
+       top: 289px;
+    }
+
+   /* 上樓梯 */
+   16%{ left: 179px; top: 292px; }
+   24%{ left: 161px; top: 322px; }
+   30%{ left: 150px; top: 322px;}
+   36%{ left: 131px; top: 307px; }
+
+   /* 蜿蜒路 */
+   50%{ left: 83px; top: 301px; }
+   62%{ left: 62px; top: 286px;
+       -o-transform: rotateY(180deg);
+    }
+   62.0000001%{ 
+       -o-transform: rotateY(0deg);
+   }
+   68%{ left: 62px; top: 274px; }
+   80%{ left: 84px; top: 261px; }
+   99.99999999%{ opacity: 1; }
+   100%{ left: 102px; top: 221px; opacity: 0;
+       -o-transform: rotateY(0deg) ;
+   }
 }
 @keyframes SeaTohomeJeff {
      /* 過橋 */
     0%{ 
         left: 242px;
         top: 289px;
-        -webkit-transform: rotateY(180deg);
-        -moz-transform: rotateY(180deg);
-        -ms-transform: rotateY(180deg);
-        -o-transform: rotateY(180deg);
         transform: rotateY(180deg);
         opacity: 0; }
     0.000001%{ opacity: 1; }
@@ -2508,56 +3190,30 @@ section#frame_desert #success_btn:hover{
     /* 蜿蜒路 */
     50%{ left: 83px; top: 301px; }
     62%{ left: 62px; top: 286px;
-        -webkit-transform: rotateY(180deg);
-        -moz-transform: rotateY(180deg);
-        -ms-transform: rotateY(180deg);
-        -o-transform: rotateY(180deg);
         transform: rotateY(180deg); }
-    62.0000001%{ 
-        -webkit-transform: rotateY(0deg);
-        -moz-transform: rotateY(0deg);
-        -ms-transform: rotateY(0deg);
-        -o-transform: rotateY(0deg);
-        transform: rotateY(0deg);
-    }
+    62.0000001%{ transform: rotateY(0deg); }
     68%{ left: 62px; top: 274px; }
     80%{ left: 84px; top: 261px; }
     99.99999999%{ opacity: 1; }
     100%{ left: 102px; top: 221px; opacity: 0;
-        -webkit-transform: rotateY(0deg) ;
-        -moz-transform: rotateY(0deg) ;
-        -ms-transform: rotateY(0deg) ;
-        -o-transform: rotateY(0deg) ;
         transform: rotateY(0deg) ;
     }
 }
 
-@keyframes homeToDesertJeff {
+@-webkit-keyframes homeToDesertJeff {
     0%{ opacity: 0;
         left: 110px;
         top: 163px;
         -webkit-transform:rotateY(180deg);
-        -moz-transform:rotateY(180deg);
-        -ms-transform:rotateY(180deg);
-        -o-transform:rotateY(180deg);
-        transform:rotateY(180deg);
     }
     0.000001%{opacity: 1;}
     7%{ left: 100px; top: 151px; }
     21%{ left: 66px; top: 128px; }
     28%{ left: 59px; top: 106px;
         -webkit-transform:rotateY(180deg);
-        -moz-transform:rotateY(180deg);
-        -ms-transform:rotateY(180deg);
-        -o-transform:rotateY(180deg);
-        transform:rotateY(180deg);
     }
     28.000001%{
         -webkit-transform:rotateY(0deg);
-        -moz-transform:rotateY(0deg);
-        -ms-transform:rotateY(0deg);
-        -o-transform:rotateY(0deg);
-        transform:rotateY(0deg);
     }
     /* 過橋 */
     32%{ left: 62px; top: 94px; }
@@ -2565,19 +3221,11 @@ section#frame_desert #success_btn:hover{
     /* 直行到底 */
     62%{ left: 140px; top: 34px;
         -webkit-transform:rotateY(0deg);
-        -moz-transform:rotateY(0deg);
-        -ms-transform:rotateY(0deg);
-        -o-transform:rotateY(0deg);
-        transform:rotateY(0deg);
     }
     99.99999999%{
         width: 32px;
         height: 58px;
         -webkit-transform:rotateY(0deg);
-        -moz-transform:rotateY(0deg);
-        -ms-transform:rotateY(0deg);
-        -o-transform:rotateY(0deg);
-        transform:rotateY(0deg);
         background-image: url(../img/map-Jeff_walk.gif);
     }
     100%{ 
@@ -2587,11 +3235,206 @@ section#frame_desert #success_btn:hover{
         top: 34px;
         opacity: 1;
         -webkit-transform:rotateY(0deg);
+        background-image: url(../img/map-Jeff_stand.gif);
+    }
+}
+@-moz-keyframes homeToDesertJeff {
+    0%{ opacity: 0;
+        left: 110px;
+        top: 163px;
+        -moz-transform:rotateY(180deg);
+    }
+    0.000001%{opacity: 1;}
+    7%{ left: 100px; top: 151px; }
+    21%{ left: 66px; top: 128px; }
+    28%{ left: 59px; top: 106px;
+        -moz-transform:rotateY(180deg);
+    }
+    28.000001%{
         -moz-transform:rotateY(0deg);
-        -ms-transform:rotateY(0deg);
+    }
+    /* 過橋 */
+    32%{ left: 62px; top: 94px; }
+    51%{ left: 113px; top: 43px; }
+    /* 直行到底 */
+    62%{ left: 140px; top: 34px;
+        -moz-transform:rotateY(0deg);
+    }
+    99.99999999%{
+        width: 32px;
+        height: 58px;
+        -moz-transform:rotateY(0deg);
+        background-image: url(../img/map-Jeff_walk.gif);
+    }
+    100%{ 
+        width: 15px;
+        height: 59px;
+        left: 321px;
+        top: 34px;
+        opacity: 1;
+        -moz-transform:rotateY(0deg);
+        background-image: url(../img/map-Jeff_stand.gif);
+    }
+}
+@-o-keyframes homeToDesertJeff {
+    0%{ opacity: 0;
+        left: 110px;
+        top: 163px;
+        -o-transform:rotateY(180deg);
+    }
+    0.000001%{opacity: 1;}
+    7%{ left: 100px; top: 151px; }
+    21%{ left: 66px; top: 128px; }
+    28%{ left: 59px; top: 106px;
+        -o-transform:rotateY(180deg);
+    }
+    28.000001%{-o-transform:rotateY(0deg);}
+    /* 過橋 */
+    32%{ left: 62px; top: 94px; }
+    51%{ left: 113px; top: 43px; }
+    /* 直行到底 */
+    62%{ left: 140px; top: 34px;
         -o-transform:rotateY(0deg);
+    }
+    99.99999999%{
+        width: 32px;
+        height: 58px;
+        -o-transform:rotateY(0deg);
+        background-image: url(../img/map-Jeff_walk.gif);
+    }
+    100%{ 
+        width: 15px;
+        height: 59px;
+        left: 321px;
+        top: 34px;
+        opacity: 1;
+        -o-transform:rotateY(0deg);
+        background-image: url(../img/map-Jeff_stand.gif);
+    }
+}
+@keyframes homeToDesertJeff {
+    0%{ opacity: 0;
+        left: 110px;
+        top: 163px;
+        transform:rotateY(180deg);
+    }
+    0.000001%{opacity: 1;}
+    7%{ left: 100px; top: 151px; }
+    21%{ left: 66px; top: 128px; }
+    28%{ left: 59px; top: 106px;
+        transform:rotateY(180deg);
+    }
+    28.000001%{
+        transform:rotateY(0deg);
+    }
+    /* 過橋 */
+    32%{ left: 62px; top: 94px; }
+    51%{ left: 113px; top: 43px; }
+    /* 直行到底 */
+    62%{ left: 140px; top: 34px;
+        transform:rotateY(0deg);
+    }
+    99.99999999%{
+        width: 32px;
+        height: 58px;
+        transform:rotateY(0deg);
+        background-image: url(../img/map-Jeff_walk.gif);
+    }
+    100%{ 
+        width: 15px;
+        height: 59px;
+        left: 321px;
+        top: 34px;
+        opacity: 1;
         transform:rotateY(0deg);
         background-image: url(../img/map-Jeff_stand.gif);
+    }
+}
+
+@-webkit-keyframes desertToHomeJeff {
+    0%{ 
+        width: 32px;
+        height: 58px;
+        left: 321px;
+        top: 34px;
+        opacity: 1;
+    }
+    38%{ left: 140px; top: 34px; }
+    /* 過橋 */
+    49%{ left: 113px; top: 43px; }
+    68%{ left: 62px; top: 94px; }
+    /* 蜿蜒路 */
+    71.99999999%{ -webkit-transform:rotateY(180deg);}
+    72%{ left: 59px; top: 106px;
+        -webkit-transform:rotateY(0deg);
+    }
+    79%{ left: 66px; top: 128px; }
+    93%{ left: 100px; top: 151px; }
+    99.9999991%{opacity: 1;}
+    100%{ opacity: 0;
+        width: 32px;
+        height: 58px;
+        left: 110px;
+        top: 163px;
+        -webkit-transform:rotateY(0deg);
+    }
+}
+@-moz-keyframes desertToHomeJeff {
+    0%{ 
+        width: 32px;
+        height: 58px;
+        left: 321px;
+        top: 34px;
+        opacity: 1;
+    }
+    38%{ left: 140px; top: 34px; }
+    /* 過橋 */
+    49%{ left: 113px; top: 43px; }
+    68%{ left: 62px; top: 94px; }
+    /* 蜿蜒路 */
+    71.99999999%{ -moz-transform:rotateY(180deg);}
+    72%{ left: 59px; top: 106px;
+        -moz-transform:rotateY(0deg);
+    }
+    79%{ left: 66px; top: 128px; }
+    93%{ left: 100px; top: 151px; }
+    99.9999991%{opacity: 1;}
+    100%{ opacity: 0;
+        width: 32px;
+        height: 58px;
+        left: 110px;
+        top: 163px;
+        -moz-transform:rotateY(0deg);
+    }
+}
+@-o-keyframes desertToHomeJeff {
+    0%{ 
+        width: 32px;
+        height: 58px;
+        left: 321px;
+        top: 34px;
+        opacity: 1;
+    }
+    38%{ left: 140px; top: 34px; }
+    /* 過橋 */
+    49%{ left: 113px; top: 43px; }
+    68%{ left: 62px; top: 94px; }
+    /* 蜿蜒路 */
+    71.99999999%{
+        -o-transform:rotateY(180deg);
+    }
+    72%{ left: 59px; top: 106px;
+        -o-transform:rotateY(0deg);
+    }
+    79%{ left: 66px; top: 128px; }
+    93%{ left: 100px; top: 151px; }
+    99.9999991%{opacity: 1;}
+    100%{ opacity: 0;
+        width: 32px;
+        height: 58px;
+        left: 110px;
+        top: 163px;
+        -o-transform:rotateY(0deg);
     }
 }
 @keyframes desertToHomeJeff {
@@ -2607,18 +3450,8 @@ section#frame_desert #success_btn:hover{
     49%{ left: 113px; top: 43px; }
     68%{ left: 62px; top: 94px; }
     /* 蜿蜒路 */
-    71.99999999%{
-        -webkit-transform:rotateY(180deg);
-        -moz-transform:rotateY(180deg);
-        -ms-transform:rotateY(180deg);
-        -o-transform:rotateY(180deg);
-        transform:rotateY(180deg);
-    }
+    71.99999999%{transform:rotateY(180deg);}
     72%{ left: 59px; top: 106px;
-        -webkit-transform:rotateY(0deg);
-        -moz-transform:rotateY(0deg);
-        -ms-transform:rotateY(0deg);
-        -o-transform:rotateY(0deg);
         transform:rotateY(0deg);
     }
     79%{ left: 66px; top: 128px; }
@@ -2629,10 +3462,6 @@ section#frame_desert #success_btn:hover{
         height: 58px;
         left: 110px;
         top: 163px;
-        -webkit-transform:rotateY(0deg);
-        -moz-transform:rotateY(0deg);
-        -ms-transform:rotateY(0deg);
-        -o-transform:rotateY(0deg);
         transform:rotateY(0deg);
     }
 }
@@ -2643,17 +3472,13 @@ section#frame_desert #success_btn:hover{
     -ms-animation: SeaToDesert 13s linear 2s forwards;
     animation: SeaToDesert 13s linear 2s forwards;
 }
-@keyframes SeaToDesert{
+@-webkit-keyframes SeaToDesert{
     /* Sea To home */
      /* 過橋 */
     0%{ 
         left: 242px;
         top: 289px;
         -webkit-transform: rotateY(180deg);
-        -moz-transform: rotateY(180deg);
-        -ms-transform: rotateY(180deg);
-        -o-transform: rotateY(180deg);
-        transform: rotateY(180deg);
         opacity: 0; }
     0.000001%{ opacity: 1; }
     6%{ 
@@ -2671,56 +3496,28 @@ section#frame_desert #success_btn:hover{
     25%{ left: 83px; top: 301px; }
     31%{ left: 62px; top: 286px;
         -webkit-transform: rotateY(180deg);
-        -moz-transform: rotateY(180deg);
-        -ms-transform: rotateY(180deg);
-        -o-transform: rotateY(180deg);
-        transform: rotateY(180deg);
     }
     31.0000001%{
         -webkit-transform: rotateY(0deg);
-        -moz-transform: rotateY(0deg);
-        -ms-transform: rotateY(0deg);
-        -o-transform: rotateY(0deg);
-        transform: rotateY(0deg);
     }
     34%{ left: 62px; top: 274px; }
     40%{ left: 84px; top: 261px; }
     49.99999999%{ opacity: 1; }
     50%{ left: 102px; top: 221px;
         -webkit-transform: rotateY(0deg);
-        -moz-transform: rotateY(0deg);
-        -ms-transform: rotateY(0deg);
-        -o-transform: rotateY(0deg);
-        transform: rotateY(0deg);
     }
 
     /* home To Desert */
-    /* 0%{ opacity: 0;
-        left: 110px;
-        top: 163px;
-        transform:rotateY(180deg) } */
     50.000001%{
         -webkit-transform:rotateY(180deg);
-        -moz-transform:rotateY(180deg);
-        -ms-transform:rotateY(180deg);
-        -o-transform:rotateY(180deg);
-        transform:rotateY(180deg);
     }
     53.5%{ left: 100px; top: 151px; }
     60.5%{ left: 66px; top: 128px; }
     64%{ left: 59px; top: 106px;
         -webkit-transform:rotateY(180deg);
-        -moz-transform:rotateY(180deg);
-        -ms-transform:rotateY(180deg);
-        -o-transform:rotateY(180deg);
-        transform:rotateY(180deg);
     }
     64.000001%{ 
         -webkit-transform:rotateY(0deg);
-        -moz-transform:rotateY(0deg);
-        -ms-transform:rotateY(0deg);
-        -o-transform:rotateY(0deg);
-        transform:rotateY(0deg);
     }
     /* 過橋 */
     66%{ left: 62px; top: 94px; }
@@ -2728,19 +3525,11 @@ section#frame_desert #success_btn:hover{
     /* 直行到底 */
     81%{ left: 140px; top: 34px;
         -webkit-transform:rotateY(0deg);
-        -moz-transform:rotateY(0deg);
-        -ms-transform:rotateY(0deg);
-        -o-transform:rotateY(0deg);
-        transform:rotateY(0deg);
     }
     99.99999999%{
         width: 32px;
         height: 58px;
         -webkit-transform:rotateY(0deg);
-        -moz-transform:rotateY(0deg);
-        -ms-transform:rotateY(0deg);
-        -o-transform:rotateY(0deg);
-        transform:rotateY(0deg);
         background-image: url(../img/map-Jeff_walk.gif);
     }
     100%{ 
@@ -2750,9 +3539,215 @@ section#frame_desert #success_btn:hover{
         top: 34px;
         opacity: 1;
         -webkit-transform:rotateY(0deg);
+        background-image: url(../img/map-Jeff_stand.gif);
+    }
+}
+@-moz-keyframes SeaToDesert{
+    /* Sea To home */
+     /* 過橋 */
+    0%{ 
+        left: 242px;
+        top: 289px;
+        -moz-transform: rotateY(180deg);
+        opacity: 0; }
+    0.000001%{ opacity: 1; }
+    6%{ 
+    left: 194px;
+    top: 289px;
+    }
+
+    /* 上樓梯 */
+    8%{ left: 179px; top: 292px; }
+    12%{ left: 161px; top: 322px; }
+    15%{ left: 150px; top: 322px;}
+    18%{ left: 131px; top: 307px; }
+
+    /* 蜿蜒路 */
+    25%{ left: 83px; top: 301px; }
+    31%{ left: 62px; top: 286px;
+        -moz-transform: rotateY(180deg);
+    }
+    31.0000001%{
+        -moz-transform: rotateY(0deg);
+    }
+    34%{ left: 62px; top: 274px; }
+    40%{ left: 84px; top: 261px; }
+    49.99999999%{ opacity: 1; }
+    50%{ left: 102px; top: 221px;
+        -moz-transform: rotateY(0deg);
+    }
+
+    /* home To Desert */
+    50.000001%{
+        -moz-transform:rotateY(180deg);
+    }
+    53.5%{ left: 100px; top: 151px; }
+    60.5%{ left: 66px; top: 128px; }
+    64%{ left: 59px; top: 106px;
+        -moz-transform:rotateY(180deg);
+    }
+    64.000001%{ 
         -moz-transform:rotateY(0deg);
-        -ms-transform:rotateY(0deg);
+    }
+    /* 過橋 */
+    66%{ left: 62px; top: 94px; }
+    75.5%{ left: 113px; top: 43px; }
+    /* 直行到底 */
+    81%{ left: 140px; top: 34px;
+        -moz-transform:rotateY(0deg);
+    }
+    99.99999999%{
+        width: 32px;
+        height: 58px;
+        -moz-transform:rotateY(0deg);
+        background-image: url(../img/map-Jeff_walk.gif);
+    }
+    100%{ 
+        width: 15px;
+        height: 59px;
+        left: 321px;
+        top: 34px;
+        opacity: 1;
+        -moz-transform:rotateY(0deg);
+        background-image: url(../img/map-Jeff_stand.gif);
+    }
+}
+@-o-keyframes SeaToDesert{
+    /* Sea To home */
+     /* 過橋 */
+    0%{ 
+        left: 242px;
+        top: 289px;
+        -o-transform: rotateY(180deg);
+        opacity: 0; }
+    0.000001%{ opacity: 1; }
+    6%{ 
+    left: 194px;
+    top: 289px;
+    }
+
+    /* 上樓梯 */
+    8%{ left: 179px; top: 292px; }
+    12%{ left: 161px; top: 322px; }
+    15%{ left: 150px; top: 322px;}
+    18%{ left: 131px; top: 307px; }
+
+    /* 蜿蜒路 */
+    25%{ left: 83px; top: 301px; }
+    31%{ left: 62px; top: 286px;
+        -o-transform: rotateY(180deg);
+    }
+    31.0000001%{
+        -o-transform: rotateY(0deg);
+    }
+    34%{ left: 62px; top: 274px; }
+    40%{ left: 84px; top: 261px; }
+    49.99999999%{ opacity: 1; }
+    50%{ left: 102px; top: 221px;
+        -o-transform: rotateY(0deg);
+    }
+
+    /* home To Desert */
+    50.000001%{
+        -o-transform:rotateY(180deg);
+    }
+    53.5%{ left: 100px; top: 151px; }
+    60.5%{ left: 66px; top: 128px; }
+    64%{ left: 59px; top: 106px;
+        -o-transform:rotateY(180deg);
+    }
+    64.000001%{ 
         -o-transform:rotateY(0deg);
+    }
+    /* 過橋 */
+    66%{ left: 62px; top: 94px; }
+    75.5%{ left: 113px; top: 43px; }
+    /* 直行到底 */
+    81%{ left: 140px; top: 34px;
+        -o-transform:rotateY(0deg);
+    }
+    99.99999999%{
+        width: 32px;
+        height: 58px;
+        -o-transform:rotateY(0deg);
+        background-image: url(../img/map-Jeff_walk.gif);
+    }
+    100%{ 
+        width: 15px;
+        height: 59px;
+        left: 321px;
+        top: 34px;
+        opacity: 1;
+        -o-transform:rotateY(0deg);
+        background-image: url(../img/map-Jeff_stand.gif);
+    }
+}
+@keyframes SeaToDesert{
+    /* Sea To home */
+     /* 過橋 */
+    0%{ 
+        left: 242px;
+        top: 289px;
+        transform: rotateY(180deg);
+        opacity: 0; }
+    0.000001%{ opacity: 1; }
+    6%{ 
+    left: 194px;
+    top: 289px;
+    }
+
+    /* 上樓梯 */
+    8%{ left: 179px; top: 292px; }
+    12%{ left: 161px; top: 322px; }
+    15%{ left: 150px; top: 322px;}
+    18%{ left: 131px; top: 307px; }
+
+    /* 蜿蜒路 */
+    25%{ left: 83px; top: 301px; }
+    31%{ left: 62px; top: 286px;
+        transform: rotateY(180deg);
+    }
+    31.0000001%{
+        transform: rotateY(0deg);
+    }
+    34%{ left: 62px; top: 274px; }
+    40%{ left: 84px; top: 261px; }
+    49.99999999%{ opacity: 1; }
+    50%{ left: 102px; top: 221px;
+        transform: rotateY(0deg);
+    }
+
+    /* home To Desert */
+    50.000001%{
+        transform:rotateY(180deg);
+    }
+    53.5%{ left: 100px; top: 151px; }
+    60.5%{ left: 66px; top: 128px; }
+    64%{ left: 59px; top: 106px;
+        transform:rotateY(180deg);
+    }
+    64.000001%{
+        transform:rotateY(0deg);
+    }
+    /* 過橋 */
+    66%{ left: 62px; top: 94px; }
+    75.5%{ left: 113px; top: 43px; }
+    /* 直行到底 */
+    81%{ left: 140px; top: 34px;
+        transform:rotateY(0deg);
+    }
+    99.99999999%{
+        width: 32px;
+        height: 58px;
+        transform:rotateY(0deg);
+        background-image: url(../img/map-Jeff_walk.gif);
+    }
+    100%{ 
+        width: 15px;
+        height: 59px;
+        left: 321px;
+        top: 34px;
+        opacity: 1;
         transform:rotateY(0deg);
         background-image: url(../img/map-Jeff_stand.gif);
     }
@@ -2763,6 +3758,183 @@ section#frame_desert #success_btn:hover{
     -moz-animation: DesertToSea 13s linear forwards;
     -ms-animation: DesertToSea 13s linear forwards;
     animation: DesertToSea 13s linear forwards;
+}
+@-webkit-keyframes DesertToSea{
+    /* Desert To Home */
+    0%{ 
+        width: 32px;
+        height: 58px;
+        left: 321px;
+        top: 34px;
+        opacity: 1;
+    }
+    19%{ left: 140px; top: 34px; }
+    /* 過橋 */
+    24.5%{ left: 113px; top: 43px; }
+    34%{ left: 62px; top: 94px; }
+    /* 蜿蜒路 */
+    35.99999999%{
+        -webkit-transform:rotateY(180deg);
+    }
+    36%{ left: 59px; top: 106px;
+        -webkit-transform:rotateY(0deg);
+    }
+    39.5%{ left: 66px; top: 128px; }
+    46.5%{ left: 100px; top: 151px; }
+    49.99999999%{
+        -webkit-transform:rotateY(0deg);
+    }
+    50%{
+        /* opacity: 0; */
+        width: 32px;
+        height: 58px;
+        left: 110px;
+        top: 163px;
+        -webkit-transform:rotateY(180deg);
+    }
+
+    /* Home To Sea */
+    60%{ left: 84px; top: 261px; }
+    66%{ left: 62px; top: 274px; }
+    68.999999%{
+        -webkit-transform: rotateY(180deg);
+    }
+    69%{ left: 62px; top: 286px;
+        -webkit-transform: rotateY(0deg);
+    }
+    75%{ left: 83px; top: 301px; }
+    /* 下樓梯 */
+    82%{ left: 131px; top: 307px; }
+    85%{ left: 150px; top: 322px;}
+    85.5%{ left: 161px; top: 322px; }
+    92%{ left: 179px; top: 292px; }
+    /* 過橋 */
+    94%{ 
+        left: 194px;
+        top: 289px;
+    }
+    99.9999%{ opacity: 1; }
+    100%{ left: 242px; top: 289px;
+        -webkit-transform: rotateY(0deg);
+        opacity: 0; }
+}
+@-moz-keyframes DesertToSea{
+    /* Desert To Home */
+    0%{ 
+        width: 32px;
+        height: 58px;
+        left: 321px;
+        top: 34px;
+        opacity: 1;
+    }
+    19%{ left: 140px; top: 34px; }
+    /* 過橋 */
+    24.5%{ left: 113px; top: 43px; }
+    34%{ left: 62px; top: 94px; }
+    /* 蜿蜒路 */
+    35.99999999%{
+        -moz-transform:rotateY(180deg);
+    }
+    36%{ left: 59px; top: 106px;
+        -moz-transform:rotateY(0deg);
+    }
+    39.5%{ left: 66px; top: 128px; }
+    46.5%{ left: 100px; top: 151px; }
+    49.99999999%{
+        -moz-transform:rotateY(0deg);
+    }
+    50%{
+        /* opacity: 0; */
+        width: 32px;
+        height: 58px;
+        left: 110px;
+        top: 163px;
+        -moz-transform:rotateY(180deg);
+    }
+
+    /* Home To Sea */
+    60%{ left: 84px; top: 261px; }
+    66%{ left: 62px; top: 274px; }
+    68.999999%{
+        -moz-transform: rotateY(180deg);
+    }
+    69%{ left: 62px; top: 286px;
+        -moz-transform: rotateY(0deg);
+    }
+    75%{ left: 83px; top: 301px; }
+    /* 下樓梯 */
+    82%{ left: 131px; top: 307px; }
+    85%{ left: 150px; top: 322px;}
+    85.5%{ left: 161px; top: 322px; }
+    92%{ left: 179px; top: 292px; }
+    /* 過橋 */
+    94%{ 
+        left: 194px;
+        top: 289px;
+    }
+    99.9999%{ opacity: 1; }
+    100%{ left: 242px; top: 289px;
+        -moz-transform: rotateY(0deg);
+        opacity: 0; }
+}
+@-o-keyframes DesertToSea{
+    /* Desert To Home */
+    0%{ 
+        width: 32px;
+        height: 58px;
+        left: 321px;
+        top: 34px;
+        opacity: 1;
+    }
+    19%{ left: 140px; top: 34px; }
+    /* 過橋 */
+    24.5%{ left: 113px; top: 43px; }
+    34%{ left: 62px; top: 94px; }
+    /* 蜿蜒路 */
+    35.99999999%{
+        -o-transform:rotateY(180deg);
+    }
+    36%{ left: 59px; top: 106px;
+        -o-transform:rotateY(0deg);
+    }
+    39.5%{ left: 66px; top: 128px; }
+    46.5%{ left: 100px; top: 151px; }
+    49.99999999%{
+        -o-transform:rotateY(0deg);
+    }
+    50%{
+        /* opacity: 0; */
+        width: 32px;
+        height: 58px;
+        left: 110px;
+        top: 163px;
+        -o-transform:rotateY(180deg);
+    }
+
+    /* Home To Sea */
+    60%{ left: 84px; top: 261px; }
+    66%{ left: 62px; top: 274px; }
+    68.999999%{
+        -o-transform: rotateY(180deg);
+    }
+    69%{ left: 62px; top: 286px;
+        -o-transform: rotateY(0deg);
+    }
+    75%{ left: 83px; top: 301px; }
+    /* 下樓梯 */
+    82%{ left: 131px; top: 307px; }
+    85%{ left: 150px; top: 322px;}
+    85.5%{ left: 161px; top: 322px; }
+    92%{ left: 179px; top: 292px; }
+    /* 過橋 */
+    94%{ 
+        left: 194px;
+        top: 289px;
+    }
+    99.9999%{ opacity: 1; }
+    100%{ left: 242px; top: 289px;
+        -o-transform: rotateY(0deg);
+        opacity: 0; }
 }
 @keyframes DesertToSea{
     /* Desert To Home */
@@ -2779,26 +3951,14 @@ section#frame_desert #success_btn:hover{
     34%{ left: 62px; top: 94px; }
     /* 蜿蜒路 */
     35.99999999%{
-        -webkit-transform:rotateY(180deg);
-        -moz-transform:rotateY(180deg);
-        -ms-transform:rotateY(180deg);
-        -o-transform:rotateY(180deg);
         transform:rotateY(180deg);
     }
     36%{ left: 59px; top: 106px;
-        -webkit-transform:rotateY(0deg);
-        -moz-transform:rotateY(0deg);
-        -ms-transform:rotateY(0deg);
-        -o-transform:rotateY(0deg);
         transform:rotateY(0deg);
     }
     39.5%{ left: 66px; top: 128px; }
     46.5%{ left: 100px; top: 151px; }
     49.99999999%{
-        -webkit-transform:rotateY(0deg);
-        -moz-transform:rotateY(0deg);
-        -ms-transform:rotateY(0deg);
-        -o-transform:rotateY(0deg);
         transform:rotateY(0deg);
     }
     50%{
@@ -2807,29 +3967,16 @@ section#frame_desert #success_btn:hover{
         height: 58px;
         left: 110px;
         top: 163px;
-        -webkit-transform:rotateY(180deg);
-        -moz-transform:rotateY(180deg);
-        -ms-transform:rotateY(180deg);
-        -o-transform:rotateY(180deg);
         transform:rotateY(180deg);
     }
 
     /* Home To Sea */
-    /* 0%{ left: 102px; top: 221px; opacity: 0; } */
     60%{ left: 84px; top: 261px; }
     66%{ left: 62px; top: 274px; }
     68.999999%{
-        -webkit-transform: rotateY(180deg);
-        -moz-transform: rotateY(180deg);
-        -ms-transform: rotateY(180deg);
-        -o-transform: rotateY(180deg);
         transform: rotateY(180deg);
     }
     69%{ left: 62px; top: 286px;
-        -webkit-transform: rotateY(0deg);
-        -moz-transform: rotateY(0deg);
-        -ms-transform: rotateY(0deg);
-        -o-transform: rotateY(0deg);
         transform: rotateY(0deg);
     }
     75%{ left: 83px; top: 301px; }
@@ -2845,10 +3992,6 @@ section#frame_desert #success_btn:hover{
     }
     99.9999%{ opacity: 1; }
     100%{ left: 242px; top: 289px;
-        -webkit-transform: rotateY(0deg);
-        -moz-transform: rotateY(0deg);
-        -ms-transform: rotateY(0deg);
-        -o-transform: rotateY(0deg);
         transform: rotateY(0deg);
         opacity: 0; }
 }
@@ -2876,6 +4019,90 @@ section#frame_desert #success_btn:hover{
     -moz-animation: homeToSeaSubmarine 2s linear 13s forwards;
     -ms-animation: homeToSeaSubmarine 2s linear 13s forwards;
     animation: homeToSeaSubmarine 2s linear 13s forwards;
+}
+@-webkit-keyframes homeToSeaSubmarine {
+    /* into submarine */
+      0%{ 
+        height: 66px;
+        background-image: url(../img/map-intoSubmarine.gif);
+    }
+     35%{
+        height: 66px;
+        top: 294px;
+        background-image: url(../img/map-intoSubmarine.gif);
+    }
+     35.999999%{
+        height: 39px;
+        top: 336px;
+        background-image: url(../img/map-submarine_down.svg);
+    }
+    /* go */
+     36%{ top: 324px; left: 300px; }
+     75%{ top: 324px;left: 375px; }
+     89%{ top: 324px; }
+     90%{ top: 321px; left: 408px; }
+    100%{ 
+        height: 39px;
+        top: 321px;
+        left: 414px;
+        background-image: url(../img/map-submarine_down.svg);
+    }
+}
+@-moz-keyframes homeToSeaSubmarine {
+    /* into submarine */
+      0%{ 
+        height: 66px;
+        background-image: url(../img/map-intoSubmarine.gif);
+    }
+     35%{
+        height: 66px;
+        top: 294px;
+        background-image: url(../img/map-intoSubmarine.gif);
+    }
+     35.999999%{
+        height: 39px;
+        top: 336px;
+        background-image: url(../img/map-submarine_down.svg);
+    }
+    /* go */
+     36%{ top: 324px; left: 300px; }
+     75%{ top: 324px;left: 375px; }
+     89%{ top: 324px; }
+     90%{ top: 321px; left: 408px; }
+    100%{ 
+        height: 39px;
+        top: 321px;
+        left: 414px;
+        background-image: url(../img/map-submarine_down.svg);
+    }
+}
+@-o-keyframes homeToSeaSubmarine {
+    /* into submarine */
+      0%{ 
+        height: 66px;
+        background-image: url(../img/map-intoSubmarine.gif);
+    }
+     35%{
+        height: 66px;
+        top: 294px;
+        background-image: url(../img/map-intoSubmarine.gif);
+    }
+     35.999999%{
+        height: 39px;
+        top: 336px;
+        background-image: url(../img/map-submarine_down.svg);
+    }
+    /* go */
+     36%{ top: 324px; left: 300px; }
+     75%{ top: 324px;left: 375px; }
+     89%{ top: 324px; }
+     90%{ top: 321px; left: 408px; }
+    100%{ 
+        height: 39px;
+        top: 321px;
+        left: 414px;
+        background-image: url(../img/map-submarine_down.svg);
+    }
 }
 @keyframes homeToSeaSubmarine {
     /* into submarine */
@@ -2905,15 +4132,12 @@ section#frame_desert #success_btn:hover{
         background-image: url(../img/map-submarine_down.svg);
     }
 }
-@keyframes SeaTohomeSubmarine {
+
+@-webkit-keyframes SeaTohomeSubmarine {
     /* go */
     0%{ 
         opacity: 1;
         -webkit-transform: rotateY(180deg);
-        -moz-transform: rotateY(180deg);
-        -ms-transform: rotateY(180deg);
-        -o-transform: rotateY(180deg);
-        transform: rotateY(180deg);
         height: 39px;
         top: 321px;
         left: 414px;
@@ -2940,21 +4164,119 @@ section#frame_desert #success_btn:hover{
      }
     100%{ 
         -webkit-transform: rotateY(180deg);
+        height: 51px;
+        background-image: url(../img/map-submarine.svg);
+        opacity: 1;
+    }
+}
+@-moz-keyframes SeaTohomeSubmarine {
+    /* go */
+    0%{ 
+        opacity: 1;
         -moz-transform: rotateY(180deg);
-        -ms-transform: rotateY(180deg);
+        height: 39px;
+        top: 321px;
+        left: 414px;
+        background-image: url(../img/map-submarine_down.svg);
+    }
+    10%{ top: 321px; left: 408px; }
+    11%{ top: 324px; }
+    25%{ top: 324px;left: 375px; }
+    64%{ top: 324px; left: 300px; }
+    /* into submarine */
+     64.999999%{
+        height: 39px;
+        top: 336px;
+        background-image: url(../img/map-submarine_down.svg);
+    }
+    65%{
+       height: 66px;
+       top: 294px;
+       background-image: url(../img/map-getoutSubmarine.gif);
+    }
+    99.9999999%{ 
+        background-image: url(../img/map-getoutSubmarine.gif);
+        height: 66px;
+     }
+    100%{ 
+        -moz-transform: rotateY(180deg);
+        height: 51px;
+        background-image: url(../img/map-submarine.svg);
+        opacity: 1;
+    }
+}
+@-o-keyframes SeaTohomeSubmarine {
+    /* go */
+    0%{ 
+        opacity: 1;
         -o-transform: rotateY(180deg);
+        height: 39px;
+        top: 321px;
+        left: 414px;
+        background-image: url(../img/map-submarine_down.svg);
+    }
+    10%{ top: 321px; left: 408px; }
+    11%{ top: 324px; }
+    25%{ top: 324px;left: 375px; }
+    64%{ top: 324px; left: 300px; }
+    /* into submarine */
+     64.999999%{
+        height: 39px;
+        top: 336px;
+        background-image: url(../img/map-submarine_down.svg);
+    }
+    65%{
+       height: 66px;
+       top: 294px;
+       background-image: url(../img/map-getoutSubmarine.gif);
+    }
+    99.9999999%{ 
+        background-image: url(../img/map-getoutSubmarine.gif);
+        height: 66px;
+     }
+    100%{ 
+        -o-transform: rotateY(180deg);
+        height: 51px;
+        background-image: url(../img/map-submarine.svg);
+        opacity: 1;
+    }
+}
+@keyframes SeaTohomeSubmarine {
+    /* go */
+    0%{ 
+        opacity: 1;
+        transform: rotateY(180deg);
+        height: 39px;
+        top: 321px;
+        left: 414px;
+        background-image: url(../img/map-submarine_down.svg);
+    }
+    10%{ top: 321px; left: 408px; }
+    11%{ top: 324px; }
+    25%{ top: 324px;left: 375px; }
+    64%{ top: 324px; left: 300px; }
+    /* into submarine */
+     64.999999%{
+        height: 39px;
+        top: 336px;
+        background-image: url(../img/map-submarine_down.svg);
+    }
+    65%{
+       height: 66px;
+       top: 294px;
+       background-image: url(../img/map-getoutSubmarine.gif);
+    }
+    99.9999999%{ 
+        background-image: url(../img/map-getoutSubmarine.gif);
+        height: 66px;
+     }
+    100%{ 
         transform: rotateY(180deg);
         height: 51px;
         background-image: url(../img/map-submarine.svg);
         opacity: 1;
     }
 }
-/* #map.atSea #map_submarine{
-    height: 39px;
-    top: 321px;
-    left: 414px;
-    background-image: url(../img/map-submarine_down.svg);
-} */
 
 /* 到定位 */
 #map #location_home.here ~ #map_submarine{
@@ -2964,6 +4286,9 @@ section#frame_desert #success_btn:hover{
     animation: none;
 }
 #map #location_sea.here ~ #map_submarine{
+    -webkit-animation: none;
+    -moz-animation: none;
+    -ms-animation: none;
     animation: none;
     height: 39px;
     top: 321px;
@@ -3036,7 +4361,6 @@ section#frame_desert #success_btn:hover{
     left: 47px;
     bottom: -18px;
     padding: 4.75px 21.55px;
-    /* 75 36 */
     background-image: url(../img/map-btn.svg);
     background-size: cover;
     z-index: 1;

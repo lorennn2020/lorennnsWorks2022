@@ -318,6 +318,10 @@ article{
     display: block;
     font-size: 1.3vw;
 }
+#chinesePaintingInner .inner_img{
+    width: 70%;
+    margin: 0 15%;
+}
 /* works end */
 /* about */
 #about{
@@ -410,7 +414,7 @@ body.inner video{
     right: 0;
 }
 body.inner p{
-    font-size: 1.5vw;
+    font-size: 1.4vw;
     color: black;
 }
 body.inner .inner_img{

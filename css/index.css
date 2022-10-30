@@ -322,6 +322,18 @@ article{
     width: 70%;
     margin: 0 15%;
 }
+#anchorInner .inner_img.line{
+    position: relative;
+    display: inline-block;
+    width: 48.9%;
+    /* padding-bottom: 49%; */
+    margin-bottom: 1.9%;
+}
+body.inner div.inner_img.line:nth-child(4),
+body.inner div.inner_img.line:nth-child(6),
+body.inner div.inner_img.line:nth-child(8){
+    margin-right: 1.9%;
+}
 /* works end */
 /* about */
 #about{

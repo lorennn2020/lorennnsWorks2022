@@ -153,6 +153,8 @@ i{
 }
 #savingBOBInner p{ 
     font-size: 1.5vw;
+    line-height: 1.4;
+    letter-spacing: -0.2px;
     color: black;
 }
 /* game_menu */
@@ -1252,6 +1254,65 @@ section #start_keyboard01 i{
 }
 
 
+#frame_volcano #seawormCount{
+    position: fixed;
+    display: block;
+    top: -110px;
+    left: 330px;
+    width: 303px;
+    height: 99px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url(../img/scene-sea_lightbox.svg);
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 27px 120px;
+    -webkit-transition: top 1.5s ease-out, opacity 0s;
+    -moz-transition: top 1.5s ease-out, opacity 0s;
+    -o-transition: top 1.5s ease-out, opacity 0s;
+    transition: top 1.5s ease-out, opacity 0s;
+    opacity: 0;
+}
+#frame_volcano #seawormCount.show{
+    top: 50px;
+    opacity: 1;
+}
+#frame_volcano #blank_Seaworm{
+    position: absolute;
+    display: block;
+    width: 27px;
+    height: 27px;
+    left: 29px;
+    bottom: 36px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url(../img/scene-sea_Blank.svg);
+    z-index: 36;
+    opacity: 0;
+    -webkit-transition: opacity 0.5s ease-out;
+    -moz-transition: opacity 0.5s ease-out;
+    -o-transition: opacity 0.5s ease-out;
+    transition: opacity 0.5s ease-out;
+}
+#frame_volcano span#blank_Seaworm:nth-child(2){
+    left: 83px;
+}
+#frame_volcano span#blank_Seaworm:nth-child(3){
+    left: 137px;
+}
+#frame_volcano span#blank_Seaworm:nth-child(4){
+    left: 191px;
+}
+#frame_volcano span#blank_Seaworm:nth-child(5){
+    left: 245px;
+}
+#frame_volcano span#blank_Seaworm.show{
+    opacity: 1;
+}
+
+
+
 section #success{
     position: absolute;
     display: none;
@@ -2097,23 +2158,6 @@ section#frame_desert #start_keyboard02 .fontSize_28 {
 }
 #frame_desert #well_bucket .fontSize_28.show{
     top: 90px;
-}
-#frame_desert #well_bucket .fontSize_28::before{
-    position: absolute;
-    display: block;
-    content: '';
-    width: 366px;
-    height: 42px;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-image: url(../img/scene-desert_lightboxBlank.svg);
-    left: 20px;
-    bottom: 30px;
-    -webkit-transition: all 1.5s ease-out;
-    -moz-transition: all 1.5s ease-out;
-    -o-transition: all 1.5s ease-out;
-    transition: all 1.5s ease-out;
-    /* opacity: 0; */
 }
 #frame_desert #blank_Geobacter{
     position: absolute;
@@ -4377,7 +4421,7 @@ section#frame_desert #success_btn:hover{
 }
 
 #FinalEnding{
-    position: fixed;
+    position: absolute;
     display: none;
     top: 0;
     bottom: 0;
@@ -4406,7 +4450,7 @@ section#frame_desert #success_btn:hover{
 }
 
 #Credits{
-    position: fixed;
+    position: absolute;
     display: block;
     width: 100%;
     height: 1200px;

@@ -93,6 +93,7 @@ body.inner p strong,
 #savingBOBInner p strong{
     font-weight: 400;
     color: #00788E;
+    letter-spacing: -0.2px;
 }
 
 .text_center{
@@ -322,16 +323,18 @@ article{
     width: 70%;
     margin: 0 15%;
 }
-#anchorInner .inner_img.line{
+#anchorInner .inner_img.line,
+#campingInner .inner_img.line{
     position: relative;
     display: inline-block;
     width: 48.9%;
     /* padding-bottom: 49%; */
     margin-bottom: 1.9%;
 }
-body.inner div.inner_img.line:nth-child(4),
-body.inner div.inner_img.line:nth-child(6),
-body.inner div.inner_img.line:nth-child(8){
+body.inner #anchorInner .inner_img.line:nth-child(3),
+body.inner #campingInner .inner_img.line:nth-child(4),
+body.inner #campingInner .line:nth-child(6),
+body.inner #campingInner .line:nth-child(8){
     margin-right: 1.9%;
 }
 /* works end */
@@ -428,6 +431,8 @@ body.inner video{
 body.inner p{
     font-size: 1.4vw;
     color: black;
+    line-height: 1.4;
+    letter-spacing: -0.2px;
 }
 body.inner .inner_img{
     position: relative;

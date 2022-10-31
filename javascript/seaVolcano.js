@@ -15,16 +15,11 @@ function isSubMarineInRightSide() {
 class Worms {
     constructor() {
         this.wormsQty = [3, 3, 2];
+        // this.wormsClassOffset = [0, 3, 6];
+        this.wormsClassOffset = [0, 3, 7];
         this.wormsCatched = [0, 0, 0];
         this.$wormInCapsule = 0;
     }
-
-// class Worms {
-//     wormsQty = [3, 3, 2];
-//     wormsCatched = [0, 0, 0];
-//     $wormInCapsule = 0;
-
-//     constructor() {}
 
     volcanoPosChang() {
         // console.log("volcanoPosChang $volcanoPos:",$volcanoPos);
@@ -43,20 +38,28 @@ class Worms {
     catchWarm(num) {
         this.showSubmarineCatch();
         $(`#frame_volcano .worm${num}`).hide();
+        
         this.$wormInCapsule++;
+        $('#frame_volcano #blank_Seaworm:nth-child('+ this.$wormInCapsule +')').addClass('show');
+
         this.wormInCapsule();
     }
 
     catchCluster(num) {
+        // console.log('catchCluster(num):'+ num);
+        // console.log("this.wormsCatched[num]:" + this.wormsCatched[num]);
+        // console.log("this.wormsClassOffset[num]:" + this.wormsClassOffset[num]);
+
         if (this.wormsCatched[num] <= this.wormsQty[num]) {
-            this.catchWarm(this.wormsCatched[num] + 1);
+            this.catchWarm(this.wormsCatched[num] + this.wormsClassOffset[num] + 1);
             this.wormsCatched[num] += 1;
+
         } else {
             // 空抓
             // console.log("空抓");
             this.showSubmarineCatch();
         }
-        console.log('$wormInCapsule: ', this.$wormInCapsule);
+        // console.log('$wormInCapsule: ', this.$wormInCapsule);
     }
 
     showSubmarineCatch() {
@@ -95,6 +98,7 @@ class Worms {
         //元素顯示
         setTimeout(function () {
             $('#frame_volcano #success').fadeIn();
+            $('#frame_volcano #seawormCount').css('top', '-120px');
         }, 2500);
 
         //capsule顯示
@@ -117,13 +121,13 @@ class Worms {
     
     // 範圍內抓取worms
     catchWorms() {
-        console.log('$volcanoPos:', $volcanoPos);
-        console.log("LeftSide:",isSubMarineInLeftSide());
-        console.log("RightSide:",isSubMarineInRightSide());
+        // console.log('$volcanoPos:', $volcanoPos);
+        // console.log("LeftSide:",isSubMarineInLeftSide());
+        // console.log("RightSide:",isSubMarineInRightSide());
 
         switch ($volcanoPos) {
             case 0:{
-                console.log('case 0');
+                // console.log('case 0');
                 //抓取worm1, worm2, worm3
                 if (isSubMarineInRightSide() && $submarineLeft > 592 && $submarineTop == 441) {
                     worms.catchCluster(0);
@@ -133,7 +137,7 @@ class Worms {
                 break;
             }
             case 10:{
-                console.log('case 10');
+                // console.log('case 10');
                 //抓取worm1, worm2, worm3
                 if (isSubMarineInRightSide() && $submarineLeft > 502 && $submarineLeft < 594 && $submarineTop == 441) {
                     worms.catchCluster(0);
@@ -143,7 +147,7 @@ class Worms {
                 break;
             }
             case 20:{
-                console.log('case 20');
+                // console.log('case 20');
 
                 //抓取worm1, worm2, worm3
                 if (isSubMarineInRightSide() && $submarineLeft > 442 && $submarineLeft < 534 && $submarineTop == 441) {
@@ -160,7 +164,7 @@ class Worms {
                 break;
             }
             case 30:{
-                console.log('case 30');
+                // console.log('case 30');
 
                 //抓取worm1, worm2, worm3
                 if (isSubMarineInRightSide() && $submarineLeft > 352 && $submarineLeft < 414 && $submarineTop == 430) {
@@ -168,7 +172,7 @@ class Worms {
                 } else if (isSubMarineInLeftSide() && $submarineLeft > 562 && $submarineLeft < 654 && $submarineTop == 441) {
                     worms.catchCluster(0);
                 
-                // 抓取worm4, worm5, worm6
+                // 抓取worm4, worm5, worm6, worm7
                 } else if (
                     isSubMarineInRightSide() && $submarineLeft > 562 && $submarineLeft < 654 && $submarineTop > 380) {
                     worms.catchCluster(1);
@@ -178,7 +182,7 @@ class Worms {
                 break;
             }
             case 40:{
-                console.log('case 40');
+                // console.log('case 40');
 
                 //抓取worm1, worm2, worm3
                 if (isSubMarineInRightSide() && $submarineLeft > 262 && $submarineLeft < 324 && $submarineTop == 441) {
@@ -186,7 +190,7 @@ class Worms {
                 } else if (isSubMarineInLeftSide() && $submarineLeft > 472 && $submarineLeft < 532 && $submarineTop == 441) {
                     worms.catchCluster(0);
                 
-                // 抓取worm4, worm5, worm6
+                // 抓取worm4, worm5, worm6, worm7
                 } else if (
                     isSubMarineInRightSide() && $submarineLeft > 472 && $submarineLeft < 564 && $submarineTop > 380) {
                     worms.catchCluster(1);
@@ -196,14 +200,14 @@ class Worms {
                 break;
             }
             case 50:{
-                console.log('case 50');
+                // console.log('case 50');
 
                 //抓取worm1, worm2, worm3
                 if (isSubMarineInRightSide() && $submarineLeft > 172 && $submarineLeft < 234 && $submarineTop == 441) {
                     worms.catchCluster(0);
                 } else if (isSubMarineInLeftSide() && $submarineLeft > 382 && $submarineLeft < 444 && $submarineTop == 441) {
                     worms.catchCluster(0);
-                    // 抓取worm4, worm5, worm6
+                    // 抓取worm4, worm5, worm6, worm7
                 } else if (
                     isSubMarineInRightSide() && $submarineLeft > 382 && $submarineLeft < 474 && $submarineTop > 380) {
                     worms.catchCluster(1);
@@ -215,14 +219,14 @@ class Worms {
                 break;
             }
             case 60:{
-                console.log('case 60');
+                // console.log('case 60');
                 //抓取worm1, worm2, worm3
                 if (isSubMarineInRightSide() && $submarineLeft > 172 && $submarineLeft < 234 && $submarineTop == 441) {
                     worms.catchCluster(0);
                 } else if (isSubMarineInLeftSide() && $submarineLeft > 292 && $submarineLeft < 354 && $submarineTop == 441) {
                     worms.catchCluster(0);
 
-                // 抓取worm4, worm5, worm6
+                // 抓取worm4, worm5, worm6, worm7
                 } else if (isSubMarineInRightSide() && $submarineLeft > 292 && $submarineLeft < 354 && $submarineTop > 380) {
                     worms.catchCluster(1);
                 } else if (isSubMarineInLeftSide() && $submarineLeft > 502 && $submarineLeft < 594 && $submarineTop > 380) {
@@ -237,7 +241,7 @@ class Worms {
                 break;
             }
             case 70:{
-                console.log('case 70');
+                // console.log('case 70');
 
                 //抓取worm1, worm2, worm3
                 if (isSubMarineInRightSide() && $submarineLeft > 22 && $submarineLeft < 54 && $submarineTop == 441) {
@@ -246,7 +250,7 @@ class Worms {
                     worms.catchCluster(0);
                 
 
-                // 抓取worm4, worm5, worm6
+                // 抓取worm4, worm5, worm6, worm7
                 } else if (isSubMarineInRightSide() && $submarineLeft > 202 && $submarineLeft < 294 && $submarineTop > 380) {
                     worms.catchCluster(1);
                 } else if (isSubMarineInLeftSide() && $submarineLeft > 412 && $submarineLeft < 504 && $submarineTop > 380) {
@@ -262,14 +266,14 @@ class Worms {
                 break;
             }
             case 80:{
-                console.log('case 80');
+                // console.log('case 80');
 
                 //抓取worm1, worm2, worm3
                 if (isSubMarineInLeftSide() && $submarineLeft > 112 && $submarineLeft < 174 && $submarineTop == 441) {
                     worms.catchCluster(0);
                 
 
-                // 抓取worm4, worm5, worm6
+                // 抓取worm4, worm5, worm6, worm7
             } else if (isSubMarineInRightSide() && $submarineLeft > 112 && $submarineLeft < 204 && $submarineTop > 380) {
                     worms.catchCluster(1);
                 } else if (isSubMarineInLeftSide() && $submarineLeft > 322 && $submarineLeft < 414 && $submarineTop > 380) {
@@ -287,12 +291,12 @@ class Worms {
                 break;
             }
             case 90:{
-                console.log('case 90');
+                // console.log('case 90');
                 //抓取worm1, worm2, worm3
                 if (isSubMarineInLeftSide() && $submarineLeft > 22 && $submarineLeft < 84 && $submarineTop == 441) {
                     worms.catchCluster(0);
                 
-                // 抓取worm4, worm5, worm6
+                // 抓取worm4, worm5, worm6, worm7
                 } else if (isSubMarineInRightSide() && $submarineLeft > 22 && $submarineLeft < 84 && $submarineTop > 380) {
                     worms.catchCluster(1);
                 } else if (isSubMarineInLeftSide() && $submarineLeft > 232 && $submarineLeft < 324 && $submarineTop > 380) {
@@ -309,8 +313,8 @@ class Worms {
                 break;
             }
             case 100: { 
-                console.log('case 100');
-                // 抓取worm4, worm5, worm6
+                // console.log('case 100');
+                // 抓取worm4, worm5, worm6, worm7
                 if (isSubMarineInLeftSide() && $submarineLeft > 142 && $submarineLeft < 234 && $submarineTop > 380) {
                     worms.catchCluster(1);
                 
@@ -325,7 +329,7 @@ class Worms {
                 break;
             }
             default:{
-                console.log('不在抓取範圍');
+                // console.log('不在抓取範圍');
                 // 空抓
                 $submarine.css('background-image', 'url(img/scene-volcano_submarineNoCatch.gif)');
                 break;
@@ -346,9 +350,10 @@ const worms = new Worms();
 // START! WASD移動James's submarine
 $('#frame_volcano #start_btn').click(function () {
     window.removeEventListener('keydown,keyup', function () {
-        console.log('removeEventListener keydown,keyup FAIL');
+        // console.log('removeEventListener keydown,keyup FAIL');
     });
     $('#frame_volcano #c_instruction').fadeOut();
+    $('#frame_volcano #seawormCount').addClass('show');
 
     // WASD Space控制潛水艇
     $submarineLeft = $submarine.position().left;
@@ -360,14 +365,14 @@ $('#frame_volcano #start_btn').click(function () {
             var keyID = e.code;
 
             if (keyID === 'KeyW') {
-                console.log('W');
+                // console.log('W');
                 if ($submarineTop > 39) {
                     $submarineTop = $submarineTop - 30;
                     $submarine.css('top', $submarineTop + 'px');
                 }
             }
             if (keyID === 'KeyA') {
-                console.log('A');
+                // console.log('A');
 
                 if ($submarineLeft > 1) {
                     $submarine.css('transform', 'rotateY(180deg)');
@@ -378,20 +383,20 @@ $('#frame_volcano #start_btn').click(function () {
                 } else if ($volcanoPos > 0) {
                     $volcanoPos = $volcanoPos - 10;
                     $('#frame_volcano').css('background-position', $volcanoPos + '% 100%');
-                    console.log('$volcanoPos:', $volcanoPos);
+                    // console.log('$volcanoPos:', $volcanoPos);
 
                     worms.volcanoPosChang();
                 }
             }
             if (keyID === 'KeyS') {
-                console.log('S');
+                // console.log('S');
                 if ($submarineTop < 430) {
                     $submarineTop = $submarineTop + 30;
                     $submarine.css('top', $submarineTop + 'px');
                 }
             }
             if (keyID === 'KeyD') {
-                console.log('D');
+                // console.log('D');
 
                 if ($submarineLeft < 700) {
                     $submarine.css('transform', 'rotateY(0deg)');
@@ -402,18 +407,18 @@ $('#frame_volcano #start_btn').click(function () {
                 } else if ($volcanoPos < 100) {
                     $volcanoPos = $volcanoPos + 10;
                     $('#frame_volcano').css('background-position', $volcanoPos + '% 100%');
-                    console.log('$volcanoPos:', $volcanoPos);
+                    // console.log('$volcanoPos:', $volcanoPos);
 
                     worms.volcanoPosChang();
                 }
             }
             if (keyID === 'Space') {
-                console.log('Spacebar');
+                // console.log('Spacebar');
                 worms.catchWorms();
             }
 
-            console.log('$submarineLeft:' + $submarineLeft);
-            console.log('$submarineTop:' + $submarineTop);
+            // console.log('$submarineLeft:' + $submarineLeft);
+            // console.log('$submarineTop:' + $submarineTop);
 
             // worms隨 $volcanoBgPos改變位置
         },
@@ -472,15 +477,15 @@ export function volcanoSTART() {
                 $('#frame_volcano #start_keyboard01 i:nth-child(1)').removeClass('down');
             }
             if (keyupID === 'KeyA') {
-                console.log('A');
+                // console.log('A');
                 $('#frame_volcano #start_keyboard01 i:nth-child(2)').removeClass('down');
             }
             if (keyupID === 'KeyS') {
-                console.log('S');
+                // console.log('S');
                 $('#frame_volcano #start_keyboard01 i:nth-child(3)').removeClass('down');
             }
             if (keyupID === 'KeyD') {
-                console.log('D');
+                // console.log('D');
                 $('#frame_volcano #start_keyboard01 i:nth-child(4)').removeClass('down');
             }
             if (keyupID === 'Space') {

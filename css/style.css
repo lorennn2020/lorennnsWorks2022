@@ -139,7 +139,7 @@ i{
     -ms-overflow-y: hidden;
     -ms-overflow-x: hidden;
     overflow: hidden;
-    margin: 10% calc(50% - 450px) 5% calc(50% - 450px);
+    margin: 6% calc(50% - 450px) 5% calc(50% - 450px);
 }
 /* 1 dpr & 96dpi 以上 */
 /* @media (-webkit-max-device-pixel-ratio: 1),(max-resolution: 96dpi){
@@ -149,7 +149,7 @@ i{
 } */
 
 #savingBOBInner{
-    padding-top: 700px;
+    padding-top: 600px;
 }
 #savingBOBInner p{ 
     font-size: 1.5vw;

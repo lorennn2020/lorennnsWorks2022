@@ -18,26 +18,7 @@ var $desertPos = 0;
 
 var $toHome, $toSea, $toDesert;
 var $taking, $clicking, $bag_spaceLR, $mousePosX, $mousePosY, $ingredientsBlock;
-  
-// preload images
-var $preloadImages = new Array();
-function preloadImg() {  
-    console.log("preloadImg...");
-    for (let i = 0; i < preloadImg.arguments.length; i++) {
-        $preloadImages[i] = new Image();
-        $preloadImages[i].src = preload.arguments[i];
-    }  
-}  
-preloadImg(  
-    "https://lorennn2020.github.io/lorennnsWorks2022/img/scene-beginning_900x600.gif",  
-    "https://lorennn2020.github.io/lorennnsWorks2022/worksImg/motionGrapic.png",
-    "https://lorennn2020.github.io/lorennnsWorks2022/worksImg/ROOM.png",
-    "https://lorennn2020.github.io/lorennnsWorks2022/worksImg/BENNS.png",
-    "https://lorennn2020.github.io/lorennnsWorks2022/worksImg/chinesePainting_cover.png",
-    "https://lorennn2020.github.io/lorennnsWorks2022/worksImg/3D_anchor_cover.png",
-    "https://lorennn2020.github.io/lorennnsWorks2022/worksImg/3Dcamping_cover.png",
-    "https://lorennn2020.github.io/lorennnsWorks2022/img/btn-orange.svg",
-)  
+    
 
 // 判別Firefox
 if (navigator.userAgent.indexOf('Firefox') !== -1) {
@@ -58,6 +39,26 @@ for (let i = 1; i < 36; i++) {
 }
 
 function init() {
+    // preload images
+    var $preloadImages = new Array();
+    function preloadImg() {  
+        console.log("preloadImg...");
+        for (let i = 0; i < preloadImg.arguments.length; i++) {
+            $preloadImages[i] = new Image();
+            $preloadImages[i].src = preload.arguments[i];
+        }  
+    }  
+    preloadImg(  
+        "https://lorennn2020.github.io/lorennnsWorks2022/img/scene-beginning_900x600.gif",  
+        "https://lorennn2020.github.io/lorennnsWorks2022/worksImg/motionGrapic.png",
+        "https://lorennn2020.github.io/lorennnsWorks2022/worksImg/ROOM.png",
+        "https://lorennn2020.github.io/lorennnsWorks2022/worksImg/BENNS.png",
+        "https://lorennn2020.github.io/lorennnsWorks2022/worksImg/chinesePainting_cover.png",
+        "https://lorennn2020.github.io/lorennnsWorks2022/worksImg/3D_anchor_cover.png",
+        "https://lorennn2020.github.io/lorennnsWorks2022/worksImg/3Dcamping_cover.png",
+        "https://lorennn2020.github.io/lorennnsWorks2022/img/btn-orange.svg",
+    )
+    
     // 防止 spaceber 滾動畫面
     window.addEventListener(
         'keydown',

@@ -45,7 +45,7 @@ function init() {
         console.log("preloadImg...");
         for (let i = 0; i < preloadImg.arguments.length; i++) {
             $preloadImages[i] = new Image();
-            $preloadImages[i].src = preload.arguments[i];
+            $preloadImages[i].src = preloadImg.arguments[i];
         }  
     }  
     preloadImg(  
@@ -58,7 +58,7 @@ function init() {
         "https://lorennn2020.github.io/lorennnsWorks2022/worksImg/3Dcamping_cover.png",
         "https://lorennn2020.github.io/lorennnsWorks2022/img/btn-orange.svg",
     )
-    
+
     // 防止 spaceber 滾動畫面
     window.addEventListener(
         'keydown',

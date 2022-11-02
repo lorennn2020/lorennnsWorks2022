@@ -42,8 +42,8 @@ function init() {
     // preload images
     var $preloadImages = new Array();
     function preloadImg() {  
-        console.log("preloadImg.");
-        for (let i = 0; i < 8; i++) {
+        console.log("preloadImg...");
+        for (let i = 0; i < 9; i++) {
             $preloadImages[i] = new Image();
         }  
         // $preloadImages1 = new Image();

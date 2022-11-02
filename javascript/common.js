@@ -284,7 +284,7 @@ function init() {
     // 點擊地圖
     $('#map #location_home').click(function () {
         $toHome = 1;
-        $('#map #map_text').text('Are you sure want to go Home?');
+        $('#map #map_text').text('Are you sure you want to go Home?');
         $('#map #map_btn_y , #map #map_btn_n').show();
         $('#map #map_text_bg').show();
     });
@@ -555,7 +555,7 @@ function init() {
             // 返家後開啟地圖
             setTimeout(function () {
                 $('#game_lightbox').addClass('c_showLightbox mapShow');
-                $('#map #map_text').text('Where you want to go first?');
+                $('#map #map_text').text('Where do you want to go first?');
                 $('#map #map_btn_y , #map #map_btn_n').hide();
                 $('#map #map_text_bg').show();
 
@@ -591,7 +591,7 @@ function init() {
         }, 1810);
 
         setTimeout(function () {
-            $('#map #map_text').text('Where you want to go next?');
+            $('#map #map_text').text('Where do you want to go next?');
             $('#map #map_text_bg').show();
             $('#map #map_btn_y , #map #map_btn_n').hide();
 
@@ -1211,7 +1211,7 @@ function init() {
             }, 1810);
 
             setTimeout(function () {
-                $('#map #map_text').text('Where you want to go next?');
+                $('#map #map_text').text('Where do you want to go next?');
                 $('#map #map_text_bg').show();
                 $('#map #map_btn_y , #map #map_btn_n').hide();
 

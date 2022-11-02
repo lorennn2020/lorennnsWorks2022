@@ -185,6 +185,106 @@ i{
     -o-transform:translateY(-100%);
     transform:translateY(-100%);
 }
+#game_menu #menu_bar,
+#game_menu #menu_bar::before,
+#game_menu #menu_bar::after{
+    position: absolute;
+    display: block;
+    background-size: cover;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    transform: translateX(-50%);
+}
+#game_menu #menu_bar{
+    background-image: url(../img/beginning-barBg.svg);
+    width: 288px;
+    height: 18px;
+    top: 474px;
+}
+#game_menu #menu_bar::before{
+    background-image: url(../img/beginning-bar.svg);
+    content: "";
+    width: 282px;
+    height: 9px;
+    top: 3px;
+    left: 144px;
+    -webkit-clip-path: polygon(0 0, 0% 0, 0% 100%, 0 100%);
+    -o-clip-path: polygon(0 0, 0% 0, 0% 100%, 0 100%);
+    -ms-clip-path: polygon(0 0, 0% 0, 0% 100%, 0 100%);
+    clip-path: polygon(0 0, 0% 0, 0% 100%, 0 100%);
+    -webkit-animation: menuBar 15s linear forwards;
+    -moz-animation: menuBar 15s linear forwards;
+    -ms-animation: menuBar 15s linear forwards;
+    animation: menuBar 15s linear forwards;
+}
+@-webkit-keyframes menuBar {
+    0%{
+      -webkit-clip-path: polygon(0 0, 0% 0, 0% 100%, 0 100%);
+  }
+  100%{ 
+      -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+}
+@-moz-keyframes menuBar {
+    0%{
+      -moz-clip-path: polygon(0 0, 0% 0, 0% 100%, 0 100%);
+      clip-path: polygon(0 0, 0% 0, 0% 100%, 0 100%);
+  }
+  100%{ 
+      -moz-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+}
+@-o-keyframes menuBar {
+    0%{
+      -o-clip-path: polygon(0 0, 0% 0, 0% 100%, 0 100%);
+  }
+  100%{ 
+      -o-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+}
+@keyframes menuBar {
+      0%{
+        clip-path: polygon(0 0, 0% 0, 0% 100%, 0 100%);
+    }
+    100%{
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+}
+#game_menu #menu_bar::after{
+    content: "Loading...";
+    top: -27px;
+    left: 144px;
+    font-size: 16px;
+    color: #fff;
+    -webkit-animation: menuBarText 2s ease infinite forwards;
+    -moz-animation: menuBarText 2s ease infinite forwards;
+    -ms-animation: menuBarText 2s ease infinite forwards;
+    animation: menuBarText 2s ease infinite forwards;
+}
+@-webkit-keyframes menuBarText {
+    0%{ opacity: 100% }
+    50%{ opacity: 0% }
+    100%{ opacity: 100% }
+}
+@-moz-keyframes menuBarText {
+    0%{ opacity: 100% }
+    50%{ opacity: 0% }
+    100%{ opacity: 100% }
+}
+@-o-keyframes menuBarText {
+    0%{ opacity: 100% }
+    50%{ opacity: 0% }
+    100%{ opacity: 100% }
+}
+@keyframes menuBarText {
+    0%{ opacity: 100% }
+    50%{ opacity: 0% }
+    100%{ opacity: 100% }
+}
 #game_menu #menu_start{
     position: absolute;
     background-image: url(../img/btn-orange.svg);
@@ -200,6 +300,9 @@ i{
     transform: translateX(-50%);
     z-index: 3;
     cursor: pointer;
+}
+#game_menu #menu_start.hide{
+    display: none;
 }
 body.isFireFox #game_menu #menu_start{
     padding: 19px 39.6px;

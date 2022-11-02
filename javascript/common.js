@@ -41,8 +41,7 @@ for (let i = 1; i < 36; i++) {
 function init() {
     // preload images
     var $preloadImages = new Array();
-    function preloadImg() {  
-        console.log("preloadImg...");
+    function preloadImg() {
         for (let i = 0; i < 195; i++) {
             $preloadImages[i] = new Image();
         }
@@ -649,6 +648,11 @@ function init() {
     }
     ////////////   ＭＡＰ end   //////////////////////
     ////////////   ＢＥＧＩＮＩＮＧ  ///////////////////
+    setTimeout(function () {
+        $('#game_menu #menu_start').removeClass("hide");
+        $('#game_menu #menu_bar').remove();
+    }, 16000);
+
     $('#game_menu #menu_start').click(function () {
         $('#game_frame').addClass('starting');
         doctorSTART();

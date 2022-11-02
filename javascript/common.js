@@ -42,22 +42,20 @@ function init() {
     // preload images
     var $preloadImages = new Array();
     function preloadImg() {  
-        console.log("preloadImg..");
+        console.log("preloadImg.....");
         for (let i = 0; i < 8; i++) {
             $preloadImages[i] = new Image();
-            $preloadImages[i].src = preloadImg.arguments[i];
         }  
-    }  
-    preloadImg(  
-        "worksImg/motionGrapic.png",
-        "worksImg/ROOM.png",
-        "worksImg/BENNS.png",
-        "worksImg/chinesePainting_cover.png",
-        "worksImg/3D_anchor_cover.png",
-        "worksImg/3Dcamping_cover.png",
-        "img/scene-beginning_900x600.gif",
-        "img/btn-orange.svg",
-    )
+        $preloadImages1.src = "worksImg/motionGrapic.png";
+        $preloadImages2.src = "worksImg/ROOM.png";
+        $preloadImages3.src = "worksImg/BENNS.png";
+        $preloadImages4.src = "worksImg/chinesePainting_cover.png";
+        $preloadImages5.src = "worksImg/3D_anchor_cover.png";
+        $preloadImages6.src = "worksImg/3Dcamping_cover.png";
+        $preloadImages7.src = "img/scene-beginning_900x600.gif";
+        $preloadImages8.src = "img/btn-orange.svg";
+    } 
+    preloadImg();
 
     // 防止 spaceber 滾動畫面
     window.addEventListener(

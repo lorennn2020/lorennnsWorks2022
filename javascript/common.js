@@ -43,20 +43,20 @@ function init() {
     var $preloadImages = new Array();
     function preloadImg() {  
         console.log("preloadImg..");
-        for (let i = 0; i < preloadImg.arguments.length; i++) {
+        for (i = 0; i < 8; i++) {
             $preloadImages[i] = new Image();
             $preloadImages[i].src = preloadImg.arguments[i];
         }  
     }  
     preloadImg(  
-        "https://lorennn2020.github.io/lorennnsWorks2022/img/scene-beginning_900x600.gif",  
-        "https://lorennn2020.github.io/lorennnsWorks2022/worksImg/motionGrapic.png",
-        "https://lorennn2020.github.io/lorennnsWorks2022/worksImg/ROOM.png",
-        "https://lorennn2020.github.io/lorennnsWorks2022/worksImg/BENNS.png",
-        "https://lorennn2020.github.io/lorennnsWorks2022/worksImg/chinesePainting_cover.png",
-        "https://lorennn2020.github.io/lorennnsWorks2022/worksImg/3D_anchor_cover.png",
-        "https://lorennn2020.github.io/lorennnsWorks2022/worksImg/3Dcamping_cover.png",
-        "https://lorennn2020.github.io/lorennnsWorks2022/img/btn-orange.svg",
+        "worksImg/motionGrapic.png",
+        "worksImg/ROOM.png",
+        "worksImg/BENNS.png",
+        "worksImg/chinesePainting_cover.png",
+        "worksImg/3D_anchor_cover.png",
+        "worksImg/3Dcamping_cover.png",
+        "img/scene-beginning_900x600.gif",
+        "img/btn-orange.svg",
     )
 
     // 防止 spaceber 滾動畫面

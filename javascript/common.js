@@ -2,11 +2,6 @@ import { volcanoSTART } from './seaVolcano.js';
 ///////  variable declaration  //////////////////
 
 // 全域參數宣告
-var gameFramePos = $("#game_frame").position();
-$(window).resize(function() {
-    gameFramePos = $("#game_frame").position();
-});
-
 var $bag_spaceLR;
 
 var $gameFrameleft = $('#game_frame').offset().left;
@@ -342,8 +337,8 @@ function init() {
 
     // 判別滑鼠位置
     function $mousePos(e) {
-        $mousePosX = e.pageX - gameFramePos.left;
-        $mousePosY = e.pageY - gameFramePos.top;
+        $mousePosX = e.pageX - $('#game_frame').offset().left;
+        $mousePosY = e.pageY - $('#game_frame').offset().top;
         // console.log("$mousePosX:",$mousePosX," ; $mousePosY:",$mousePosY);
     }
 
